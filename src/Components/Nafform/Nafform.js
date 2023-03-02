@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 // import DataSource from '../../Components/MainSearch/DataSource';
@@ -20,7 +19,7 @@ import BIapicall from '../ApiCall/BIapicall';
 
 function NafForm(props) {
 
-    const [isSidebar, setIsSidebar] = useState(true);
+
 
     // let apiparams = {}
     let famille2 = props.famille2

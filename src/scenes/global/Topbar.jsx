@@ -13,9 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import Typography from '@mui/material/Typography';
-import Image from 'mui-image'
-// import myImgSrc from './Logo-Vinci-Energies.jpg';
-import myImgSrc from './vincijpg.jpg';
+
 
 const Topbar = () => {
   const theme = useTheme();
