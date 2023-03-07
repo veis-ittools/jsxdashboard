@@ -18,7 +18,8 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 // import { blue, red } from "@mui/material/colors";
 import myImgSrc from './vincijpg.jpg';
-
+// import FlashOffIcon from '@mui/icons-material/FlashOff';
+// import Tooltip from '@mui/material/Tooltip';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -149,8 +150,11 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Supplier Data
+              Supplier Data *inactive
             </Typography>
+            
+
+
             <Item
               title="Manage Team"
               to="/team"
@@ -158,8 +162,9 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+
             <Item
-              title="Contacts Information"
+              title="Contact Information"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
@@ -207,8 +212,9 @@ const Sidebar = () => {
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
-              Business 
+              Business *inactive
             </Typography>
+
             <Item
               title="Revenue"
               to="/bar"
@@ -216,6 +222,8 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+   
+            
             <Item
               title="Purchase History"
               to="/pie"
@@ -231,7 +239,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Map"
+              title="Ethics & Compliance"
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}

@@ -3,6 +3,7 @@ import axios from "axios";
 import Datagrid from './Datagrid';
 import Button from '@mui/material/Button';
 
+import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 
 function BIapicall(props) {
 
@@ -30,7 +31,7 @@ function BIapicall(props) {
     console.log(datasource)
 
     let apiurltocall = urlformating(ESS, location,category, datasource, regionlen, naftocall, naf)
-    console.log('function output', apiurltocall)
+    console.log('BI function output', apiurltocall)
 
     apiurllist.push(apiurltocall[0])
 
@@ -89,6 +90,7 @@ function BIapicall(props) {
         
     const [users, setUsers] = useState([])
     const [birecs, setBIrecs] = useState([])
+    const [biflag, setBiflag] = useState(false)
  
     
 
@@ -104,6 +106,8 @@ function BIapicall(props) {
         axios.post(urlchange).then((response) => {
             setUsers(response.data);
             setBIrecs(response.data.BI)
+            setBiflag(true)
+
             console.log(response.data)
             console.log('here from now')
       })
@@ -111,33 +115,65 @@ function BIapicall(props) {
 
 
   if (!users) return null;
-  return (
-    <div>
-      {/* API TEST.....
-      {apiurl} */}
+  // return (
+  //   <div>
 
-      <Datagrid
-            rows = {birecs}
-            columns = {columns}
-            loading = {!birecs.length}
-            sx = {userTableStyles}
-            />  
+
+  //     <Datagrid
+  //           rows = {birecs}
+  //           columns = {columns}
+  //           loading = {!birecs.length}
+  //           sx = {userTableStyles}
+  //           />  
     
-    </div>
-  )
+  //   </div>
+  // )
+
+  // if (biflag ===  true ) {
+  //   return (
+  //   <div>
+  //     <Datagrid
+  //           rows = {birecs}
+  //           columns = {columns}
+  //           loading = {!birecs.length}
+  //           sx = {userTableStyles}
+  //           />  
+  //   </div>      
+  //   );
+  // }
+  // return null ;
+
+// dlkajlsdkjalskdj
+if (birecs!= [] && biflag === true) {
+  return (
+  <div>
+      <DataGrid 
+        rows = {birecs}
+        columns = {columns}
+        // loading = {!birecs.length}
+        sx = {userTableStyles}
+        // components={{ Toolbar: GridToolbar }}
+        // getRowId={(rows) =>  generateRandom()}  
+        /> 
+  </div>      
+  );
 }
+return null ;
+
+}
+
 
 export default BIapicall
 
 
 const urlformating = (ESS, location,category, datasource, regionlen, naftocall, naf) => {
 
-    console.log('FUNCTION CODE BLOCK CALLED!')
+    console.log(' *BI* FUNCTION CODE BLOCK CALLED!')
 
     let finalbaseURL = []
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
-        console.log('insee block')
+        // console.log('insee block')
         let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/All?ESS=false`
         console.log('scene 1')
         // console.log(baseURL)

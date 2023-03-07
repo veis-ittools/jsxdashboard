@@ -16,6 +16,8 @@ import Switch from '@mui/material/Switch';
 import Apitest from '../ApiCall/Apitest';
 import BIapicall from '../ApiCall/BIapicall';
 
+import Apirouting from '../ApiCall/Apirouting';
+import { Troubleshoot } from '@mui/icons-material';
 
 function NafForm(props) {
 
@@ -24,6 +26,10 @@ function NafForm(props) {
     // let apiparams = {}
     let famille2 = props.famille2
     console.log(famille2)
+    let [apiparams2, setApiparams] = useState()
+    let [formcomplete, setFromcomplete] = useState(false)
+    let [dataBI, setDataBI] = useState(false)
+    let [dataINSEE, setDataINSEE] = useState(false)
 
     
 
@@ -46,13 +52,16 @@ function NafForm(props) {
         setApiparams(apiparams)
         setFromcomplete(true)
 
-        console.log('APIPARAMS--', apiparams2)
-        if (apiparams.datasource === 'BI'){
-            setDataBI(true)
-        }
-        if (apiparams.datasource === 'INSEE'){
-            setDataINSEE(true)
-        }
+        // console.log('APIPARAMS--', apiparams2)
+        // if (apiparams.datasource === 'BI'){
+        //     setDataBI(true)
+        //     setDataINSEE(false)
+        // }
+        // if (apiparams.datasource === 'INSEE'){
+        //     setDataINSEE(true)
+        //     setDataBI(true)
+        // }
+
         }
 
 // ===================================NAFCODE OPEN=====================================================
@@ -63,10 +72,7 @@ function NafForm(props) {
         // STATE FOR NAF
         let [inputnaf , setInputnaf ] =  useState({})
         const [nafflag, setNafflag] = useState(false)
-        let [apiparams2, setApiparams] = useState()
-        let [formcomplete, setFromcomplete] = useState(false)
-        let [dataBI, setDataBI] = useState(false)
-        let [dataINSEE, setDataINSEE] = useState(false)
+
         
         // STATE FOR AUTOCOMPLETE INPUT NAF
         let [storenaf, setStorenaf] = useState('')
@@ -127,6 +133,18 @@ function NafForm(props) {
 
         // --------------------------button----------------------
         let [buttonclickstate, setButtonclickstate]  = useState(false)
+
+        const onbuttonClicked = (params) => {
+            console.log('APIPARAMS from button clicked--', apiparams2)
+            setButtonclickstate(
+                !buttonclickstate
+                )
+            console.log('from button', buttonclickstate);
+            setDataBI(
+                dataBI === true
+            )
+            console.log('from button bi flag', dataBI);    
+        }
 
         
 
@@ -270,7 +288,7 @@ function NafForm(props) {
               type="submit"
               variant="contained"
               sx={{ marginTop:2,  alignContent:'left'}}
-              onClick={setButtonclickstate}
+              onClick={onbuttonClicked}
             >
               Launch Search
             </Button> 
@@ -282,9 +300,13 @@ function NafForm(props) {
                 }
                 }  */}
 
-            {dataBI && <BIapicall apiparams2= {apiparams2}  />}
+            {/* {dataBI && <BIapicall apiparams2= {apiparams2}  />} 
             
-            {dataINSEE && <Apitest apiparams2= {apiparams2}  />}
+            {dataINSEE && <Apitest apiparams2= {apiparams2}  />}  */}
+            {/* {buttonclickstate && <Apirouting  apiparams2= {apiparams2} ></Apirouting>} */}
+            {/* {buttonclickstate && <Apirouting ></Apirouting>} */}
+            {formcomplete && <Apirouting apiparams2= {apiparams2}  ></Apirouting> }
+        
 
         </Box>
     </div>

@@ -122,7 +122,7 @@ function Apitest(props) {
     
       const fetchData = () => {
         // setApiurl(apiurltocall[0])
-        console.log('API CODE -----')
+        console.log('INSEE API CODE -----')
         axios.post(urlchange).then((response) => {
             setUsers(response.data);
             setInseerecs(response.data.INSEE)
@@ -154,7 +154,7 @@ export default Apitest
 
 const urlformating = (ESS, location,category, datasource, regionlen, naftocall, naf) => {
 
-    console.log('FUNCTION CODE BLOCK CALLED!')
+    console.log('INSEE FUNCTION CODE BLOCK CALLED!')
 
     let finalbaseURL = []
 
