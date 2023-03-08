@@ -38,8 +38,8 @@ const Topbar = () => {
           <Avatar sx={{  bgcolor: 'secondary.main' }}>
               <ApartmentIcon />
           </Avatar> 
-          <Typography component="h1" variant="h5"> 
-              Enterprise Search 
+          <Typography component="h1" variant="h2"> 
+              NAAVIK 
           </Typography>  
       </Stack>
 

@@ -15,6 +15,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 import SecondSearchbar from '../SecondSearchbar/SecondSearchbar';
 import CountrySelect from '../CountrySelect';
 
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 
 function Mainseach() {
     const theme = useTheme();
@@ -84,28 +89,22 @@ function Mainseach() {
                 />
           </Grid>
           <Grid item xs={12} sm={4}>
-            <TextField label="Enter Keywords"
-                    size="small" 
-                    variant="outlined" 
-                    margin="normal">
-            </TextField>
-          </Grid>          
+            <CountrySelect/>
+          </Grid>
+
         </Grid>
 
         
-        <Grid marginTop={-2} alignContent={'center'} container spacing={3}
+        <Grid marginTop={-1.75} alignContent={'center'} container spacing={3}
         > 
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={12}>
              {/* <SecondSearchbar famille1= {inputValue} />  */}
             {flag  && <SecondSearchbar famille1= {inputValue} />} 
           </Grid>
        
-        <Grid item xs={12} sm={4}>
-            {/* <TextField label="Country"
-                    size="small" >
-            </TextField> */}
+          {/* <Grid item xs={12} sm={4}>
             {flag  && <CountrySelect/>}
-          </Grid>
+          </Grid> */}
         </Grid>  
 
 

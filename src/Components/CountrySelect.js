@@ -19,7 +19,7 @@ import Select from '@mui/material/Select';
 
 export default function CountrySelect() {
   return (
-    <FormControl sx={{ m: 0, minWidth: 165 }} size="small">
+    <FormControl sx={{ m: 2, minWidth: 235 }} size="small">
     <InputLabel id="demo-select-small">Country</InputLabel>
     <Select
       labelId="demo-select-small"

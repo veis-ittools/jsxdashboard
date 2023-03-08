@@ -281,7 +281,7 @@ function NafForm(props) {
                   name='ESS'
                   id = 'ESS'
                   /> */}
-                  <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="ESS" value="YES" name='ESS' id='ESS'/>
+                  <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="L'économie sociale et solidaire (ESS)" value="YES" name='ESS' id='ESS'/>
                 </Grid>
             </Grid>
             <Button
