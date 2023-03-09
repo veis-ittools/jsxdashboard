@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Button, IconButton, Typography,TextField, useTheme } from "@mui/material";
 // import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
@@ -19,6 +19,13 @@ import BasicInfo from '../../Components/BasicInfo/BasicInfo';
 const Sirensearch= () =>{
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
+    const [siren, setSiren] = useState('')
+    const [buttonclickstate, setButtonclickstate]  = useState(false)
+
+
+
+
   return (
     <Box m="20px">
         <Box display="flex" justifyContent="space-around" alignItems="center"   >
@@ -37,12 +44,21 @@ const Sirensearch= () =>{
                     size="small"
                     id = 'siren'
                     sx={{ marginTop:1,
-                    mx:5
-         
+                    mx:5 }}
+                    onChange= {(e)=>{
+                        console.log(e.target.value);
+                        setSiren(e.target.value)
+                        
                     }}
+                    
                     />
 
+
+                    
+
+
                 <Button
+                    onClick={setButtonclickstate}
                     sx={{
                     backgroundColor: colors.blueAccent[600],
                     color: colors.grey[100],
@@ -51,34 +67,17 @@ const Sirensearch= () =>{
                     padding: "10px 20px",
                     // marginRight: "150px"
                     }}
+                    
                 >
                 <DownloadOutlinedIcon sx={{ mr: "10px" }} />
                     Search Supplier
                 </Button>
+
+
             </Box>
 
-        <Box backgroundColor={colors.primary[400]}  justifyContent='center' 
-        sx={{
-            marginTop: 0,
-            // marginLeft: 5,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            borderRadius: 2,
-            width: 820,
-            height: 150, 
-            
-            
-        }}
-        > 
-        basic info
         </Box>
-
-
-
-
-
-        </Box>
+        {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> }
 
         {/* <BasicInfo></BasicInfo> */}
         
@@ -176,7 +175,7 @@ const Sirensearch= () =>{
 
 
 
-        {/* <BasicInfo></BasicInfo> */}
+        
     </Box>
     
   )
