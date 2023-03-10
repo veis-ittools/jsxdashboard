@@ -22,6 +22,7 @@ import FAQ from "./scenes/Faq";
 import Sirensearch from "./scenes/Sirensearch";
 import Bar from "./scenes/bar";
 import BlankPage from "./scenes/blankpage";
+import Apex from "./scenes/apex";
 
 // import Dashboard from "./scenes/dashboard";
 
@@ -52,7 +53,7 @@ function App() {
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />    */}
               <Route path="/faq" element={<FAQ />} />
-              {/* <Route path="/calendar" element={<Bar />} /> */}
+              <Route path="/calendar" element={<Apex />} /> 
               {/* <Route path="/geography" element={<Geography />} /> */} 
             </Routes>
           </main>

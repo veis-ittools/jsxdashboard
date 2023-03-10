@@ -4,14 +4,14 @@ import { Box, Button, IconButton, Typography,TextField, useTheme } from "@mui/ma
 import { tokens } from "../../theme";
 import Header from '../../Components/Header';
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-// import SearchIcon from "@mui/icons-material/Search";
-// import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 
-// import EmailIcon from "@mui/icons-material/Email";
-// import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-// import PersonAddIcon from "@mui/icons-material/PersonAdd";
-// import StatBox from '../../Components/StatBox';
-// import TrafficIcon from "@mui/icons-material/Traffic";
+import EmailIcon from "@mui/icons-material/Email";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import StatBox from '../../Components/StatBox';
+import TrafficIcon from "@mui/icons-material/Traffic";
 
 
 import BasicInfo from '../../Components/BasicInfo/BasicInfo';
@@ -85,7 +85,7 @@ const Sirensearch= () =>{
         {/* -------------------------START----------------------------- */}
         {/* GRID & CHARTS */}  {/* ROW 1 */} 
         
-        {/* <Box
+        <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
           gridAutoRows="140px"
@@ -99,8 +99,8 @@ const Sirensearch= () =>{
             justifyContent="center"
           >
             <StatBox
-              title="12,361"
-              subtitle="Emails Sent"
+              title="€71,154,803"
+              subtitle="Chiffre d'affaires"
               progress="0.75"
               increase="+14%"
               icon={
@@ -118,8 +118,8 @@ const Sirensearch= () =>{
             justifyContent="center"
           >
             <StatBox
-              title="431,225"
-              subtitle="Sales Obtained"
+              title="€59,865,496"
+              subtitle="Résultat"
               progress="0.50"
               increase="+21%"
               icon={
@@ -137,8 +137,8 @@ const Sirensearch= () =>{
             justifyContent="center"
           >
             <StatBox
-              title="32,441"
-              subtitle="New Clients"
+              title="59"
+              subtitle="Effectif "
               progress="0.30"
               increase="+5%"
               icon={
@@ -156,8 +156,8 @@ const Sirensearch= () =>{
             justifyContent="center"
           >
             <StatBox
-              title="1,325,134"
-              subtitle="Traffic Received"
+              title="89"
+              subtitle="établissement(s)"
               progress="0.80"
               increase="+43%"
               icon={
@@ -167,7 +167,7 @@ const Sirensearch= () =>{
               }
             />
           </Box>
-        </Box> */}
+        </Box>
         
         {/* 4 SMALL BOXES */}
         {/* -------------------------END----------------------------- */}

@@ -13,10 +13,11 @@ function BasicInfo(props) {
     const colorMode = useContext(ColorModeContext);
 
 
-    
+
   return (
 
-    <Box backgroundColor={colors.primary[400]}  justifyContent='center' 
+    // <Box backgroundColor={colors.primary[400]}  justifyContent='center' 
+    <Box  justifyContent='center' 
         sx={{
             marginTop: 0,
             marginLeft: 5,
@@ -25,7 +26,7 @@ function BasicInfo(props) {
             alignItems: 'center',
             borderRadius: 2,
             width: 820,
-            height: 150, 
+            height: 130, 
             
             
         }}
@@ -38,10 +39,10 @@ function BasicInfo(props) {
         // fontWeight="bold"
         sx={{ m: "0 0 5px 0" }}
       >
-        "Présentation de la société VINCI ENERGIES"
+        Présentation de la société VINCI ENERGIES
       </Typography>
       <Typography variant="h5" color={colors.greenAccent[400]}>
-          "Categorie Juridique UniteLegale SA à conseil d'administration (s.a.i.)"
+          Categorie Juridique UniteLegale SA à conseil d'administration (s.a.i.)
       </Typography>
 
       <Typography variant="h5" color={colors.blueAccent[400]}>
@@ -49,9 +50,9 @@ function BasicInfo(props) {
           Spécialisée dans le secteur d'activité Construction de réseaux électriques et de télécommunications
           Génie civil, 42.22Z     
       </Typography>
-      <Typography variant="h5" color={colors.blueAccent[400]}>
+      {/* <Typography variant="h5" color={colors.blueAccent[400]}>
           Sur l'année 2020, VINCI ENERGIES réalise un chiffre d'affaires de 71154803 €.
-      </Typography>
+      </Typography> */}
     </Box>
   )
 }
