@@ -15,6 +15,8 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 
 
 import BasicInfo from '../../Components/BasicInfo/BasicInfo';
+import ApexCharts from '../../Components/ApexCharts';
+
 
 const Sirensearch= () =>{
     const theme = useTheme();
@@ -88,7 +90,7 @@ const Sirensearch= () =>{
         <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
-          gridAutoRows="140px"
+          gridAutoRows="120px"
           gap="20px"
         >
           <Box
@@ -171,12 +173,70 @@ const Sirensearch= () =>{
         
         {/* 4 SMALL BOXES */}
         {/* -------------------------END----------------------------- */}
-        {/* GRID & CHARTS */}  {/* ROW 1 */}  
+        {/* GRID & CHARTS */}  {/* ROW 1 */}
+
+
+          {/* 3 charts revenue  */}
+        {/* --------------------START=------------------------- */}
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
+          gridAutoRows="275px"
+          gap="20px"
+          marginTop={2}
+        >
+          <Box
+            gridColumn="span 4"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            {/* <StatBox
+              title="€71,154,803"
+              subtitle="Chiffre d'affaires"
+              progress="0.75"
+              increase="+14%"
+              icon={
+                <EmailIcon
+                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                />
+              }
+            /> */}
 
 
 
-        
+            <ApexCharts></ApexCharts>
+          </Box>
+          <Box
+            gridColumn="span 4"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+
+            <ApexCharts></ApexCharts>
+          </Box>
+          <Box
+            gridColumn="span 4"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <ApexCharts></ApexCharts>
+          </Box>
+        </Box>        
+  
+      
+      
+          
+       
+           
+        {/* --------------------END=------------------------- */}    
     </Box>
+
     
   )
 }

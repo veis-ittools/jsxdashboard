@@ -6,10 +6,12 @@ import React from 'react'
 
 function Apex() {
   return (
+
+
     <Box m="20px">
       <Header title="Bar Chart" subtitle="Simple Bar Chart" />
       <Box height="75vh">
-        <ApexCharts />
+         <ApexCharts />
       </Box>
     </Box>
   )

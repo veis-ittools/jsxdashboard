@@ -189,7 +189,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Manage Team"
-              to="/calender"
+              to="/apex"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -216,7 +216,7 @@ const Sidebar = () => {
 
             <Item
               title="Revenue"
-              to="/bar"
+              to="/team"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

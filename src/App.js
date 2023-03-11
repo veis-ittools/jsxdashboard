@@ -20,7 +20,7 @@ import { ColorModeContext, useMode } from "./theme";
 import Mainseach from "./Components/Mainsearch/Mainseach";
 import FAQ from "./scenes/Faq";
 import Sirensearch from "./scenes/Sirensearch";
-import Bar from "./scenes/bar";
+import BarC from "./scenes/bar";
 import BlankPage from "./scenes/blankpage";
 import Apex from "./scenes/apex";
 
@@ -45,16 +45,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Mainseach />} />
               <Route path="/sirensearch" element={<Sirensearch />} />  
-              <Route path="/team" element={<Bar />} />
+              <Route path="/team" element={<BarC />} />
               <Route path="/contacts" element={<BlankPage />} /> 
-              {/* <Route path="/invoices" element={<Invoices />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/line" element={<Line />} />    */}
+
+
               <Route path="/faq" element={<FAQ />} />
-              <Route path="/calendar" element={<Apex />} /> 
-              {/* <Route path="/geography" element={<Geography />} /> */} 
+              <Route path="/apex" element={<Apex />} /> 
+
             </Routes>
           </main>
         </div>
