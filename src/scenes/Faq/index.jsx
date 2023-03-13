@@ -19,12 +19,12 @@ const FAQ = () => {
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-              Qu'est-ce que NAAVIK ?
+              Qu'est-ce que NAVIK ?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            NAVIIK est une plateforme de recherche de fournisseurs dans tous les secteurs. Notre mission est de fournir une plateforme facile à utiliser qui aide les utilisateurs à trouver des fournisseurs à partir de SAP BI et des fournisseurs à travers la France en utilisant les données ouvertes de l'INSEE.
+            NAVIK est une plateforme de recherche de fournisseurs dans tous les secteurs. Notre mission est de fournir une plateforme facile à utiliser qui aide les utilisateurs à trouver des fournisseurs à partir de SAP BI(*limited) et des fournisseurs à travers la France en utilisant les données ouvertes de l'INSEE.
 
           </Typography>
         </AccordionDetails>
@@ -56,16 +56,17 @@ const FAQ = () => {
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-            Quelles sont les données utilisées par NAAVIK ?
+            Quelles sont les données utilisées par NAVIK ?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-              NAAVIK utilise des données provenant de différentes sources, l'application est constamment connectée avec des données provenant de SAP-BI, INSEE (Opendata), DataGrippe (Revenue), Lamarche Inclusive, FR Region data.  
+              NAVIK utilise des données provenant de différentes sources, l'application est constamment connectée avec des données provenant de SAP-BI(limited), INSEE (Opendata), DataGrippe (Revenue), Lamarche Inclusive, FR Region data.  
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      
+      {/* <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             The Final Question
@@ -77,7 +78,7 @@ const FAQ = () => {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
     </Box>
   );
 };

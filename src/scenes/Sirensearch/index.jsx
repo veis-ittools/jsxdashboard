@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Box, Button, IconButton, Typography,TextField, useTheme } from "@mui/material";
+import { Box, Button ,TextField, useTheme } from "@mui/material";
 // import { Box, useTheme } from "@mui/material";
+// import { Box, Button, IconButton, Typography,TextField, useTheme } from "@mui/material";
+
 import { tokens } from "../../theme";
 import Header from '../../Components/Header';
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
+// import SearchIcon from "@mui/icons-material/Search";
+// import InputBase from "@mui/material/InputBase";
 
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -31,7 +33,7 @@ const Sirensearch= () =>{
   return (
     <Box m="20px">
         <Box display="flex" justifyContent="space-around" alignItems="center"   >
-            <Header title="Enterprise Search" subtitle="Search using the SIREN for Suppliers in France" />
+            <Header title="Enterprise Search" subtitle="Search using the SIREN for Suppliers in France (Section under Develpment*)" />
 
             <Box   
                 display="flex"
@@ -79,7 +81,8 @@ const Sirensearch= () =>{
             </Box>
 
         </Box>
-        {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> }
+        {/* {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> } */}
+        <BasicInfo siren = {siren}></BasicInfo> 
 
         {/* <BasicInfo></BasicInfo> */}
         

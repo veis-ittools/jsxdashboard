@@ -8,7 +8,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 // import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
@@ -127,7 +127,7 @@ const Sidebar = () => {
                   // fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  NAAVIK
+                  NAVIK
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   Substainable Sourcing 
@@ -161,7 +161,7 @@ const Sidebar = () => {
             /> 
             <Item
               title="About NAAVIK"
-              to="/calendar"
+              to="/about"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -175,7 +175,7 @@ const Sidebar = () => {
             /> 
             <Item
               title="Help us to Improve"
-              to="/faq"
+              to="/help"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -189,7 +189,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Manage Team"
-              to="/apex"
+              to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -225,21 +225,21 @@ const Sidebar = () => {
             
             <Item
               title="Purchase History"
-              to="/pie"
+              to="/team"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="KPI's"
-              to="/line"
+              to="/team"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Ethics & Compliance"
-              to="/geography"
+              to="/team"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
