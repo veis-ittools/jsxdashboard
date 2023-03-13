@@ -13,11 +13,11 @@ import FormControl from '@mui/material/FormControl';
 import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
 import Switch from '@mui/material/Switch';
-import Apitest from '../ApiCall/Apitest';
-import BIapicall from '../ApiCall/BIapicall';
+// import Apitest from '../ApiCall/Apitest';
+// import BIapicall from '../ApiCall/BIapicall';
 
 import Apirouting from '../ApiCall/Apirouting';
-import { Troubleshoot } from '@mui/icons-material';
+// import { Troubleshoot } from '@mui/icons-material';
 
 function NafForm(props) {
 
@@ -29,7 +29,7 @@ function NafForm(props) {
     let [apiparams2, setApiparams] = useState()
     let [formcomplete, setFromcomplete] = useState(false)
     let [dataBI, setDataBI] = useState(false)
-    let [dataINSEE, setDataINSEE] = useState(false)
+    // let [dataINSEE, setDataINSEE] = useState(false)
 
     
 

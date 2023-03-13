@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
-import Datagrid from './Datagrid';
-import Button from '@mui/material/Button';
+// import Datagrid from './Datagrid';
+// import Button from '@mui/material/Button';
 
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 
@@ -13,7 +13,7 @@ function BIapicall(props) {
     console.log('BI block----', apiparams2)
     // console.log('Flag--->', apiparams2.iscomplete)
 
-    let [apiurl, setApiurl] = useState()
+    // let [apiurl, setApiurl] = useState()
 
     // if (apiparams2.iscomplete === true){
     let naf = apiparams2.naf
@@ -144,7 +144,7 @@ function BIapicall(props) {
   // return null ;
 
 // dlkajlsdkjalskdj
-if (birecs!= [] && biflag === true) {
+if (birecs!== [] && biflag === true) {
   return (
   <div>
       <DataGrid 

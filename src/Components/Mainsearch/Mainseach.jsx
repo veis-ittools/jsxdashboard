@@ -1,30 +1,30 @@
 import React, { useState} from 'react'
-import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
+// import { useContext } from "react";
+// import { ColorModeContext, tokens } from "../../theme";
 import { Box, Grid, TextField, IconButton, useTheme } from "@mui/material";
-import Button from '@mui/material/Button';
-import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
+// import InputBase from "@mui/material/InputBase";
+// import SearchIcon from "@mui/icons-material/Search";
+// import Avatar from '@mui/material/Avatar';
+// import Stack from '@mui/material/Stack';
+// import ApartmentIcon from '@mui/icons-material/Apartment';
+// import Typography from '@mui/material/Typography';
 
 import { famill1_options } from './Famille1'; 
 import Autocomplete from '@mui/material/Autocomplete';
 import SecondSearchbar from '../SecondSearchbar/SecondSearchbar';
 import CountrySelect from '../CountrySelect';
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
 
 
 function Mainseach() {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
+    // const theme = useTheme();
+    // const colors = tokens(theme.palette.mode);
+    // const colorMode = useContext(ColorModeContext);
 
     const [value, setValue] = useState(famill1_options[0])
     const [flag, setFlag] = useState(false)

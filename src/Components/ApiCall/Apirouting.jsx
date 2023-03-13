@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import BIapicall from '../ApiCall/BIapicall';
 import Apitest from '../ApiCall/Apitest';
 

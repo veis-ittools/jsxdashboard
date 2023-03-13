@@ -1,8 +1,8 @@
-import React, { useState} from 'react'
+import React from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
-import { Box, Grid, TextField, IconButton, useTheme, Typography } from "@mui/material";
-import Header from '../Header';
+import { Box, useTheme, Typography } from "@mui/material";
+// import Header from '../Header';
 
 function BasicInfo(props) {
 

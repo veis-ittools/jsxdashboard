@@ -1,6 +1,6 @@
 import React from 'react'
 import { LineChart,Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Box, Typography, useTheme } from "@mui/material";
+// import { Box, Typography, useTheme } from "@mui/material";
 
 const data = [
   {
@@ -40,44 +40,24 @@ const data = [
   //   "amt": 2100
   // }
 ]
-const data2 = [
-  {
-    "name": "2020",
-    "Chiffre d'affaires": -21.8319493322,
+// const data2 = [
+//   {
+//     "name": "2020",
+//     "Chiffre d'affaires": -21.8319493322,
 
-  },
-  {
-    "name": "2019",
-    "Chiffre d'affaires": -35.1971396013,
+//   },
+//   {
+//     "name": "2019",
+//     "Chiffre d'affaires": -35.1971396013,
 
-  },
-  {
-    "name": "2018",
-    "Chiffre d'affaires": -14.5888863155,
+//   },
+//   {
+//     "name": "2018",
+//     "Chiffre d'affaires": -14.5888863155,
 
-  },
-  {
-    "name": "2017",
-    "Chiffre d'affaires": -3.185187379,
+//   },
 
-  },
-  // {
-  //   "name": "2016",
-  //   "Chiffre d'affaires": 169873083,
-  // },
-  // {
-  //   "name": "Page F",
-  //   "uv": 2390,
-  //   "pv": 3800,
-  //   "amt": 2500
-  // },
-  // {
-  //   "name": "Page G",
-  //   "uv": 3490,
-  //   "pv": 4300,
-  //   "amt": 2100
-  // }
-]
+// ]
 
 
 function ApexCharts() {
