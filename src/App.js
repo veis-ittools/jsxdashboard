@@ -40,51 +40,41 @@ import Button from "react-bootstrap/Button";
 
 
 
-// function App() {
-//   const [theme, colorMode] = useMode();
-//   const [isSidebar, setIsSidebar] = useState(true);
+function App() {
+  const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
 
-//   return (
-//     <>
-//     <AuthenticatedTemplate>
-//       <PageLayout>
-//         <ColorModeContext.Provider value={colorMode}>
-//           <ThemeProvider theme={theme}>
-//             <CssBaseline />
-//             <div className="app">
-//               <Sidebar isSidebar={isSidebar} />
-//               <main className="content">
-//                 <Topbar setIsSidebar={setIsSidebar} />
-//                 {/* <Mainseach></Mainseach> */}
+  return (
+    <>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <div className="app">
+              <Sidebar isSidebar={isSidebar} />
+              <main className="content">
+                <Topbar setIsSidebar={setIsSidebar} />
+                {/* <Mainseach></Mainseach> */}
                 
-//                 <Routes>
-//                   <Route path="/" element={<Mainseach />} />
-//                   <Route path="/sirensearch" element={<Sirensearch />} />  
-//                   <Route path="/team" element={<BlankPage />} />
-//                   <Route path="/contacts" element={<BlankPage />} /> 
-//                   <Route path="/faq" element={<FAQ />} />
-//                   <Route path="/about" element={<BlankPage />} /> 
-//                   <Route path="/help" element={<BlankPage />} /> 
+                <Routes>
+                  <Route path="/" element={<Mainseach />} />
+                  <Route path="/sirensearch" element={<Sirensearch />} />  
+                  <Route path="/team" element={<BlankPage />} />
+                  <Route path="/contacts" element={<BlankPage />} /> 
+                  <Route path="/faq" element={<FAQ />} />
+                  <Route path="/about" element={<BlankPage />} /> 
+                  <Route path="/help" element={<BlankPage />} /> 
 
-//                 </Routes>
-//               </main>
-//             </div>
-//           </ThemeProvider>
-//         </ColorModeContext.Provider>
-//       </PageLayout>
-//     </AuthenticatedTemplate>
-
-//     <UnauthenticatedTemplate>
-//         {/* <p>This will only render if a user is not signed-in.</p> */}
-//         <PageLayout />
-//     </UnauthenticatedTemplate>
-
-//     </>
+                </Routes>
+              </main>
+            </div>
+          </ThemeProvider>
+        </ColorModeContext.Provider>
+    </>
     
-//   );
-// }
+  );
+}
 
-// export default App;
+export default App;
 
 
 
@@ -100,73 +90,73 @@ import Button from "react-bootstrap/Button";
 /**
  * Renders information about the signed-in user or a button to retrieve data about the user
  */
-const ProfileContent = () => {
-    const { instance, accounts } = useMsal();
-    const [graphData, setGraphData] = useState(null);
+// const ProfileContent = () => {
+//     const { instance, accounts } = useMsal();
+//     const [graphData, setGraphData] = useState(null);
 
-    const [theme, colorMode] = useMode();
-    const [isSidebar, setIsSidebar] = useState(true);
+//     const [theme, colorMode] = useMode();
+//     const [isSidebar, setIsSidebar] = useState(true);
 
-    function RequestProfileData() {
-        // Silently acquires an access token which is then attached to a request for MS Graph data
-        instance.acquireTokenSilent({
-            ...loginRequest,
-            account: accounts[0]
-        }).then((response) => {
-            callMsGraph(response.accessToken).then(response => setGraphData(response));
-        });
-    }
+//     function RequestProfileData() {
+//         // Silently acquires an access token which is then attached to a request for MS Graph data
+//         instance.acquireTokenSilent({
+//             ...loginRequest,
+//             account: accounts[0]
+//         }).then((response) => {
+//             callMsGraph(response.accessToken).then(response => setGraphData(response));
+//         });
+//     }
 
-    return (
-        <>
-          <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-              <CssBaseline />
-              <div className="app">
-                <Sidebar isSidebar={isSidebar} />
-                <main className="content">
-                  <Topbar setIsSidebar={setIsSidebar} />
-                  {/* <Mainseach></Mainseach> */}
+//     return (
+//         <>
+//           <ColorModeContext.Provider value={colorMode}>
+//             <ThemeProvider theme={theme}>
+//               <CssBaseline />
+//               <div className="app">
+//                 <Sidebar isSidebar={isSidebar} />
+//                 <main className="content">
+//                   <Topbar setIsSidebar={setIsSidebar} />
+//                   {/* <Mainseach></Mainseach> */}
                   
-                  <Routes>
-                    <Route path="/" element={<Mainseach />} />
-                    <Route path="/sirensearch" element={<Sirensearch />} />  
-                    <Route path="/team" element={<BlankPage />} />
-                    <Route path="/contacts" element={<BlankPage />} /> 
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/about" element={<BlankPage />} /> 
-                    <Route path="/help" element={<BlankPage />} /> 
+//                   <Routes>
+//                     <Route path="/" element={<Mainseach />} />
+//                     <Route path="/sirensearch" element={<Sirensearch />} />  
+//                     <Route path="/team" element={<BlankPage />} />
+//                     <Route path="/contacts" element={<BlankPage />} /> 
+//                     <Route path="/faq" element={<FAQ />} />
+//                     <Route path="/about" element={<BlankPage />} /> 
+//                     <Route path="/help" element={<BlankPage />} /> 
 
-                  </Routes>
-                </main>
-              </div>
-            </ThemeProvider>
-          </ColorModeContext.Provider>
-        </>
-    );
-};
+//                   </Routes>
+//                 </main>
+//               </div>
+//             </ThemeProvider>
+//           </ColorModeContext.Provider>
+//         </>
+//     );
+// };
 
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-const MainContent = () => {    
-    return (
-        <div className="App">
-            <AuthenticatedTemplate>
-                <ProfileContent />
-            </AuthenticatedTemplate>
+// const MainContent = () => {    
+//     return (
+//         <div className="App">
+//             <AuthenticatedTemplate>
+//                 <ProfileContent />
+//             </AuthenticatedTemplate>
 
-            <UnauthenticatedTemplate>
-                <h5 className="card-title">Please sign-in to see your profile information.</h5>
-            </UnauthenticatedTemplate>
-        </div>
-    );
-};
+//             <UnauthenticatedTemplate>
+//                 <h5 className="card-title">Please sign-in to see your profile information.</h5>
+//             </UnauthenticatedTemplate>
+//         </div>
+//     );
+// };
 
-export default function App() {
-    return (
-        <PageLayout>
-            <MainContent />
-        </PageLayout>
-    );
-}
+// export default function App() {
+//     return (
+//         <PageLayout>
+//             <MainContent />
+//         </PageLayout>
+//     );
+// }
