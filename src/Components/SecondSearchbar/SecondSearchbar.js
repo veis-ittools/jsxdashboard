@@ -12,6 +12,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 // import NafForm from '../NafForm/NafForm';
 import NafForm from '../Nafform/Nafform';
 
+
 function SecondSearchbar(props) {
     let famille1 = props.famille1
     console.log(famille1)
@@ -37,8 +38,10 @@ function SecondSearchbar(props) {
         label: famille2
       }))
 
-      console.log('value i want', autnafinputValue)
-      console.log('flag i want', autonaf)
+      console.log('value autnafinputValue --=', autnafinputValue)
+      console.log(typeof(autnafinputValue))
+      console.log(autnafinputValue.length)
+      console.log('flag autonaf----=', autonaf)
 
   return (
     <div>
@@ -79,7 +82,29 @@ function SecondSearchbar(props) {
                 <CountrySelect/>
             </Grid> */}
         {/* </Grid> */}
-        {autonaf && <NafForm famille2 = {autnafinputValue}></NafForm>}
+        
+        
+        {/* {autonaf && <NafForm famille2 = {autnafinputValue}></NafForm>} */}
+
+        {autonaf=== true  ? <NafForm famille2 = {autnafinputValue}></NafForm> : null} 
+        {/* { autnafinputValue.length === 0  ? <h6>No data</h6> : null}  */}
+        
+
+        {/* <NafForm famille2 = {autnafinputValue} autonaf ={autonaf}></NafForm> */}
+
+        {/* {()=>{
+          if(autonaf === true){
+            return(
+              <NafForm famille2 = {autnafinputValue}></NafForm>
+            )
+          }else{
+            return(
+              <p>NOT ENOUGH DATA TO PREDICT</p>
+            )
+          }
+        }} */}
+
+
     </div>
   )
 }

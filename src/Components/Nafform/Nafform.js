@@ -22,10 +22,14 @@ import Apirouting from '../ApiCall/Apirouting';
 function NafForm(props) {
 
 
-
+    // let autonaf = props.autonaf 
     // let apiparams = {}
     let famille2 = props.famille2
+    
+    
     console.log(famille2)
+    // console.log('autonaf flag from naf form', autonaf)
+
     let [apiparams2, setApiparams] = useState()
     let [formcomplete, setFromcomplete] = useState(false)
     let [dataBI, setDataBI] = useState(false)

@@ -4,6 +4,7 @@ import axios from "axios";
 // import Button from '@mui/material/Button';
 
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
+import { Box } from '@mui/system';
 
 function BIapicall(props) {
 
@@ -40,12 +41,13 @@ function BIapicall(props) {
     let urlchange = apiurllist[0] 
     
     const userTableStyles = {
-        m: 2,
-        marginTop: 2,
-        height: '370px',
-        width: 800,
-        // display: 'flex',
-        // flexDirection: 'column',
+        // m: 2,
+        // marginTop: 2,
+        // height: '370px',
+        height: '450px',
+        width: 900,
+        display: 'flex',
+        flexDirection: 'column',
         boxShadow: 2,
         border: 2,
         borderColor: 'primary.light',
@@ -56,7 +58,7 @@ function BIapicall(props) {
 
     const columns = [
         { field: 'id', headerName: 'Id', width: 30 },
-        { field: 'Name', headerName: 'Name', width: 200 },
+        { field: 'Name', headerName: 'Name', width: 300 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
         { field: 'commune', headerName: 'City', width: 135 },
@@ -70,7 +72,7 @@ function BIapicall(props) {
         { field: 'Code Postal', headerName: 'Code Postal', width: 75 },
         { feild: 'link', headerName:'Link', width:200 , 
           renderCell: (params) => 
-          <a  href={params.row.link} >{params.row.link} </a>,
+          <a   href={params.row.link} target={"_blank" } rel={"noreferrer"} >{params.row.link} </a>,
       },
     //   {
     //     field: "action",
@@ -146,16 +148,23 @@ function BIapicall(props) {
 // dlkajlsdkjalskdj
 if (birecs!== [] && biflag === true) {
   return (
-  <div>
-      <DataGrid 
-        rows = {birecs}
-        columns = {columns}
-        // loading = {!birecs.length}
-        sx = {userTableStyles}
-        // components={{ Toolbar: GridToolbar }}
-        // getRowId={(rows) =>  generateRandom()}  
-        /> 
-  </div>      
+
+    <Box m="20px">
+        <Box display="flex" justifyContent="center" alignItems="center"  >
+
+        <DataGrid 
+          rows = {birecs}
+          columns = {columns}
+          // loading = {!birecs.length}
+          sx = {userTableStyles}
+          components={{ Toolbar: GridToolbar }}
+          // getRowId={(rows) =>  generateRandom()}  
+          /> 
+        </Box>
+
+        </Box>
+
+    
   );
 }
 return null ;

@@ -22,7 +22,8 @@ const Datagrid = ({
         sx= {sx}
         loading= {loading}
         components={{ Toolbar: GridToolbar }}
-        // getRowId={(rows) =>  generateRandom()}  
+        // getRowId={(rows) =>  generateRandom()} 
+        autoHeight={true} 
         />
     </div>
   )
