@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
-import Datagrid from './Datagrid';
+import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 // import Button from '@mui/material/Button';
-
+import { Box } from '@mui/system';
 
 function Apitest(props) {
 
@@ -43,10 +43,10 @@ function Apitest(props) {
     let urlchange = apiurllist[0] 
     
     const userTableStyles = {
-        m: 2,
-        marginTop: 2,
-        height: '370px',
-        width: 800,
+        // m: 2,
+        // marginTop: 2,
+        height: '450px',
+        width: 900,
         // display: 'flex',
         // flexDirection: 'column',
         boxShadow: 2,
@@ -59,7 +59,7 @@ function Apitest(props) {
 
     const columns = [
         { field: 'id', headerName: 'Id', width: 30 },
-        { field: 'Name', headerName: 'Name', width: 200 },
+        { field: 'Name', headerName: 'Name', width: 300 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
         { field: 'commune', headerName: 'City', width: 135 },
@@ -73,7 +73,7 @@ function Apitest(props) {
         { field: 'Code Postal', headerName: 'Code Postal', width: 75 },
         { feild: 'link', headerName:'Link', width:200 , 
           renderCell: (params) => 
-          <a  href={params.row.link} >{params.row.link} </a>,
+          <a  href={params.row.link} target={"_blank" } rel={"noreferrer"} >{params.row.link} </a>,
       },
     //   {
     //     field: "action",
@@ -134,18 +134,18 @@ function Apitest(props) {
 
   if (!users) return null;
   return (
-    <div>
-      {/* API TEST.....
-      {apiurl} */}
+    <Box m="20px">
+      <Box display="flex" justifyContent="center" alignItems="center"  >
+        <DataGrid
+              rows = {inseerecs}
+              columns = {columns}
+              loading = {!inseerecs.length}
+              sx = {userTableStyles}
+              components={{ Toolbar: GridToolbar }}
+              />  
+      </Box>
+    </Box> 
 
-      <Datagrid
-            rows = {inseerecs}
-            columns = {columns}
-            loading = {!inseerecs.length}
-            sx = {userTableStyles}
-            />  
-    
-    </div>
   )
 }
 
