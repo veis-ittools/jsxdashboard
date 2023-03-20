@@ -21,6 +21,42 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 import BasicInfo from '../../Components/BasicInfo/BasicInfo';
 import ApexCharts from '../../Components/ApexCharts';
 
+import PercentDiffer from '../../Components/PercentDiffer';
+import ResultantChart from '../../Components/ResultantChart';
+// data for rev
+// 
+
+const data = [
+
+  {
+    "name": "2020",
+    "Chiffre d'affaires": 71154803,
+
+  },
+  {
+    "name": "2019",
+    "Chiffre d'affaires": 91027987,
+
+  },
+  {
+    "name": "2018",
+    "Chiffre d'affaires": 140469088,
+
+  },
+  {
+    "name": "2017",
+    "Chiffre d'affaires": 164462307,
+
+  },
+  {
+    "name": "2016",
+    "Chiffre d'affaires": 169873083,
+  },
+
+
+]
+
+
 
 const Sirensearch= () =>{
     const theme = useTheme();
@@ -211,7 +247,7 @@ const Sirensearch= () =>{
 
 
 
-            <ApexCharts></ApexCharts>
+            <ApexCharts data= {data}></ApexCharts>
           </Box>
           <Box
             gridColumn="span 4"
@@ -221,7 +257,7 @@ const Sirensearch= () =>{
             justifyContent="center"
           >
 
-            <ApexCharts></ApexCharts>
+            <PercentDiffer ></PercentDiffer>
           </Box>
           <Box
             gridColumn="span 4"
@@ -230,7 +266,7 @@ const Sirensearch= () =>{
             alignItems="center"
             justifyContent="center"
           >
-            <ApexCharts></ApexCharts>
+            <ResultantChart></ResultantChart>
           </Box>
         </Box>        
   

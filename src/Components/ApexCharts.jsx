@@ -3,6 +3,7 @@ import { LineChart,Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, Responsiv
 // import { Box, Typography, useTheme } from "@mui/material";
 
 const data = [
+
   {
     "name": "2020",
     "Chiffre d'affaires": 71154803,
@@ -60,7 +61,8 @@ const data = [
 // ]
 
 
-function ApexCharts() {
+function ApexCharts(props) {
+  let data = props.data
   return (
 
 

@@ -18,7 +18,7 @@ import { ColorModeContext, useMode } from "./theme";
 
 // import FAQ from "./scenes/faq";
 
-
+import LandingPage from "./Components/LandingPage";
 // import Mainseach from "./Components/Mainsearch/Mainseach";
 import FAQ from "./scenes/Faq";
 import Sirensearch from "./scenes/Sirensearch";
@@ -33,8 +33,6 @@ import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
 
 import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
 import { loginRequest } from "./authConfig";
-import { PageLayout } from "./Components/PageLayout";
-import { ProfileData } from "./Components/ProfileData";
 import { callMsGraph } from "./graph";
 import Button from "react-bootstrap/Button";
 // import "./styles/App.css";
@@ -42,7 +40,7 @@ import Button from "react-bootstrap/Button";
 
 
 
-function App() {
+function ProfileContent() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
 
@@ -76,7 +74,7 @@ function App() {
   );
 }
 
-export default App;
+// export default App;
 
 
 
@@ -141,24 +139,24 @@ export default App;
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-// const MainContent = () => {    
-//     return (
-//         <div className="App">
-//             <AuthenticatedTemplate>
-//                 <ProfileContent />
-//             </AuthenticatedTemplate>
+const MainContent = () => {    
+    return (
+        <div className="App">
+            <AuthenticatedTemplate>
+                <ProfileContent />
+            </AuthenticatedTemplate>
 
-//             <UnauthenticatedTemplate>
-//                 <h5 className="card-title">Please sign-in to see your profile information.</h5>
-//             </UnauthenticatedTemplate>
-//         </div>
-//     );
-// };
+            <UnauthenticatedTemplate>
+                <LandingPage/>
+            </UnauthenticatedTemplate>
+        </div>
+    );
+};
 
-// export default function App() {
-//     return (
-//         <PageLayout>
-//             <MainContent />
-//         </PageLayout>
-//     );
-// }
+export default function App() {
+    return (
+
+          <MainContent />
+
+    );
+}
