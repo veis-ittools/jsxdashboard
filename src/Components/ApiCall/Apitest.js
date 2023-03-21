@@ -16,7 +16,7 @@ function Apitest(props) {
     console.log('testapi block----', apiparams2)
     console.log('Flag--->', apiparams2.iscomplete)
 
-    let [apiurl, setApiurl] = useState()
+    // let [apiurl, setApiurl] = useState()
 
     // if (apiparams2.iscomplete === true){
     let naf = apiparams2.naf

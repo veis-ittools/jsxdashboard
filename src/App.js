@@ -31,7 +31,7 @@ import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
 // import Dashboard from "./scenes/dashboard";
 
 
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
+import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
 import { loginRequest } from "./authConfig";
 import { callMsGraph } from "./graph";
 import Button from "react-bootstrap/Button";

@@ -62,6 +62,7 @@ const Topbar = () => {
           ) : (
             <LightModeOutlinedIcon />
           )}
+          <Typography variant="h5">Color Mode</Typography>
         </IconButton>
         {/* <IconButton>
           <NotificationsOutlinedIcon />
@@ -78,6 +79,7 @@ const Topbar = () => {
 
           }}>
           <ExitToAppIcon />
+          <Typography variant="h5">Sign Out</Typography>
         </IconButton>
       </Box>
     </Box>
