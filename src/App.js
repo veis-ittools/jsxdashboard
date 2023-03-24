@@ -32,9 +32,9 @@ import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
 
 
 import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
-import { loginRequest } from "./authConfig";
-import { callMsGraph } from "./graph";
-import Button from "react-bootstrap/Button";
+// import { loginRequest } from "./authConfig";
+// import { callMsGraph } from "./graph";
+// import Button from "react-bootstrap/Button";
 // import "./styles/App.css";
 
 
@@ -139,19 +139,28 @@ function ProfileContent() {
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-const MainContent = () => {    
-    return (
-        <div className="App">
-            <AuthenticatedTemplate>
-                <ProfileContent />
-            </AuthenticatedTemplate>
+// const MainContent = () => {    
+//     return (
+//         <div className="App">
+//             <AuthenticatedTemplate>
+//                 <ProfileContent />
+//             </AuthenticatedTemplate>
 
-            <UnauthenticatedTemplate>
-                <LandingPage/>
-            </UnauthenticatedTemplate>
-        </div>
-    );
+//             <UnauthenticatedTemplate>
+//                 <LandingPage/>
+//             </UnauthenticatedTemplate>
+//         </div>
+//     );
+// };
+
+const MainContent = () => {    
+  return (
+      <div className="App">
+            <ProfileContent />
+      </div>
+  );
 };
+
 
 export default function App() {
     return (
