@@ -26,6 +26,9 @@ import Sirensearch from "./scenes/Sirensearch";
 import BlankPage from "./scenes/blankpage";
 
 import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
+import SapSearch from "./Components/SapSearch/SapSearch";
+
+import RgeSuppliers from "./Components/RgeSuppliers/RgeSuppliers";
 // import Apex from "./scenes/apex";
 
 // import Dashboard from "./scenes/dashboard";
@@ -56,14 +59,16 @@ function ProfileContent() {
                 {/* <Mainseach></Mainseach> */}
                 
                 <Routes>
-                  <Route path="/" element={<NewMainsearch />} />
+                  <Route path="/" element={<SapSearch />} />
                   <Route path="/sirensearch" element={<Sirensearch />} />  
+                  <Route path="/inseesearch" element={<NewMainsearch />} />
+
+                  <Route path="/rgesearch" element={<RgeSuppliers />} />
                   <Route path="/team" element={<BlankPage />} />
                   <Route path="/contacts" element={<BlankPage />} /> 
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/about" element={<BlankPage />} /> 
                   <Route path="/help" element={<BlankPage />} /> 
-
                 </Routes>
               </main>
             </div>

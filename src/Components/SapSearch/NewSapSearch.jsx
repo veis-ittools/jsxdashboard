@@ -1,40 +1,25 @@
 import React, { useState } from 'react'
-import {Typography,  Box, Button ,TextField, useTheme , Grid,} from "@mui/material";
-
+import { Box, Button ,TextField, useTheme , Grid,} from "@mui/material";
 import Header from '../Header';
 import { tokens } from "../../theme";
 import { famill1_options } from './Famille1'; 
 import Autocomplete from '@mui/material/Autocomplete';
 import CountrySelect from '../CountrySelect';
-import SecondSearchbar from '../SecondSearchbar/SecondSearchbar';
+// import SecondSearchbar from '../SecondSearchbar/SecondSearchbar';
+// import NewSapform from './NewSapform';
+import SapFormresults from './SapFormresults';
 
 
-function NewMainsearch() {
+function NewSapSearch() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const [value, setValue] = useState(famill1_options[0])
     const [flag, setFlag] = useState(false)
     let [inputValue, setInputValue] = useState('')
-
   return (
-    <Box marginTop={1}>
-        <Box mb="25px" marginLeft={2}>
-          <Typography
-            variant="h3"
-            color={colors.grey[100]}
-            // fontWeight="bold"
-            sx={{ m: "0 0 5px 0" }}
-          >
-            INSEE Search
-          </Typography>
-          <Typography variant="h5" color={colors.greenAccent[400]}>
-            Search Suppliers in all Sectors in FRANCE
-          </Typography>
-        </Box>
-
-
+    <Box marginTop={2}>
         <Box display="flex" justifyContent="space-around" alignItems="center"   >
-            {/* <Header title="Search" subtitle="Search using VINCI fammille classification " /> */}     
+            {/* <Header title="Search" subtitle="Search using VINCI fammille classification " /> */}
         </Box> 
 
         <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
@@ -89,7 +74,7 @@ function NewMainsearch() {
         >  
           <Grid item xs={12} sm={10.1}>
              {/* <SecondSearchbar famille1= {inputValue} />  */}
-            {flag  && <SecondSearchbar famille1= {inputValue} />} 
+            {flag  && <SapFormresults famille1= {inputValue} />} 
           </Grid> 
        
         </Grid>    
@@ -100,4 +85,4 @@ function NewMainsearch() {
   )
 }
 
-export default NewMainsearch
+export default NewSapSearch

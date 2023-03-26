@@ -246,7 +246,7 @@ function NafForm(props) {
                             >
                                 {/* <option value={null}>ALL</option> */}
                                 <option value={'INSEE'}>INSEE</option>
-                                <option value={'BI'}>SAP-BI </option>
+                                {/* <option value={'BI'}>SAP-BI </option> */}
                             </NativeSelect>
                             </FormControl>
                         </Box>

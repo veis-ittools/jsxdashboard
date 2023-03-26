@@ -16,6 +16,10 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import SearchIcon from '@mui/icons-material/Search';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+
 // import { blue, red } from "@mui/material/colors";
 import myImgSrc from './vincijpg.jpg';
 // import FlashOffIcon from '@mui/icons-material/FlashOff';
@@ -138,9 +142,33 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="Launch Search"
+              title="SAP Search"
               to="/"
               icon={<HomeOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="INSEE Search"
+              to="/inseesearch"
+              icon={<ManageSearchIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            
+            <Item
+              title="RGE Suppliers"
+              to="/rgesearch"
+              icon={<SearchIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="SIREN Search"
+              to="/sirensearch"
+              icon={<TravelExploreIcon />}
               selected={selected}
               setSelected={setSelected}
             />

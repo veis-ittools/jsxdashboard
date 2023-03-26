@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import {Typography,  Box, Button ,TextField, useTheme , Grid,} from "@mui/material";
 
-import Header from '../Header';
+
 import { tokens } from "../../theme";
-import { famill1_options } from './Famille1'; 
+import { metadomains } from './Meta_domaine'; 
 import Autocomplete from '@mui/material/Autocomplete';
-import CountrySelect from '../CountrySelect';
-import SecondSearchbar from '../SecondSearchbar/SecondSearchbar';
 
 
-function NewMainsearch() {
+function RgeSuppliers() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const [value, setValue] = useState(famill1_options[0])
+    const [value, setValue] = useState(metadomains[0])
     const [flag, setFlag] = useState(false)
     let [inputValue, setInputValue] = useState('')
 
@@ -25,18 +23,12 @@ function NewMainsearch() {
             // fontWeight="bold"
             sx={{ m: "0 0 5px 0" }}
           >
-            INSEE Search
+            RGE Suppliers
           </Typography>
           <Typography variant="h5" color={colors.greenAccent[400]}>
             Search Suppliers in all Sectors in FRANCE
           </Typography>
         </Box>
-
-
-        <Box display="flex" justifyContent="space-around" alignItems="center"   >
-            {/* <Header title="Search" subtitle="Search using VINCI fammille classification " /> */}     
-        </Box> 
-
         <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
         >
           <Grid item xs={12} sm={8}>
@@ -64,7 +56,7 @@ function NewMainsearch() {
                 }      
 
                 }}
-                options={famill1_options}
+                options={metadomains}
                 // style={{ width: 300  }}
                 renderInput={(params) => <TextField {...params} 
                 variant="outlined" 
@@ -79,25 +71,11 @@ function NewMainsearch() {
                 />}                   
                 />
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <CountrySelect/>
-          </Grid>
         </Grid>
 
 
-        <Grid marginTop={-3.2} marginLeft={0} marginRight={0} alignContent={'center'} container spacing={3}
-        >  
-          <Grid item xs={12} sm={10.1}>
-             {/* <SecondSearchbar famille1= {inputValue} />  */}
-            {flag  && <SecondSearchbar famille1= {inputValue} />} 
-          </Grid> 
-       
-        </Grid>    
-
-
     </Box>
-
   )
 }
 
-export default NewMainsearch
+export default RgeSuppliers
