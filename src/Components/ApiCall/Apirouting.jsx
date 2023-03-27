@@ -1,6 +1,7 @@
 import React from 'react'
 import BIapicall from '../ApiCall/BIapicall';
 import Apitest from '../ApiCall/Apitest';
+import SAPApicall from './SAPApicall';
 
 function Apirouting(props) {
 
@@ -21,9 +22,14 @@ function Apirouting(props) {
 
   if (datasource === 'BI') {
     return (
-    <div>
-      <BIapicall apiparams2={apiparams2} ></BIapicall>
-    </div>      
+    // <div>
+    //   <BIapicall apiparams2={apiparams2} ></BIapicall>
+    // </div> 
+      <div>
+        <SAPApicall apiparams2={apiparams2} ></SAPApicall>
+      </div>
+    
+
     );
   }
   return <Apitest apiparams2={apiparams2}  ></Apitest> ;

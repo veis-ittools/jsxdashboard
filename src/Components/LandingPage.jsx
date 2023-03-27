@@ -8,7 +8,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import { useIsAuthenticated } from "@azure/msal-react";
 import { useMsal } from "@azure/msal-react";
@@ -33,7 +33,7 @@ export default function LandingPage() {
 
   const isAuthenticated = useIsAuthenticated();
   const { instance } = useMsal()
-  const [authdone, setAuthdone] = useState(false)
+//   const [authdone, setAuthdone] = useState(false)
   console.log('isAuthenticated===', isAuthenticated);
 
   const handleSubmit = () => {

@@ -13,6 +13,8 @@ import FormControl from '@mui/material/FormControl';
 import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
 import Switch from '@mui/material/Switch';
+import Apirouting from '../ApiCall/Apirouting';
+
 
 function SapFormresults(props) {
     
@@ -32,15 +34,37 @@ function SapFormresults(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
+        // const datasource = 'BI'
         
-        console.log({
-            famille2: data.get('famille2'),
-            location: data.get('location'),
-            ESS: data.get('ESS'),
-            companysize: data.get('companysize'), 
-            'iscomplete': true
+        // console.log({
+        //     famille2: data.get('famille2'),
+        //     location: data.get('location'),
+        //     ESS: data.get('ESS'),
+        //     companysize: data.get('companysize'), 
+        //     'iscomplete': true
+            
 
-        });
+        // });
+
+        let apiparams =     
+            {
+                
+                famille2: data.get('famille2'),
+                location: data.get('location'),
+                ESS: data.get('ESS'),
+                companysize: data.get('companysize'), 
+                'iscomplete': true,
+                'datasource': 'BI'
+                
+    
+            }
+        // {...apiparams, iscomplete: 'true' }
+       
+        setApiparams(apiparams)
+        setFromcomplete(true)
+
+        console.log('apiparams----', apiparams)
+
     };
 
     useEffect(() => {
@@ -198,6 +222,8 @@ function SapFormresults(props) {
             >
               Launch Search
             </Button> 
+
+            {formcomplete && <Apirouting apiparams2= {apiparams2}  ></Apirouting> }
 
         </Box>
 

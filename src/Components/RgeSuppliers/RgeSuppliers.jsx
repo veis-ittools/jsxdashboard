@@ -5,7 +5,7 @@ import {Typography,  Box, Button ,TextField, useTheme , Grid,} from "@mui/materi
 import { tokens } from "../../theme";
 import { metadomains } from './Meta_domaine'; 
 import Autocomplete from '@mui/material/Autocomplete';
-
+import RgeResults from './RgeResults';
 
 function RgeSuppliers() {
     const theme = useTheme();
@@ -23,7 +23,7 @@ function RgeSuppliers() {
             // fontWeight="bold"
             sx={{ m: "0 0 5px 0" }}
           >
-            RGE Suppliers
+            RGE Certified Suppliers
           </Typography>
           <Typography variant="h5" color={colors.greenAccent[400]}>
             Search Suppliers in all Sectors in FRANCE
@@ -65,13 +65,14 @@ function RgeSuppliers() {
                 required
                 // fullWidth
                 id="purchasefamily1"
-                label="Achat famille 1"
+                label="Main Sector"
                 name="purchasefamily1"
                 autoFocus
                 />}                   
                 />
           </Grid>
         </Grid>
+        {flag && <RgeResults meta={inputValue}></RgeResults>}
 
 
     </Box>

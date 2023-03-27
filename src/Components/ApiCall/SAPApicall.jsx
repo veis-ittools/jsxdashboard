@@ -6,20 +6,11 @@ import axios from "axios";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import { Box } from '@mui/system';
 
-function BIapicall(props) {
 
+function SAPApicall(props) {
     let apiurllist =[]
     let apiparams2 = props.apiparams2
-
-    console.log('BI block----', apiparams2)
-    // console.log('Flag--->', apiparams2.iscomplete)
-
-    // let [apiurl, setApiurl] = useState()
-
-    // if (apiparams2.iscomplete === true){
-    let naf = apiparams2.naf
-    let naftocall =  naf.slice(0, 6)
-
+    let famille2 = apiparams2.famille2
     let datasource = apiparams2.datasource
     let category = apiparams2.companysize
     let ESS = apiparams2.ESS
@@ -28,18 +19,16 @@ function BIapicall(props) {
     console.log(location)
     console.log(location.toString().length )
     let regionlen  = location.toString().length
-    console.log(naftocall)
     console.log(datasource)
 
-    let apiurltocall = urlformating(ESS, location,category, datasource, regionlen, naftocall, naf)
+    console.log('BI block----', apiparams2)
+
+    let apiurltocall = sapurlformating(famille2, ESS, location,category, regionlen)
     console.log('BI function output', apiurltocall)
 
     apiurllist.push(apiurltocall[0])
-
-    // setApiurl(apiurltocall[0])
-    // }
     let urlchange = apiurllist[0] 
-    
+
     const userTableStyles = {
         // m: 2,
         // marginTop: 2,
@@ -89,12 +78,10 @@ function BIapicall(props) {
 
 
       ];
-        
-    const [users, setUsers] = useState([])
-    const [birecs, setBIrecs] = useState([])
-    const [biflag, setBiflag] = useState(false)
- 
-    
+
+      const [users, setUsers] = useState([])
+      const [birecs, setBIrecs] = useState([])
+      const [biflag, setBiflag] = useState(false)
 
 
 
@@ -104,93 +91,62 @@ function BIapicall(props) {
     
       const fetchData = () => {
         // setApiurl(apiurltocall[0])
-        console.log('API CODE -----')
+        console.log('SAP API CODE -----')
         axios.post(urlchange).then((response) => {
             setUsers(response.data);
             setBIrecs(response.data.SAP)
             setBiflag(true)
-
             console.log(response.data)
             console.log('here from now')
       })
     }
 
-
-  if (!users) return null;
-  // return (
-  //   <div>
-
-
-  //     <Datagrid
-  //           rows = {birecs}
-  //           columns = {columns}
-  //           loading = {!birecs.length}
-  //           sx = {userTableStyles}
-  //           />  
-    
-  //   </div>
-  // )
-
-  // if (biflag ===  true ) {
-  //   return (
-  //   <div>
-  //     <Datagrid
-  //           rows = {birecs}
-  //           columns = {columns}
-  //           loading = {!birecs.length}
-  //           sx = {userTableStyles}
-  //           />  
-  //   </div>      
-  //   );
-  // }
-  // return null ;
-
-// dlkajlsdkjalskdj
+if (!users) return null;
 if (birecs!== [] && biflag === true) {
-  return (
-
-    <Box m="20px">
-        <Box display="flex" justifyContent="center" alignItems="center"  >
-
-        <DataGrid 
-          rows = {birecs}
-          columns = {columns}
-          // loading = {!birecs.length}
-          sx = {userTableStyles}
-          components={{ Toolbar: GridToolbar }}
-          // getRowId={(rows) =>  generateRandom()}  
-          /> 
-        </Box>
-
-        </Box>
-
-    
-  );
+    return (
+  
+      <Box m="20px">
+          <Box display="flex" justifyContent="center" alignItems="center"  >
+  
+          <DataGrid 
+            rows = {birecs}
+            columns = {columns}
+            // loading = {!birecs.length}
+            sx = {userTableStyles}
+            components={{ Toolbar: GridToolbar }}
+            // getRowId={(rows) =>  generateRandom()}  
+            /> 
+          </Box>
+  
+          </Box>
+  
+      
+    );
+  }
+  return null ;
+  
 }
-return null ;
 
-}
-
-
-export default BIapicall
+export default SAPApicall
 
 
-const urlformating = (ESS, location,category, datasource, regionlen, naftocall, naf) => {
+const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
-    console.log(' *BI* FUNCTION CODE BLOCK CALLED!')
+    console.log(' *SAP BI* FUNCTION CODE BLOCK CALLED!')
+    console.log('famiile----', famille2)
 
     let finalbaseURL = []
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         // console.log('insee block')
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/All?ESS=false`
+        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&ESS=false`
         console.log('scene 1')
-        // console.log(baseURL)
+        console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/All?ESS=true`
+        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&ESS=true`
         console.log('scene 2')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -199,7 +155,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/${category}?ESS=false`
+        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         console.log('scene 3')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -207,25 +163,22 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/${category}?ESS=true`
+		let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
         console.log('scene 4')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
 // region figures
-    if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {
-        console.log('insee block')
-        let naftocall =  naf.slice(0, 6)
-        console.log(naftocall)
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/All?region=${location}&ESS=false`
+    if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
+		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
         console.log('scene 5')
         finalbaseURL.push(baseURL)
 
 
     }
-    if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/All?region=${location}&ESS=true`
+    if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
+		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
         console.log('scene 6')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -233,16 +186,16 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
 
-    if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=false`
+    if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){	
+		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=false `
         console.log('scene 7')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
 
-    if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.com:5900/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=true`
+    if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){		
+		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=true `
         console.log('scene 8')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
