@@ -35,6 +35,7 @@ export default function CountrySelect() {
       {/* <MenuItem value={10}>SP</MenuItem>
       <MenuItem value={20}>BR</MenuItem> */}
       <MenuItem value={30}>FRANCE </MenuItem>
+      <MenuItem value={40}>SPAIN(*inactive) </MenuItem>
     </Select>
   </FormControl>
     // <Box sx={{ minWidth: 120, height: '80%', marginTop:2.5 }}>

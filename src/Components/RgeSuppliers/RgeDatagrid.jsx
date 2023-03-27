@@ -84,7 +84,7 @@ if (rgerecs!== [] && rgeflag === true) {
             columns = {columns}
             // loading = {!birecs.length}
             sx = {userTableStyles}
-            // components={{ Toolbar: GridToolbar }}
+            components={{ Toolbar: GridToolbar }}
             // getRowId={(rows) =>  generateRandom()}  
             /> 
           </Box>
