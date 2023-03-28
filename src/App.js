@@ -29,6 +29,9 @@ import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
 import SapSearch from "./Components/SapSearch/SapSearch";
 
 import RgeSuppliers from "./Components/RgeSuppliers/RgeSuppliers";
+import SearchSiren from "./Components/SearchSiren/SearchSiren";
+
+
 // import Apex from "./scenes/apex";
 
 // import Dashboard from "./scenes/dashboard";
@@ -60,7 +63,7 @@ function ProfileContent() {
                 
                 <Routes>
                   <Route path="/" element={<SapSearch />} />
-                  <Route path="/sirensearch" element={<Sirensearch />} />  
+                  <Route path="/sirensearch" element={<SearchSiren />} />  
                   <Route path="/inseesearch" element={<NewMainsearch />} />
 
                   <Route path="/rgesearch" element={<RgeSuppliers />} />
