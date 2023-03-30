@@ -6,85 +6,97 @@ import { Box, useTheme, Typography } from "@mui/material";
 // import Header from '../Header';
 import axios from "axios";
 
+import BoxTop from './BoxTop';
+
 function InfoBasic(props) {
     let sirenvar = props.inputsiren
     let pastedsiren = props.pastedsiren
+    console.log(pastedsiren);
 
-    console.log('from child, ', sirenvar)
+    let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${pastedsiren}`
+    console.log(urlchange);
+    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
-
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
-
-    // const [users, setUsers] = useState([])
-    const [flagbasicinfo, setBasicinfo] = useState('')
-    const [allBasicinfo, setallBasicinfo] = useState([])
-
-
-    if(typeof pastedsiren !== "undefined"){
-        let baseURL = `https://veis-ittools.com:9100/FR/dashboard/data/${pastedsiren}`
-        console.log(baseURL)
-        // setBasicinfo(baseURL)
-    }
-    return baseURL
-        
-    if (flagbasicinfo === true){
-        
-
-    }
     
+    const [users, setUsers] = useState([])
+    const [inseerecs, setInseerecs] = useState([])
 
-
-    const [apiresponse, setApiresponse] = useState(null)
-  
     useEffect(() => {
-    
-
-      axios.post(baseURL).then((response) => {
-
-        setApiresponse(response.data);
-        // setBasicinfo(true);
-        console.log(response.data.basicinfo)
-
-
-      });
-    }, [baseURL]);
-
-
-    // if (flagbasicinfo === true){
-
-
-    //     Object.entries(apiresponse.basicinfo).map(([key, value]) => {
-    //         // Pretty straightforward - use key for the key and value for the value.
-    //         // Just to clarify: unlike object destructuring, the parameter names don't matter here.
-    //         console.log(key)
-    //         console.log(value)
-
-    //     })}
-
-    
+      fetchData();
+    }, [urlchange]);
+  
+    const fetchData = () => {
+      // setApiurl(apiurltocall[0])
+      console.log('INSEE API CODE -----')
+      axios.post(urlchange).then((response) => {
+          setUsers(response.data);
+          setInseerecs(response.data.basicinfo)
+          console.log(response.data.basicinfo)
+          console.log(typeof((response.data.basicinfo)))
+          console.log(typeof(inseerecs));
+          console.log('here from now');
+    })
+  }
 
 
-    // console.log('NAme --s', apiresponse.basicinfo.Name)
+  
+
+
+    // Object.entries(inseerecs.basicinfo).map(([key, value]) => {
+    //     // Pretty straightforward - use key for the key and value for the value.
+    //     // Just to clarify: unlike object destructuring, the parameter names don't matter here.
+    //     console.log(key)
+    //     console.log(value)
+
+    // })
+
+  if (!users) return null; 
 
   return (
     <Box  justifyContent='center' >
-      siren - {sirenvar} 
-      pasted -{pastedsiren}
-      
-      
 
-      {/* pasted -{pastedsiren}
-      {/* <div>
-        {apiresponse.basicinfo.map(item => 
-          <div>
-            <p>{item.Name} </p>
-          </div>
-        )}
-      </div> */}
-      {/* {allBasicinfo} */}
-      
+
+        {inseerecs && Object.entries(inseerecs).map(([key, value]) => {
+          // Pretty straightforward - use key for the key and value for the value.
+          // Just to clarify: unlike object destructuring, the parameter names don't matter here.
+          console.log('key--', key)
+          console.log('value--', value)
+          console.log('value--', value.Name)
+
+          return (
+            <Box>
+              <h2>{value.Name}</h2>
+              <p>
+                'Category' : {value.Category}
+              </p>
+              <BoxTop></BoxTop>
+            </Box>
+            
+
+          );
+        })}
+
+
+
+
+
+      {inseerecs && Object.entries(inseerecs).map(([key, value]) => {
+            // Pretty straightforward - use key for the key and value for the value.
+            // Just to clarify: unlike object destructuring, the parameter names don't matter here.
+            console.log('key--', key)
+            console.log('value--', value)
+            console.log('value--', value.Name)
+
+        })}      
+      {/* <h2>{objectData[0].Name}</h2>
+      <p>Category: {objectData[0].Category}</p>
+      <p>Address: {objectData[0].Addressline1} {objectData[0].Addressline2} {objectData[0].Addressline3}</p>
+      <p>Region: {objectData[0].Région}</p>
+      <p>Department: {objectData[0]["Code Département"]}</p>
+      <p>Postal Code: {objectData[0]["Code Postal"]}</p>
+      <p>Description: {objectData[0].Description}</p>
+      <p>Link: <a href={objectData[0].link} target="_blank" rel="noreferrer">{objectData[0].link}</a></p> */}
+
       
     </Box>
   )
