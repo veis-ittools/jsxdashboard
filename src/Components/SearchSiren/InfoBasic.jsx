@@ -8,45 +8,84 @@ import axios from "axios";
 
 function InfoBasic(props) {
     let sirenvar = props.inputsiren
-    let pastedsiren = props.pastedsirenvar
+    let pastedsiren = props.pastedsiren
+
+    console.log('from child, ', sirenvar)
+
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const colorMode = useContext(ColorModeContext);
 
-    const [users, setUsers] = useState([])
-    const [inseerecs, setInseerecs] = useState()
-    const [cfrecs, setCFrecs] = useState()
+    // const [users, setUsers] = useState([])
+    const [flagbasicinfo, setBasicinfo] = useState('')
+    const [allBasicinfo, setallBasicinfo] = useState([])
 
 
-    // let baseURL = `https://veis-ittools.com:9100/FR/dashboard/data/${pastedsiren}`
-    // let baseURL = 'https://veis-ittools.com:9100/FR/dashboard/data/391635844'
-    // let baseURL = `https://veis-ittools.com:5900/FR/enterprise/data/${sirenvar}`
-    let baseURL = `https://veis-ittools.com:5900/FR/enterprise/data/391635844`
+    if(typeof pastedsiren !== "undefined"){
+        let baseURL = `https://veis-ittools.com:9100/FR/dashboard/data/${pastedsiren}`
+        console.log(baseURL)
+        // setBasicinfo(baseURL)
+    }
+    return baseURL
+        
+    if (flagbasicinfo === true){
+        
 
-    // let cfbaseURL = `https://veis-ittools.com:5900/FR/enterprise/data/${sirenvar}`
+    }
+    
 
 
-
-    console.log(baseURL)
+    const [apiresponse, setApiresponse] = useState(null)
+  
     useEffect(() => {
-        axios.post(baseURL).then((response) => {
-            setUsers(response.data);
-            setInseerecs(response.data.INSEE);
-          console.log(response.data.Chiffredaffaires
-          )
-          console.log('here from now')
-          console.log(inseerecs)
+    
 
-        });
-      }, [baseURL]);
+      axios.post(baseURL).then((response) => {
 
+        setApiresponse(response.data);
+        // setBasicinfo(true);
+        console.log(response.data.basicinfo)
+
+
+      });
+    }, [baseURL]);
+
+
+    // if (flagbasicinfo === true){
+
+
+    //     Object.entries(apiresponse.basicinfo).map(([key, value]) => {
+    //         // Pretty straightforward - use key for the key and value for the value.
+    //         // Just to clarify: unlike object destructuring, the parameter names don't matter here.
+    //         console.log(key)
+    //         console.log(value)
+
+    //     })}
+
+    
+
+
+    // console.log('NAme --s', apiresponse.basicinfo.Name)
 
   return (
     <Box  justifyContent='center' >
+      siren - {sirenvar} 
+      pasted -{pastedsiren}
+      
+      
 
-      {/* {sirenvar} */}
-      {pastedsiren}
+      {/* pasted -{pastedsiren}
+      {/* <div>
+        {apiresponse.basicinfo.map(item => 
+          <div>
+            <p>{item.Name} </p>
+          </div>
+        )}
+      </div> */}
+      {/* {allBasicinfo} */}
+      
+      
     </Box>
   )
 }

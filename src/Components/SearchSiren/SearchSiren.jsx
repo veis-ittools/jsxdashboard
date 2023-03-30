@@ -9,31 +9,43 @@ import InfoBasic from './InfoBasic';
 function SearchSiren() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    // const [siren, setSiren] = useState('')
+    const [siren, setSiren] = useState('')
     // const [buttonclickstate, setButtonclickstate]  = useState(false)
 
+
+   
 
     const [inputsiren, setInputSiren] = useState('')
     const [pastedsiren, setPasteSiren] = useState('')
     const [validflag, setValidFlag] = useState(false)
     const [pasteflag, setPasteFlag] = useState(false)
 
-    const [buttonclickstate, setButtonclickstate]  = useState(false)
+
+
+    
     const onPaste = (event) => {
         let events_s  =  event.clipboardData.getData("text/plain")
         setPasteSiren(events_s)
+        // setInputSiren(events_s)
         console.log('EVENTS', events_s)
 
-        if (events_s.toString().length === 9){
+        if (events_s.toString().length === 9)  {
           console.log('code is here')
           setPasteFlag(true)
-          // setValidFlag(true)
+        //   setValidFlag(true)
           // setInputSiren(events_s)
+          
         } 
         else { setPasteFlag(false)}
         console.log('pasted siren', pasteflag);
         // console.log('input siren', inputsiren);
       };
+ 
+
+    let [buttonclickstate, setButtonclickstate]  = useState(false)
+    
+    
+
   
     return (
     <Box m="20px">
@@ -46,25 +58,30 @@ function SearchSiren() {
                 borderRadius="3px"
                 >
                 
+
                 <TextField
                     variant="standard"
+                    margin="normal"
+                    // fullWidth
                     name="siren"
                     label="Enter SIREN"
                     size="small"
                     id = 'siren'
-                    sx={{ marginTop:1,
-                    mx:5 }}
-                    // onChange= {(e)=>{
-                    //     console.log(e.target.value);
-                    //     setSiren(e.target.value)
-                        
-                    // }}
+                    sx={{ marginTop:2,
+                    mx:6
+         
+                    }}
+
+                    // value = {inputsiren}
+                    autoFocus
+                    // onChange={handleChange}
+                    // onChange= {handleChange}
                     onChange ={(events)=>{
 
                         if (pasteflag === false){
                           console.log('IF pasted flag false code')
                           setInputSiren( events.target.value)
-                          // setValidFlag(true)
+                        //   setValidFlag(true)
 
                         }
                         // setInputSiren( events.target.value)
@@ -74,17 +91,16 @@ function SearchSiren() {
                      
                     }
                     inputProps={{ onPaste }}
-                    
                     />
-
-
                     
 
 
                 <Button
                     onClick={()=>{
                         setButtonclickstate(!buttonclickstate)
+                        console.log('button flag==', buttonclickstate)
                     }}
+                    // onClick={}
                     sx={{
                     backgroundColor: colors.blueAccent[600],
                     color: colors.grey[100],
@@ -103,8 +119,10 @@ function SearchSiren() {
             </Box>
 
         </Box>
-        {/* {buttonclickstate && <InfoBasic siren = {siren}></InfoBasic> } */}
-        {buttonclickstate === true ? <InfoBasic sirenvar= {inputsiren} pastedsirenvar = {pastedsiren}></InfoBasic> : null}
+        {/* {buttonclickstate && <InfoBasic siren = {inputsiren} pastedsiren= {pastedsiren}></InfoBasic> } */}
+        { buttonclickstate === true ? <InfoBasic siren = {inputsiren} pastedsiren= {pastedsiren}></InfoBasic> : null}
+        {/* {buttonclickstate === true ? <InfoBasic sirenvar= {siren} pastedsiren= {pastedsiren} ></InfoBasic> : null} */}
+        {/* {buttonclickstate === true ? <InfoBasic sirenvar= {text} ></InfoBasic> : null}  */}
     </Box>
   )
 }
