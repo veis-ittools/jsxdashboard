@@ -67,7 +67,7 @@ function ProfileContent() {
                   <Route path="/inseesearch" element={<NewMainsearch />} />
 
                   <Route path="/rgesearch" element={<RgeSuppliers />} />
-                  <Route path="/team" element={<BlankPage />} />
+                  <Route path="/team" element={<Sirensearch />} />
                   <Route path="/contacts" element={<BlankPage />} /> 
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/about" element={<BlankPage />} /> 

@@ -19,6 +19,8 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 
 
 import BasicInfo from '../../Components/BasicInfo/BasicInfo';
+import RevenueStats from '../../Components/BasicInfo/RevenueStats';
+
 import ApexCharts from '../../Components/ApexCharts';
 
 import PercentDiffer from '../../Components/PercentDiffer';
@@ -119,8 +121,11 @@ const Sirensearch= () =>{
             </Box>
 
         </Box>
-        {/* {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> } */}
-        <BasicInfo siren = {siren}></BasicInfo> 
+        {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> }
+        {buttonclickstate && <RevenueStats siren = {siren}></RevenueStats> }
+
+
+        {/* <BasicInfo siren = {siren}></BasicInfo>  */}
 
         {/* <BasicInfo></BasicInfo> */}
         
@@ -128,7 +133,7 @@ const Sirensearch= () =>{
         {/* -------------------------START----------------------------- */}
         {/* GRID & CHARTS */}  {/* ROW 1 */} 
         
-        <Box
+        {/* <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
           gridAutoRows="120px"
@@ -210,7 +215,7 @@ const Sirensearch= () =>{
               }
             />
           </Box>
-        </Box>
+        </Box> */}
         
         {/* 4 SMALL BOXES */}
         {/* -------------------------END----------------------------- */}
@@ -219,7 +224,7 @@ const Sirensearch= () =>{
 
           {/* 3 charts revenue  */}
         {/* --------------------START=------------------------- */}
-        <Box
+        {/* <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
           gridAutoRows="275px"
@@ -233,19 +238,6 @@ const Sirensearch= () =>{
             alignItems="center"
             justifyContent="center"
           >
-            {/* <StatBox
-              title="€71,154,803"
-              subtitle="Chiffre d'affaires"
-              progress="0.75"
-              increase="+14%"
-              icon={
-                <EmailIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
-            /> */}
-
-
 
             <ApexCharts data= {data}></ApexCharts>
           </Box>
@@ -269,7 +261,7 @@ const Sirensearch= () =>{
             <ResultantChart></ResultantChart>
           </Box>
         </Box>        
-  
+   */}
       
       
           
