@@ -11,20 +11,12 @@ import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 // import SearchIcon from "@mui/icons-material/Search";
 // import InputBase from "@mui/material/InputBase";
 
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import StatBox from '../../Components/StatBox';
-import TrafficIcon from "@mui/icons-material/Traffic";
 
 
 import BasicInfo from '../../Components/BasicInfo/BasicInfo';
 import RevenueStats from '../../Components/BasicInfo/RevenueStats';
+import AllEstablish from '../../Components/BasicInfo/AllEstablish';
 
-import ApexCharts from '../../Components/ApexCharts';
-
-import PercentDiffer from '../../Components/PercentDiffer';
-import ResultantChart from '../../Components/ResultantChart';
 // data for rev
 // 
 
@@ -123,6 +115,8 @@ const Sirensearch= () =>{
         </Box>
         {buttonclickstate && <BasicInfo siren = {siren}></BasicInfo> }
         {buttonclickstate && <RevenueStats siren = {siren}></RevenueStats> }
+        {buttonclickstate && <AllEstablish siren = {siren}></AllEstablish>}        
+        {/* <ApexCharts data = {data}></ApexCharts> */}
 
 
         {/* <BasicInfo siren = {siren}></BasicInfo>  */}

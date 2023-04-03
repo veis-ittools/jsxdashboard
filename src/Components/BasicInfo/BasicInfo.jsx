@@ -3,8 +3,14 @@ import React, {useEffect, useState} from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import { Box, useTheme, Typography, Grid } from "@mui/material";
+import { sizing } from '@mui/system';
+
+
+import Alert from '@mui/material/Alert';
+
 // import Header from '../Header';
 import axios from "axios";
+
 
 function BasicInfo(props) {
 
@@ -78,19 +84,32 @@ function BasicInfo(props) {
           // Just to clarify: unlike object destructuring, the parameter names don't matter here.
           console.log('key--', key)
           console.log('value--', value)
-          console.log('value--', value.Name)
+          console.log('ESS value--', value.ESS)
+
 
           return (
             <Box>
 
-              <Typography
-                variant="h3"
-                color={colors.grey[100]}
-                // fontWeight="bold"
-                sx={{ m: "0 0 5px 0" }}
-              >
-                Présentation de la société {value.Name}
-              </Typography>
+              <Box display="flex" justifyContent="left" alignItems="center"   >
+         
+                <Typography
+                  variant="h3"
+                  color={colors.grey[100]}
+                  // fontWeight="bold"
+                  sx={{ m: "0 0 5px 0" }}
+                >
+                  Présentation de la société {value.Name}  
+                </Typography >
+                  {/* <Alert sx = {{width: 1/8, height: '50%'}} severity="success">Active</Alert>     */} 
+                  {value.Status === "A" ? (
+                    <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="success">Active</Alert>    
+                  ) : (
+                    <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="error">inactive</Alert>      
+                  )}
+              
+              
+              </Box>
+
 
 
               <Typography variant="h5" color={colors.greenAccent[400]}>
@@ -136,6 +155,7 @@ function BasicInfo(props) {
                       {/* 2169 BD DE LA DEFENSE NANTERRE HAUTS-DE-SEINE ILE-DE-FRANCE 92000 */}
                       {value.address}
                 </Typography>
+                {/* <Alert sx = {{width: 1/4}} severity="success">Active</Alert> */}
               </Grid>
 
             </Grid>

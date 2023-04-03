@@ -16,8 +16,12 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import StatBox from '../../Components/StatBox';
 import TrafficIcon from "@mui/icons-material/Traffic";
+import EuroSymbolIcon from '@mui/icons-material/EuroSymbol';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
 
 import ApexCharts from '../ApexCharts';
+import PercentDiffer from '../PercentDiffer';
+import ResultantChart from '../ResultantChart';
 
 const data = [
 
@@ -62,6 +66,8 @@ function FourCharts(props) {
     let year = props.year
 
     let cachart = props.cachart
+    let resultatchart = props.resultatchart
+    let effectifchart = props.effectifchart
     
 
     console.log('CA---', cachart)
@@ -70,7 +76,8 @@ function FourCharts(props) {
     console.log('year---', year)
 
   return (
-
+    <Box m="20px">
+      <Box display="flex" justifyContent="space-around" alignItems="center"   >
         <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
@@ -90,7 +97,7 @@ function FourCharts(props) {
               progress="0.75"
             //   increase="+14%"
               icon={
-                <EmailIcon
+                <EuroSymbolIcon
                   sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
                 />
               }
@@ -147,13 +154,59 @@ function FourCharts(props) {
               progress="0.80"
             //   increase="+43%"
               icon={
-                <TrafficIcon
+                <LocationCityIcon
                   sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
                 />
               }
             />
+          </Box>         
+        </Box>
+        </Box>
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
+          gridAutoRows="350px"
+          gap="20px"
+          marginTop={2}
+        >
+            <Box
+              gridColumn="span 4"
+              backgroundColor={colors.primary[400]}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+
+              <ApexCharts data= {cachart}></ApexCharts>
+            </Box>
+
+            <Box
+              gridColumn="span 4"
+              backgroundColor={colors.primary[400]}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+
+              <ResultantChart data= {resultatchart}></ResultantChart>
+            </Box>
+
+            <Box
+              gridColumn="span 4"
+              backgroundColor={colors.primary[400]}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+
+              <PercentDiffer data= {effectifchart}></PercentDiffer>
+            </Box>
+
           </Box>
-         
+
+
+
+
         </Box> 
 
 

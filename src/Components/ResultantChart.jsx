@@ -39,7 +39,7 @@ function ResultantChart() {
     <>
 
       <ResponsiveContainer width="90%" aspect={1}>
-      <LineChart width={730} height={250} data={data2}
+      <LineChart width={500} height={250} data={data2}
         margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />

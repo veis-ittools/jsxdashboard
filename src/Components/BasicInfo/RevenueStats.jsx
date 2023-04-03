@@ -6,6 +6,7 @@ import { Box, useTheme, Typography, Grid } from "@mui/material";
 // import Header from '../Header';
 import axios from "axios";
 import FourCharts from './FourCharts';
+import Alert from '@mui/material/Alert';
 
 function RevenueStats(props) {  
     let siren = props.siren
@@ -96,14 +97,20 @@ function RevenueStats(props) {
                     totalrec = {totalrec}
                     year = {revinseerecs.year}
                     cachart= {cachart}
+                    resultatchart= {resultatchart}
+                    effectifchart= {effectifchart}
 
                     /> }
-        {/* <FourCharts records= {revinseerecs.CA} 
-                    resultat = {revinseerecs.RESULTAT}
-                    effective = {revinseerecs.EFFECTIF}
-                    totalrec = {totalrec}
-                    year = {revinseerecs.year}
-                    /> */}
+
+        
+        {revinseerecs === null ?  
+        <Alert severity="error">Revenue details not available</Alert>  
+        : null} 
+
+
+
+
+
 
         
     </Box>

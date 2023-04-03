@@ -7,12 +7,15 @@ import { LineChart,Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, Responsiv
 
 function ApexCharts(props) {
   let data = props.data
+
+  console.log('data fom rev api for chart', data)
+
   return (
 
     <>
 
       <ResponsiveContainer width="90%" aspect={1}>
-      <LineChart width={730} height={250} data={data}
+      <LineChart width={500} height={250} data={data}
         margin={{ top: 10, right: 20, left: 10, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
