@@ -4,6 +4,8 @@ import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
 import {Typography,  Box, Button, useTheme , Grid,} from "@mui/material";
 import RgeDatagrid from './RgeDatagrid';
+import NewRgeDatagrid from './NewRgeDatagrid';
+
 
 function RgeResults(props) {
     
@@ -85,8 +87,11 @@ function RgeResults(props) {
         >
             Launch Search
     </Button>
-    {buttonclick === true  ? <RgeDatagrid meta={meta} domain= {autnafinputValue} /> : null}
- 
+    {/* wotking RGE Without button */}
+    {/* {buttonclick === true  ? <RgeDatagrid meta={meta} domain= {autnafinputValue} /> : null} */}
+    
+    
+    {buttonclick === true ? <NewRgeDatagrid  meta={meta} domain= {autnafinputValue} ></NewRgeDatagrid> :null}
     </div>
   )
 }

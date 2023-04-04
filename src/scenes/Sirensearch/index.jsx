@@ -17,40 +17,6 @@ import BasicInfo from '../../Components/BasicInfo/BasicInfo';
 import RevenueStats from '../../Components/BasicInfo/RevenueStats';
 import AllEstablish from '../../Components/BasicInfo/AllEstablish';
 
-// data for rev
-// 
-
-const data = [
-
-  {
-    "name": "2020",
-    "Chiffre d'affaires": 71154803,
-
-  },
-  {
-    "name": "2019",
-    "Chiffre d'affaires": 91027987,
-
-  },
-  {
-    "name": "2018",
-    "Chiffre d'affaires": 140469088,
-
-  },
-  {
-    "name": "2017",
-    "Chiffre d'affaires": 164462307,
-
-  },
-  {
-    "name": "2016",
-    "Chiffre d'affaires": 169873083,
-  },
-
-
-]
-
-
 
 const Sirensearch= () =>{
     const theme = useTheme();
@@ -58,9 +24,6 @@ const Sirensearch= () =>{
 
     const [siren, setSiren] = useState('')
     const [buttonclickstate, setButtonclickstate]  = useState(false)
-
-
-
 
   return (
     <Box m="20px">
@@ -88,10 +51,6 @@ const Sirensearch= () =>{
                     }}
                     
                     />
-
-
-                    
-
 
                 <Button
                     onClick={setButtonclickstate}

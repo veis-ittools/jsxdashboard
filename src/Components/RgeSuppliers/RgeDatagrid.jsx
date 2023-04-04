@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
-import { Box } from '@mui/system';
+import { Box, Button ,TextField, useTheme } from "@mui/material";
+
 
 function RgeDatagrid(props) {
     let meta = props.meta
@@ -28,6 +29,7 @@ function RgeDatagrid(props) {
           color: 'primary.main',
         },
     }
+    
     const columns = [
         { field: 'id', headerName: 'Id', width: 30 },
         { field: 'nom_entreprise', headerName: 'Name', width: 250 },
@@ -45,11 +47,56 @@ function RgeDatagrid(props) {
         { field: 'domaine', headerName: 'Domaine', width: 120 },
         { field: 'telephone', headerName: 'Telephone', width: 125 },
         { field: 'email', headerName: 'Email', width: 200 },
-        // { feild: 'url_qualification', headerName:'Certificate', width:200 , 
-        //   renderCell: (params) => 
-        //   <a   href={params.row.url_qualification} target={"_blank" } rel={"noreferrer"} >{params.row.url_qualification} </a>,
-        // },
+        // {
+        //   field: "action",
+        //   headerName: "Action",
+        //   sortable: false,
+        //   renderCell: ({ row }) =>
+        //     <Button 
+        //     type="submit"
+        //     size='small'
+        //     variant="contained">
+        //       Action  
+        //     </Button>
+        // }, 
+
+        // {
+        // field: "action",
+        // headerName: "Action",
+        // sortable: false,
+        // renderCell: ({ row }) =>
+        //   <Button 
+        //   type="submit"
+        //   size='small'
+        //   variant="contained"
+        //   onClick={()=>{    
+        //     console.log('Action Clicked');
+        //     // console.log(params.row.siret)
+        //   }}>
+        //     Action  
+        //   </Button>,
+        // } ,
+      
+      {
+          field: "action",
+          headerName: "Action",
+          sortable: false,
+          renderCell: (params) => {
+            const handleClick = () => {
+              console.log(params.row.siret);
+            };
+            return <button
+                    type="submit"
+                    size='small'
+                    variant="contained" 
+                    onClick={handleClick}>
+                    Action</button>;
+        },
+      }
     ]
+    
+    
+    
     useEffect(() => {
         fetchData();
       }, [URL]);
@@ -82,7 +129,7 @@ if (rgerecs!== [] && rgeflag === true) {
           <DataGrid 
             rows = {rgerecs}
             columns = {columns}
-            // loading = {!birecs.length}
+            loading = {!rgerecs.length}
             sx = {userTableStyles}
             components={{ Toolbar: GridToolbar }}
             // getRowId={(rows) =>  generateRandom()}  
