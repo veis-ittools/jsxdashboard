@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import MyComponent from './MyComponent';
 
 function DataGridPage() {
+  const [rows, setRows] = useState([]);
   const [selectedRow, setSelectedRow] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/rows')
+      .then((response) => response.json())
+      .then((data) => setRows(data));
+  }, []);
 
   const handleButtonClick = (params) => {
     setSelectedRow(params.row);
@@ -36,3 +43,4 @@ function DataGridPage() {
 }
 
 export default DataGridPage;
+  
