@@ -13,10 +13,24 @@ function NewRgeDatagrid(props) {
     let meta = props.meta
     let domain = props.domain
 
+    console.log('domain', domain);
+    console.log('domain type', typeof(domain));
+    console.log('domain lenght===', domain.length);
+
+
+    let domainflag =  props.domainflag
+    let buttonclick = props.buttonclick
+
+    console.log('domainflag', domainflag);
+    console.log('buttonclick', buttonclick);
+
+
+
     let URL = `https://veis-ittools.com:9100/RGE/${meta}/domain/${domain}`
 
     const [users, setUsers] = useState([])
     const [selectedRow, setSelectedRow] = useState(null);
+    const [allrgerows, setAllrgerows] = useState(null);
     const [rgerecs, setRGErecs] = useState([])
     const [rgeflag, setRGEflag] = useState(false)
 
@@ -47,7 +61,18 @@ function NewRgeDatagrid(props) {
         // renderCell: (params) => 
         // <a   href={params.row.url_qualification} target={"_blank" } rel={"noreferrer"} >{params.row.url_qualification} </a>,
         // },
-        
+        {
+            field: 'button',
+            headerName: 'Action',
+            sortable: false,
+            width: 100,
+            disableClickEventBubbling: true,
+            renderCell: (params) => {
+                return (
+                <button onClick={() => handleButtonClick(params)}>More</button>
+                );
+            },
+        },
        
         
         { field: 'organisme', headerName: 'Organisme', width: 120 },
@@ -63,18 +88,18 @@ function NewRgeDatagrid(props) {
         renderCell: (params) => 
         <a   href={params.row.site_internet} target={"_blank" } rel={"noreferrer"} >{params.row.site_internet} </a>,
         }, 
-        {
-            field: 'button',
-            headerName: 'Action',
-            sortable: false,
-            width: 100,
-            disableClickEventBubbling: true,
-            renderCell: (params) => {
-                return (
-                <button onClick={() => handleButtonClick(params)}>Click Me</button>
-                );
-            },
-        },
+        // {
+        //     field: 'button',
+        //     headerName: 'Action',
+        //     sortable: false,
+        //     width: 100,
+        //     disableClickEventBubbling: true,
+        //     renderCell: (params) => {
+        //         return (
+        //         <button onClick={() => handleButtonClick(params)}>More</button>
+        //         );
+        //     },
+        // },
         // {
         //     field: "action",
         //     headerName: "Action",
@@ -95,6 +120,8 @@ function NewRgeDatagrid(props) {
     
     const handleButtonClick = (params) => {
         setSelectedRow(params.row.siret);
+        setAllrgerows(params.row)
+        console.log('rge all rec----', allrgerows);
     };   
     
     useEffect(() => {
@@ -108,7 +135,7 @@ function NewRgeDatagrid(props) {
         setUsers(response.data);
         setRGErecs(response.data.RGE)
         setRGEflag(true)
-        console.log(response.data.RGE)
+        // console.log(response.data.RGE)
         // console.log(response.data)
         // console.log('here from now')
     })
@@ -120,7 +147,7 @@ if (!users) return null;
 
 
 
-if (rgerecs!== [] && rgeflag === true) {
+if (rgerecs!== [] && domainflag === true && buttonclick === true) {
     return (
     
         <Box m="20px">
@@ -137,10 +164,12 @@ if (rgerecs!== [] && rgeflag === true) {
                 /> 
             </Box>
             {/* {selectedRow && <ContentRge row={selectedRow} />} */}
-            {selectedRow && <BasicInfo siren = {selectedRow}></BasicInfo>}
-            {/* {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> } */}
-            {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}        
+            {selectedRow &&  <BasicInfo siren = {selectedRow}></BasicInfo>}
+            {allrgerows && <ContentRge rgerows = {allrgerows} ></ContentRge>}
     
+            {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> }
+            {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}        
+            {/* {allrgerows && <ContentRge rgerows = {allrgerows} ></ContentRge>} */}
         </Box>
     
         

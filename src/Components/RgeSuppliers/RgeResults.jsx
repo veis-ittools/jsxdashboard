@@ -91,7 +91,7 @@ function RgeResults(props) {
     {/* {buttonclick === true  ? <RgeDatagrid meta={meta} domain= {autnafinputValue} /> : null}  */}
     
     
-    {buttonclick === true ? <NewRgeDatagrid  meta={meta} domain= {autnafinputValue} ></NewRgeDatagrid> :null} 
+    {buttonclick === true ? <NewRgeDatagrid  meta={meta} domain= {autnafinputValue} domainflag = {autonaf} buttonclick = {buttonclick} ></NewRgeDatagrid> :null} 
     </div>
   )
 }

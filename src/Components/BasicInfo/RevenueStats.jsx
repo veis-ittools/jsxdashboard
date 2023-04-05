@@ -10,6 +10,7 @@ import Alert from '@mui/material/Alert';
 
 function RevenueStats(props) {  
     let siren = props.siren
+    siren = siren.toString()
 
     if (siren.length > 9) {
       siren = siren.slice(0, 9);

@@ -15,12 +15,17 @@ const addId=(arr)=> {
 
 function AllEstablish(props) {
     let siren = props.siren
+
+    siren = siren.toString()
+    // console.log('type ETS==', typeof(siren));
+    // console.log('lenght ETS=', siren.length );
+
     if (siren.length > 9) {
       siren = siren.slice(0, 9);
     }
 
 
-    console.log('from all es new comp', siren)
+    // console.log('from all es new comp', siren)
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
