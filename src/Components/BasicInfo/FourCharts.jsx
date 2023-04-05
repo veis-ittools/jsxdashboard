@@ -23,35 +23,35 @@ import ApexCharts from '../ApexCharts';
 import PercentDiffer from '../PercentDiffer';
 import ResultantChart from '../ResultantChart';
 
-const data = [
+// const data = [
 
-    {
-      "name": "2020",
-      "Chiffre d'affaires": 71154803,
+//     {
+//       "name": "2020",
+//       "Chiffre d'affaires": 71154803,
   
-    },
-    {
-      "name": "2019",
-      "Chiffre d'affaires": 91027987,
+//     },
+//     {
+//       "name": "2019",
+//       "Chiffre d'affaires": 91027987,
   
-    },
-    {
-      "name": "2018",
-      "Chiffre d'affaires": 140469088,
+//     },
+//     {
+//       "name": "2018",
+//       "Chiffre d'affaires": 140469088,
   
-    },
-    {
-      "name": "2017",
-      "Chiffre d'affaires": 164462307,
+//     },
+//     {
+//       "name": "2017",
+//       "Chiffre d'affaires": 164462307,
   
-    },
-    {
-      "name": "2016",
-      "Chiffre d'affaires": 169873083,
-    },
+//     },
+//     {
+//       "name": "2016",
+//       "Chiffre d'affaires": 169873083,
+//     },
   
   
-  ]
+//   ]
   
 
 function FourCharts(props) {

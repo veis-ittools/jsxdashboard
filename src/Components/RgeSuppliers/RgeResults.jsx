@@ -88,10 +88,10 @@ function RgeResults(props) {
             Launch Search
     </Button>
     {/* wotking RGE Without button */}
-    {/* {buttonclick === true  ? <RgeDatagrid meta={meta} domain= {autnafinputValue} /> : null} */}
+    {/* {buttonclick === true  ? <RgeDatagrid meta={meta} domain= {autnafinputValue} /> : null}  */}
     
     
-    {buttonclick === true ? <NewRgeDatagrid  meta={meta} domain= {autnafinputValue} ></NewRgeDatagrid> :null}
+    {buttonclick === true ? <NewRgeDatagrid  meta={meta} domain= {autnafinputValue} ></NewRgeDatagrid> :null} 
     </div>
   )
 }

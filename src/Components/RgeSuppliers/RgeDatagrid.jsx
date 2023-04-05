@@ -108,7 +108,7 @@ function RgeDatagrid(props) {
         setUsers(response.data);
         setRGErecs(response.data.RGE)
         setRGEflag(true)
-        // console.log(response.data)
+        // console.log(response.data.RGE)
         // console.log('here from now')
     })
     }

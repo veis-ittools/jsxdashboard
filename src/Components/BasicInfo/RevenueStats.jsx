@@ -10,6 +10,11 @@ import Alert from '@mui/material/Alert';
 
 function RevenueStats(props) {  
     let siren = props.siren
+
+    if (siren.length > 9) {
+      siren = siren.slice(0, 9);
+    }
+    
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     const colorMode = useContext(ColorModeContext);

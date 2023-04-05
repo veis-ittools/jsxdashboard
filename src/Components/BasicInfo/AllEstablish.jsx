@@ -15,6 +15,9 @@ const addId=(arr)=> {
 
 function AllEstablish(props) {
     let siren = props.siren
+    if (siren.length > 9) {
+      siren = siren.slice(0, 9);
+    }
 
 
     console.log('from all es new comp', siren)

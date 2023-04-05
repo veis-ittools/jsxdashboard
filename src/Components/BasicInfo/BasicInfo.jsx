@@ -44,7 +44,7 @@ function BasicInfo(props) {
       axios.post(urlchange).then((response) => {
           setUsers(response.data);
           setInseerecs(response.data.basicinfo)
-          console.log(response.data.basicinfo)
+          console.log(response.data)
           console.log(typeof((response.data.basicinfo)))
           console.log(typeof(inseerecs));
           console.log('here from now');
@@ -82,9 +82,11 @@ function BasicInfo(props) {
       {inseerecs && Object.entries(inseerecs).map(([key, value]) => {
           // Pretty straightforward - use key for the key and value for the value.
           // Just to clarify: unlike object destructuring, the parameter names don't matter here.
-          console.log('key--', key)
-          console.log('value--', value)
-          console.log('ESS value--', value.ESS)
+          // console.log('key--', key)
+          // console.log('value--', value)
+          // console.log('ESS value--', value.ESS)
+          // console.log('Value.Name', value.Name)
+          // console.log(typeof((value.Name)))
 
 
           return (
@@ -92,14 +94,36 @@ function BasicInfo(props) {
 
               <Box display="flex" justifyContent="left" alignItems="center"   >
          
-                <Typography
+                {/* <Typography
                   variant="h3"
                   color={colors.grey[100]}
                   // fontWeight="bold"
                   sx={{ m: "0 0 5px 0" }}
                 >
-                  Présentation de la société {value.Name}  
-                </Typography >
+                  Présentation de la société {value.Name}        
+                </Typography > */}
+
+
+                {value.Name !== null && value.Name !== undefined ?  (
+                        <Typography
+                        variant="h3"
+                        color={colors.grey[100]}
+                        // fontWeight="bold"
+                        sx={{ m: "0 0 5px 0" }}
+                      >
+                        Présentation de la société {value.Name}        
+                      </Typography >                  
+                    ):(
+                        <Typography
+                        variant="h3"
+                        color={colors.grey[100]}
+                        // fontWeight="bold"
+                        sx={{ m: "0 0 5px 0" }}
+                        >
+                        Présentation de la Entrepreneur individuel {value.Sexunit} {value.Prenom2} {value.Prenom3}       
+                      </Typography >
+                    )
+                }
                   {/* <Alert sx = {{width: 1/8, height: '50%'}} severity="success">Active</Alert>     */} 
                   {value.Status === "A" ? (
                     <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="success">Active</Alert>    
