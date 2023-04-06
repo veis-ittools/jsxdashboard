@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid } from "@mui/material";
+import { Box, useTheme, Typography, Grid, Tooltip } from "@mui/material";
 import { sizing } from '@mui/system';
 
 
@@ -34,6 +34,9 @@ function BasicInfo(props) {
     const [users, setUsers] = useState([])
     const [inseerecs, setInseerecs] = useState([])
 
+    const [lamarche, setLamarche] = useState(null)
+    const [norecfound , setNorecfound] = useState(false)
+
     useEffect(() => {
       fetchData();
     }, [urlchange]);
@@ -57,6 +60,43 @@ function BasicInfo(props) {
     
     // BASIC INFORMATION API CALL CODE START------
 
+
+    // LA MARCHE INCLUSIVE START
+    let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT/${siren}`
+    useEffect(() => {
+      MfetchData();
+    }, [mar_url]);
+  
+    const MfetchData = () => {
+      // setApiurl(apiurltocall[0])
+      console.log('INSEE API CODE -----')
+      axios.post(mar_url).then((response) => {
+        setLamarche(response.data.ESAT)
+        setNorecfound(response.data.ESAT.address)
+
+        // console.log('larmache--', response.data.ESAT);
+        // console.log('norec clasue--', response.data.ESAT.detail);
+        
+
+        
+
+      })
+    }
+
+    // let marcheflag = null
+    console.log('state', lamarche);
+    console.log('state undefin',norecfound );
+    // Object.entries(lamarche).map(([key, value]) => {
+
+    //   console.log('key', key);
+    //   console.log('val', value.name);
+    //   console.log('val', value.is_active);
+    //   let marcheflag =  value.is_active 
+    //   // setNorecfound(value.is_active )
+      
+    // })
+
+    //  LA MARCHE STOP
 
 
   if (!users) return null; 
@@ -90,9 +130,9 @@ function BasicInfo(props) {
 
 
           return (
-            <Box>
+            <Box marginTop={3}>
 
-              <Box display="flex" justifyContent="left" alignItems="center"   >
+              <Box display="flex"  justifyContent="left" alignItems="center"   >
          
                 {/* <Typography
                   variant="h3"
@@ -158,7 +198,7 @@ function BasicInfo(props) {
               </Grid>
               <Grid item xs={12} sm={6}>
                   <Typography variant="h5" color={colors.blueAccent[100]}>
-                    {value.Category}  {value.salaries}  salariés | ESS: {value.ESS} 
+                    {value.Category}  {value.salaries}  salariés |  ESS: {value.ESS} 
                   </Typography>
 
               </Grid>
@@ -172,100 +212,53 @@ function BasicInfo(props) {
             </Grid>
             
             
-            <Grid marginTop={0} alignContent={'center'} container spacing={3}
+            <Grid alignContent={'center'} container spacing={3}
               >
               <Grid item xs={12} sm={12}>
                   <Typography variant="h5" color={colors.blueAccent[100]}>
                       {/* 2169 BD DE LA DEFENSE NANTERRE HAUTS-DE-SEINE ILE-DE-FRANCE 92000 */}
-                      {value.address}
+                      {value.Address} {value.commune} {value.Région}
                 </Typography>
                 {/* <Alert sx = {{width: 1/4}} severity="success">Active</Alert> */}
               </Grid>
 
             </Grid>
+ 
+            {/* {marcheflag === true ?  (
 
-            </Box>
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) - Yes </Typography>):(
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) -  Pas trouvé </Typography>
+              )}  */}
+             
+              </Box>
             
 
           );
-        })}  
+        })
+        
+      }  
 
 
 
+      {lamarche && Object.entries(lamarche).map(([key, value]) => {
+          return (
+            <Tooltip title= "API du marché de l'inclusion">
+              <Box>
+                {value.is_active === true ?  (
+                
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) - Yes </Typography>):(
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) -  Pas trouvé </Typography>
+                )} 
 
-
-
-      {/* <Typography
-        variant="h3"
-        color={colors.grey[100]}
-        // fontWeight="bold"
-        sx={{ m: "0 0 5px 0" }}
-      >
-        Présentation de la société VINCI ENERGIES
-      </Typography>
-      <Typography variant="h5" color={colors.greenAccent[400]}>
-          Categorie Juridique UniteLegale- SA à conseil d'administration (s.a.i.)
-      </Typography>
-
-      <Typography variant="h5" color={colors.greenAccent[400]}>
+              </Box>
+            </Tooltip>
+          )
           
-          Spécialisée dans le secteur d'activité- 
-      </Typography> */}
-      {/* <Typography variant="h5" color={colors.blueAccent[400]}>
-          Sur l'année 2020, VINCI ENERGIES réalise un chiffre d'affaires de 71154803 €.
-      </Typography> */}
-
-      
-      {/* <Typography variant="h5" color={colors.blueAccent[100]}>
-        SIREN: 391635844  SIRET: 39163584400288
-      </Typography>
-
-      
-      <Typography variant="h5" color={colors.blueAccent[100]}>
-         50 à 99 salariés  Category Grande (GE)
-      </Typography> */}
-
-      {/* <Grid marginTop={0} alignContent={'center'} container spacing={1}
-        >
-        <Grid item xs={12} sm={3}>
-            <Typography variant="h5" color={colors.blueAccent[100]}>
-              SIREN: 391635844  
-            </Typography>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-            <Typography variant="h5" color={colors.blueAccent[100]}>
-              SIRET: 39163584400288 
-            </Typography>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-            <Typography variant="h5" color={colors.blueAccent[100]}>
-              Enterprise- Grande (GE)
-            </Typography>
-
-        </Grid>
-        <Grid item xs={12} sm={3}>
-            <Typography variant="h5" color={colors.blueAccent[100]}>
-              50 à 99 salariés ESS: NA  
-            </Typography>
-
-        </Grid>
-      
-      </Grid>
+        }
+        )
+      }
       
       
-      <Grid marginTop={0} alignContent={'center'} container spacing={1}
-        >
-        <Grid item xs={12} sm={12}>
-            <Typography variant="h5" color={colors.blueAccent[100]}>
-                2169 BD DE LA DEFENSE NANTERRE HAUTS-DE-SEINE ILE-DE-FRANCE 92000
-          </Typography>
-        </Grid>
-
-      </Grid>
-    */}
-
-
-
 
 
     </Box>

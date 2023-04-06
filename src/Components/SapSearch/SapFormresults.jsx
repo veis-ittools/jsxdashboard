@@ -211,7 +211,7 @@ function SapFormresults(props) {
 
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="L'économie sociale et solidaire (ESS)" value="YES" name='ESS' id='ESS'/>
+                    <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="L'économie sociale et solidaire (ESS) [FR Only]" value="YES" name='ESS' id='ESS'/>
                 </Grid>
             </Grid>
             <Button

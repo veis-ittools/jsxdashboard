@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography, useTheme , Stack} from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
@@ -24,6 +24,7 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import myImgSrc from './vincijpg.jpg';
 // import FlashOffIcon from '@mui/icons-material/FlashOff';
 // import Tooltip from '@mui/material/Tooltip';
+import ReactCountryFlag from "react-country-flag"
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -148,9 +149,21 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            
+              
+            <Box paddingLeft={10}>
+ 
+              <ReactCountryFlag 
+                            style={{
+                              fontSize: '2em',
+                              lineHeight: '2em',
+                          }}
 
+                          countryCode="FR" svg />
+              </Box>
+  
             <Item
-              title="INSEE Search"
+              title=" FR- INSEE Search"
               to="/inseesearch"
               icon={<ManageSearchIcon />}
               selected={selected}
@@ -158,7 +171,7 @@ const Sidebar = () => {
             />
             
             <Item
-              title="RGE Suppliers"
+              title="Certified RGE Suppliers"
               to="/rgesearch"
               icon={<SearchIcon />}
               selected={selected}
@@ -166,7 +179,7 @@ const Sidebar = () => {
             />
 
             <Item
-              title="SIREN Search"
+              title="Enterprise Search"
               to="/sirensearch"
               icon={<TravelExploreIcon />}
               selected={selected}

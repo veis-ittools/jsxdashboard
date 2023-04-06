@@ -28,7 +28,7 @@ const Sirensearch= () =>{
   return (
     <Box m="20px">
         <Box display="flex" justifyContent="space-around" alignItems="center"   >
-            <Header title="Enterprise Search" subtitle="Search using the SIREN for Suppliers in France (Section under Develpment*)" />
+            <Header title="Enterprise Search" subtitle="Recherche de fournisseurs avec leur SIRET/SIREN pour les fournisseurs en France " />
 
             <Box   
                 display="flex"
@@ -39,7 +39,7 @@ const Sirensearch= () =>{
                 <TextField
                     variant="standard"
                     name="siren"
-                    label="Enter SIREN"
+                    label="Enter SIREN/SIRET"
                     size="small"
                     id = 'siren'
                     sx={{ marginTop:1,

@@ -50,7 +50,7 @@ function SearchSiren() {
     return (
     <Box m="20px">
         <Box display="flex" justifyContent="space-around" alignItems="center"   >
-            <Header title="Enterprise Search" subtitle="Search using the SIREN for Suppliers in France (Section under Develpment*)" />
+            <Header title="Enterprise Search" subtitle="Rechercher des fournisseurs dans tous les secteurs en FRANCE" />
 
             <Box   
                 display="flex"

@@ -65,7 +65,6 @@ function BIapicall(props) {
         { field: 'Département', headerName: 'Département', width: 120 },
         { field: 'Région', headerName: 'Région', width: 120 },
         { field: 'Address', headerName: 'Address', width: 150 },
-        
         { field: 'Category', headerName: 'Category', width: 75 },
         { field: 'NAF', headerName: 'NAF', width: 75 },
         { field: 'ESS', headerName: 'ESS', width: 25 },
@@ -110,8 +109,8 @@ function BIapicall(props) {
             setBIrecs(response.data.SAP)
             setBiflag(true)
 
-            console.log(response.data)
-            console.log('here from now')
+            console.log('SAP---here from now', response.data.SAP)
+            console.log('SAP---here from now')
       })
     }
 

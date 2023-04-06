@@ -28,7 +28,8 @@ function NewMainsearch() {
             INSEE Search
           </Typography>
           <Typography variant="h5" color={colors.greenAccent[400]}>
-            Search Suppliers in all Sectors in FRANCE
+            {/* Search Suppliers in all Sectors in FRANCE */}
+            Rechercher des fournisseurs dans tous les secteurs en FRANCE
           </Typography>
         </Box>
 

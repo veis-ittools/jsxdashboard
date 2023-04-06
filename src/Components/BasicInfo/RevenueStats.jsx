@@ -94,7 +94,7 @@ function RevenueStats(props) {
 
     // TOTAL ESTABLISHMENTS API CALL END-------
   return (
-    <Box  justifyContent='center' marginTop={-2}>
+    <Box  justifyContent='center' marginTop={1}>
 
 
         {revinseerecs && <FourCharts records= {revinseerecs.CA} 

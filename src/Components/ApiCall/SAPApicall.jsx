@@ -5,7 +5,9 @@ import axios from "axios";
 
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import { Box } from '@mui/system';
-
+import BasicInfo from '../BasicInfo/BasicInfo';
+import RevenueStats from '../BasicInfo/RevenueStats';
+import AllEstablish from '../BasicInfo/AllEstablish';
 
 function SAPApicall(props) {
     let apiurllist =[]
@@ -21,13 +23,19 @@ function SAPApicall(props) {
     let regionlen  = location.toString().length
     console.log(datasource)
 
-    console.log('BI block----', apiparams2)
+    console.log('SAP BI block----', apiparams2)
 
     let apiurltocall = sapurlformating(famille2, ESS, location,category, regionlen)
-    console.log('BI function output', apiurltocall)
+    console.log('SAP ---- BI function output', apiurltocall)
 
     apiurllist.push(apiurltocall[0])
-    let urlchange = apiurllist[0] 
+    let urlchange = apiurllist[0]
+    
+    const [users, setUsers] = useState([])
+    const [birecs, setBIrecs] = useState([])
+    const [biflag, setBiflag] = useState(false)
+    const [selectedRow, setSelectedRow] = useState(null);
+    
 
     const userTableStyles = {
         // m: 2,
@@ -47,11 +55,31 @@ function SAPApicall(props) {
 
     const columns = [
         { field: 'id', headerName: 'Id', width: 30 },
+
+
+
         { field: 'Name', headerName: 'Name', width: 300 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
+
+        {
+          field: 'button',
+          headerName: 'Action',
+          sortable: false,
+          width: 70,
+          disableClickEventBubbling: true,
+          renderCell: (params) => {
+              return (
+              <button onClick=
+              {
+                () => handleButtonClick(params)
+              }>More</button>
+              );
+          },
+      },
+
         { field: 'commune', headerName: 'City', width: 135 },
-        { field: 'Département', headerName: 'Département', width: 120 },
+        // { field: 'Département', headerName: 'Département', width: 120 },
         { field: 'Région', headerName: 'Région', width: 120 },
         { field: 'Address', headerName: 'Address', width: 150 },
         
@@ -78,10 +106,13 @@ function SAPApicall(props) {
 
 
       ];
+    const handleButtonClick = (params) => {
+        setSelectedRow(params.row.SIRET);
+        // setAllrgerows(params.row)
+        console.log('sap basic all ROW----', selectedRow);
+    };  
 
-      const [users, setUsers] = useState([])
-      const [birecs, setBIrecs] = useState([])
-      const [biflag, setBiflag] = useState(false)
+ 
 
 
 
@@ -96,8 +127,8 @@ function SAPApicall(props) {
             setUsers(response.data);
             setBIrecs(response.data.SAP)
             setBiflag(true)
-            console.log(response.data)
-            console.log('here from now')
+            // console.log('here from now', response.data.SAP)
+            // console.log('here from now')
       })
     }
 
@@ -114,9 +145,15 @@ if (birecs!== [] && biflag === true) {
             // loading = {!birecs.length}
             sx = {userTableStyles}
             components={{ Toolbar: GridToolbar }}
+            checkboxSelection
             // getRowId={(rows) =>  generateRandom()}  
             /> 
           </Box>
+          {selectedRow && <BasicInfo siren = {selectedRow}></BasicInfo>}
+          {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> }
+          {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}        
+
+
   
           </Box>
   

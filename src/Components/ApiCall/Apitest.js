@@ -4,6 +4,10 @@ import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 // import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
 
+import BasicInfo from '../BasicInfo/BasicInfo';
+import RevenueStats from '../BasicInfo/RevenueStats';
+import AllEstablish from '../BasicInfo/AllEstablish';
+
 function Apitest(props) {
 
     let apiurllist =[]
@@ -41,6 +45,7 @@ function Apitest(props) {
     // setApiurl(apiurltocall[0])
     // }
     let urlchange = apiurllist[0] 
+    const [selectedRow, setSelectedRow] = useState(null);
     
     const userTableStyles = {
         // m: 2,
@@ -62,6 +67,19 @@ function Apitest(props) {
         { field: 'Name', headerName: 'Name', width: 300 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
+        {
+          field: 'button',
+          headerName: 'Action',
+          sortable: false,
+          width: 100,
+          disableClickEventBubbling: true,
+          renderCell: (params) => {
+              return (
+              <button onClick={() => handleButtonClick(params)}>More</button>
+              );
+          },
+      },
+
         { field: 'commune', headerName: 'City', width: 135 },
         { field: 'Département', headerName: 'Département', width: 120 },
         { field: 'Région', headerName: 'Région', width: 120 },
@@ -116,6 +134,13 @@ function Apitest(props) {
     //     });
     // }, [apiurllist ]);
 
+
+    const handleButtonClick = (params) => {
+      setSelectedRow(params.row.SIRET);
+      // setAllrgerows(params.row)
+      console.log('INSEE basic all ROW----', selectedRow);
+    };  
+
     useEffect(() => {
         fetchData();
       }, [urlchange]);
@@ -142,8 +167,13 @@ function Apitest(props) {
               loading = {!inseerecs.length}
               sx = {userTableStyles}
               components={{ Toolbar: GridToolbar }}
+              checkboxSelection
               />  
       </Box>
+      {selectedRow && <BasicInfo siren = {selectedRow}></BasicInfo>}
+      {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> }
+      {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}        
+
     </Box> 
 
   )

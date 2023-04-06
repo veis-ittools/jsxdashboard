@@ -23,10 +23,10 @@ function RgeSuppliers() {
             // fontWeight="bold"
             sx={{ m: "0 0 5px 0" }}
           >
-            RGE Certified Suppliers
+            RGE  (Reconnu garant de l'environnement) Certificated Suppliers
           </Typography>
-          <Typography variant="h5" color={colors.greenAccent[400]}>
-            Search Suppliers in all Sectors in FRANCE
+          <Typography variant="h6" color={colors.greenAccent[400]}>
+            Recherchez-vous des fournisseurs spécialisés dans la rénovation énergétique ou l'installation d'équipements à énergie renouvelable ? Les travaux et installations réalisés par des professionnels certifiés RGE permettent d'obtenir des aides financières et des déductions fiscales.
           </Typography>
         </Box>
         <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
