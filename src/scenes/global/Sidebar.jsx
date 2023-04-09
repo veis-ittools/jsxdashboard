@@ -193,20 +193,20 @@ const Sidebar = () => {
             >
               Pages
             </Typography>
-            <Item
+            {/* <Item
               title="SIREN "
               to="/sirensearch"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> 
-            <Item
+            />  */}
+            {/* <Item
               title="About NAAVIK"
               to="/about"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             <Item
               title="FAQ Page"
               to="/faq"
@@ -216,7 +216,7 @@ const Sidebar = () => {
             /> 
             <Item
               title="Help us to Improve"
-              to="/help"
+              to="/inactive"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -230,7 +230,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Manage Team"
-              to="/team"
+              to="/inactive"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -238,7 +238,7 @@ const Sidebar = () => {
 
             <Item
               title="Contact Information"
-              to="/contacts"
+              to="/inactive"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -257,7 +257,7 @@ const Sidebar = () => {
 
             <Item
               title="Revenue"
-              to="/team"
+              to="/inactive"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -266,21 +266,21 @@ const Sidebar = () => {
             
             <Item
               title="Purchase History"
-              to="/team"
+              to="/inactive"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="KPI's"
-              to="/team"
+              to="/inactive"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Ethics & Compliance"
-              to="/team"
+              to="/inactive"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

@@ -18,13 +18,13 @@ function NewSapSearch() {
     let [inputValue, setInputValue] = useState('')
   return (
     <Box marginTop={2}>
-        <Box display="flex" justifyContent="space-around" alignItems="center"   >
+        <Box display="column" justifyContent="center" alignItems="center"   >
             {/* <Header title="Search" subtitle="Search using VINCI fammille classification " /> */}
         </Box> 
 
-        <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
+        <Grid marginTop={-1} marginLeft={1} alignContent={'center'} container spacing={2}
         >
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={10}>
             <Autocomplete
                 value={value}
                 onChange={(_, newValue) => {
@@ -64,9 +64,9 @@ function NewSapSearch() {
                 />}                   
                 />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {/* <Grid item xs={12} sm={4}>
             <CountrySelect/>
-          </Grid>
+          </Grid> */}
         </Grid>
 
 

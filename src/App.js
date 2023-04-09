@@ -146,27 +146,28 @@ function ProfileContent() {
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-// const MainContent = () => {    
-//     return (
-//         <div className="App">
-//             <AuthenticatedTemplate>
-//                 <ProfileContent />
-//             </AuthenticatedTemplate>
-
-//             <UnauthenticatedTemplate>
-//                 <LandingPage/>
-//             </UnauthenticatedTemplate>
-//         </div>
-//     );
-// };
-
 const MainContent = () => {    
-  return (
-      <div className="App">
-            <ProfileContent />
-      </div>
-  );
+    return (
+        <div className="App">
+            <AuthenticatedTemplate>
+                <ProfileContent />
+            </AuthenticatedTemplate>
+
+            <UnauthenticatedTemplate>
+                <LandingPage/>
+            </UnauthenticatedTemplate>
+        </div>
+    );
 };
+
+// MAIN CONTENT at UN AUTH
+// const MainContent = () => {    
+//   return (
+//       <div className="App">
+//             <ProfileContent />
+//       </div>
+//   );
+// };
 
 
 export default function App() {

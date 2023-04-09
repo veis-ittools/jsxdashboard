@@ -18,12 +18,13 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 export default function CountrySelect() {
+  
   return (
     <FormControl sx={{ m: 2, minWidth: 235 }} size="small">
     <InputLabel id="demo-select-small">Country</InputLabel>
     <Select
-      labelId="demo-select-small"
-      id="demo-select-small"
+      labelId="country"
+      id="country"
       // value={Country}
       defaultValue={30}
       label="Country"

@@ -8,6 +8,7 @@ function Apirouting(props) {
   let apiparams2 = props.apiparams2
   console.log('api routing block----', apiparams2)
   let datasource = apiparams2.datasource
+  let country = apiparams2.country
   console.log('api routing block----', datasource)
 
 
@@ -31,6 +32,8 @@ function Apirouting(props) {
     
 
     );
+
+    
   }
   return <Apitest apiparams2={apiparams2}  ></Apitest> ;
 

@@ -14,7 +14,10 @@ import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
 import Switch from '@mui/material/Switch';
 import Apirouting from '../ApiCall/Apirouting';
+import MenuItem from '@mui/material/MenuItem';
 
+import Select from '@mui/material/Select';
+import { minWidth } from '@mui/system';
 
 function SapFormresults(props) {
     
@@ -54,7 +57,8 @@ function SapFormresults(props) {
                 ESS: data.get('ESS'),
                 companysize: data.get('companysize'), 
                 'iscomplete': true,
-                'datasource': 'BI'
+                'datasource': 'BI', 
+                country: data.get('country')
                 
     
             }
@@ -125,9 +129,9 @@ function SapFormresults(props) {
   
     return (
     
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -2  }}>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} sm={8}>
                     <Autocomplete
                     id="combo-box-demo"
                     onChange={(_, newValue) => {
@@ -156,6 +160,41 @@ function SapFormresults(props) {
                     /> 
 
                 </Grid>
+                
+                <Grid item xs={12} sm={4}>
+
+                <div>
+                        
+                            <FormControl sx={{ m: 0, minWidth: 250 , }}>
+                                <InputLabel sx = {{maxHeight:75, minWidth:45}}  >
+                                    Country
+                                </InputLabel>
+                                <NativeSelect
+                                defaultValue={'FRANCE'}
+                                inputProps={{
+                                    name: 'country',
+                                    id: 'country',
+                                }}
+                                >
+                                <option value={'FRANCE'}>FRANCE</option>
+                                <option value={'SPAIN'}>SPAIN(*inactive)</option>
+                                <option value={'PORTUGAL'}>PORTUGAL(*inactive)</option>
+                                <option value={'GERMANY(*inactive)'}>GERMANY(*inactive)</option>
+                                <option value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</option>
+                                <option value={'CANADA(*inactive)'}>CANADA(*inactive)</option>
+                                <option value={'AUSTRALIA(*inactive)'}>AUSTRALIA(*inactive)</option>
+
+                                </NativeSelect>
+
+                            </FormControl>
+                           
+                    </div>
+
+
+                </Grid>
+
+
+
             </Grid>
 
             <Grid container spacing={3}>
