@@ -57,8 +57,7 @@ function SapFormresults(props) {
                 ESS: data.get('ESS'),
                 companysize: data.get('companysize'), 
                 'iscomplete': true,
-                'datasource': 'BI', 
-                country: data.get('country')
+                'datasource': 'BI'
                 
     
             }
@@ -129,9 +128,9 @@ function SapFormresults(props) {
   
     return (
     
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
+        <Box component="form" marginLeft={2} onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12} sm={10}>
                     <Autocomplete
                     id="combo-box-demo"
                     onChange={(_, newValue) => {
@@ -161,7 +160,7 @@ function SapFormresults(props) {
 
                 </Grid>
                 
-                <Grid item xs={12} sm={4}>
+                {/* <Grid item xs={12} sm={4}>
 
                 <div>
                         
@@ -191,7 +190,7 @@ function SapFormresults(props) {
                     </div>
 
 
-                </Grid>
+                </Grid> */}
 
 
 

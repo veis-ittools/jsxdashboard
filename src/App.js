@@ -27,6 +27,9 @@ import BlankPage from "./scenes/blankpage";
 import NewMainsearch from "./Components/Mainsearch/NewMainsearch";
 import SapSearch from "./Components/SapSearch/SapSearch";
 import RgeSuppliers from "./Components/RgeSuppliers/RgeSuppliers";
+import AllCountrySAP from "./Components/AllCountrySAP/AllCountrySAP";
+
+import FeedbackBox from "./scenes/global/FeedbackBox";
 
 // old siren
 // import SearchSiren from "./Components/SearchSiren/SearchSiren";
@@ -62,15 +65,15 @@ function ProfileContent() {
                 
                 <Routes>
                   <Route path="/" element={<SapSearch />} />
-                  <Route path="/sirensearch" element={<Sirensearch />} />  
+                  <Route path="/sirensearch" element={<AllCountrySAP />} />  
                   <Route path="/inseesearch" element={<NewMainsearch />} />
 
                   <Route path="/rgesearch" element={<RgeSuppliers />} />
-                  <Route path="/team" element={<Sirensearch />} />
+                  <Route path="/team" element={<BlankPage />} />
                   <Route path="/contacts" element={<BlankPage />} /> 
                   <Route path="/faq" element={<FAQ />} />
-                  <Route path="/about" element={<BlankPage />} /> 
-                  <Route path="/help" element={<BlankPage />} /> 
+                  <Route path="/inactive" element={<BlankPage />} /> 
+                  <Route path="/help" element={<FeedbackBox />} /> 
                 </Routes>
               </main>
             </div>
@@ -146,28 +149,28 @@ function ProfileContent() {
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-const MainContent = () => {    
-    return (
-        <div className="App">
-            <AuthenticatedTemplate>
-                <ProfileContent />
-            </AuthenticatedTemplate>
+// const MainContent = () => {    
+//     return (
+//         <div className="App">
+//             <AuthenticatedTemplate>
+//                 <ProfileContent />
+//             </AuthenticatedTemplate>
 
-            <UnauthenticatedTemplate>
-                <LandingPage/>
-            </UnauthenticatedTemplate>
-        </div>
-    );
-};
+//             <UnauthenticatedTemplate>
+//                 <LandingPage/>
+//             </UnauthenticatedTemplate>
+//         </div>
+//     );
+// };
 
 // MAIN CONTENT at UN AUTH
-// const MainContent = () => {    
-//   return (
-//       <div className="App">
-//             <ProfileContent />
-//       </div>
-//   );
-// };
+const MainContent = () => {    
+  return (
+      <div className="App">
+            <ProfileContent />
+      </div>
+  );
+};
 
 
 export default function App() {

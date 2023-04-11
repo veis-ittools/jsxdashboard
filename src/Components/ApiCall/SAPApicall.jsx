@@ -30,6 +30,10 @@ function SAPApicall(props) {
 
     apiurllist.push(apiurltocall[0])
     let urlchange = apiurllist[0]
+
+    console.log('urltocall---', urlchange)
+
+    const encoded_url = encodeURI(urlchange)
     
     const [users, setUsers] = useState([])
     const [birecs, setBIrecs] = useState([])
@@ -118,12 +122,12 @@ function SAPApicall(props) {
 
     useEffect(() => {
         fetchData();
-      }, [urlchange]);
+      }, [encoded_url]);
     
       const fetchData = () => {
         // setApiurl(apiurltocall[0])
         console.log('SAP API CODE -----')
-        axios.post(urlchange).then((response) => {
+        axios.post(encoded_url).then((response) => {
             setUsers(response.data);
             setBIrecs(response.data.SAP)
             setBiflag(true)

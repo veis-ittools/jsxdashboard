@@ -216,7 +216,7 @@ const Sidebar = () => {
             /> 
             <Item
               title="Help us to Improve"
-              to="/inactive"
+              to="/help"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -230,7 +230,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Manage Team"
-              to="/inactive"
+              to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
