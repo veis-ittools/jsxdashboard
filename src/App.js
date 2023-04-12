@@ -64,12 +64,12 @@ function ProfileContent() {
                 {/* <Mainseach></Mainseach> */}
                 
                 <Routes>
-                  <Route path="/" element={<SapSearch />} />
-                  <Route path="/sirensearch" element={<AllCountrySAP />} />  
+                  <Route path="/" element={<AllCountrySAP />} />
+                  <Route path="/sirensearch" element={<Sirensearch />} />  
                   <Route path="/inseesearch" element={<NewMainsearch />} />
 
                   <Route path="/rgesearch" element={<RgeSuppliers />} />
-                  <Route path="/team" element={<BlankPage />} />
+                  <Route path="/team" element={<AllCountrySAP />} />
                   <Route path="/contacts" element={<BlankPage />} /> 
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/inactive" element={<BlankPage />} /> 

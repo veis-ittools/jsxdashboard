@@ -40,7 +40,7 @@ function NewMainsearch() {
 
         <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
         >
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={10}>
             <Autocomplete
                 value={value}
                 onChange={(_, newValue) => {
@@ -80,15 +80,15 @@ function NewMainsearch() {
                 />}                   
                 />
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <CountrySelect/>
+          <Grid item xs={12} sm={2}>
+            {/* <CountrySelect/> */}
           </Grid>
         </Grid>
 
 
-        <Grid marginTop={-3.2} marginLeft={0} marginRight={0} alignContent={'center'} container spacing={3}
+        <Grid marginTop={-2} marginLeft={0} marginRight={0} alignContent={'center'} container spacing={3}
         >  
-          <Grid item xs={12} sm={10.1}>
+          <Grid item xs={12} sm={10}>
              {/* <SecondSearchbar famille1= {inputValue} />  */}
             {flag  && <SecondSearchbar famille1= {inputValue} />} 
           </Grid> 

@@ -61,7 +61,8 @@ function ContentRge(props) {
                 variant="h5"
                 color={colors.grey[100]}
                 // fontWeight="bold"
-                sx={{ m: "0 0 5px 0" }}
+                sx={{ m: "1 0 5px 0" }}
+                
             >
                 Main Sector - {rgerows.meta_domaine}        
             </Typography >
@@ -77,7 +78,7 @@ function ContentRge(props) {
 
             <Stack direction="row" alignItems="center" gap={2}>
                 {/* <Alert severity="success">RGE Certificate</Alert>  */}
-                <Typography variant="h5">RGE Certificate {rgerows.nom_certificat} Click here to view -</Typography>
+                <Typography variant="h5">RGE Certificate {rgerows.nom_certificat}</Typography>
                 <Avatar sx={{  bgcolor: 'secondary.main' }}>
                     <Tooltip title="Click the icon to see the certificate">    
                         <WorkspacePremiumIcon   onClick={event =>  window.open(cert)} />

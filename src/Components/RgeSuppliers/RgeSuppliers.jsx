@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import {Typography,  Box, Button ,TextField, useTheme , Grid,} from "@mui/material";
-
+import {Typography,  Box, Button ,TextField, useTheme , Grid,Tooltip} from "@mui/material";
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import LanguageIcon from '@mui/icons-material/Language';
 
 import { tokens } from "../../theme";
 import { metadomains } from './Meta_domaine'; 
@@ -17,17 +19,40 @@ function RgeSuppliers() {
   return (
     <Box marginTop={1}>
         <Box mb="25px" marginLeft={2}>
-          <Typography
-            variant="h3"
-            color={colors.grey[100]}
-            // fontWeight="bold"
-            sx={{ m: "0 0 5px 0" }}
-          >
-            RGE  (Reconnu garant de l'environnement) Certificated Suppliers
-          </Typography>
+          <Stack direction="row" alignItems="center" gap={2}>
+            <Typography
+              variant="h4"
+              color={colors.grey[100]}
+              // fontWeight="bold"
+              sx={{ m: "0 0 5px 0" }}
+            >
+              RGE  (Reconnu garant de l'environnement) Certificated Suppliers
+            </Typography>
+          
+            
+            <Tooltip title="Click the icon to visit website">
+                <Avatar sx={{  bgcolor: 'secondary.main' }}>
+                    <LanguageIcon  onClick={event =>  window.open('https://www.ecologie.gouv.fr/label-reconnu-garant-lenvironnement-rge')} />
+                </Avatar> 
+              </Tooltip>
+
+
+            <Typography
+              variant="h6"
+              color={colors.grey[100]}>
+
+                Website
+
+            </Typography>
+          </Stack>
+
           <Typography variant="h6" color={colors.greenAccent[400]}>
+            {/* Le label RGE, un gage de qualité des professionnels de la rénovation énergétique */}
             Recherchez-vous des fournisseurs spécialisés dans la rénovation énergétique ou l'installation d'équipements à énergie renouvelable ? Les travaux et installations réalisés par des professionnels certifiés RGE permettent d'obtenir des aides financières et des déductions fiscales.
+            
           </Typography>
+
+
         </Box>
         <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
         >
