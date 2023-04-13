@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 // import Header from '../Header';
 import axios from "axios";
 import FourCharts from './FourCharts';
@@ -12,15 +12,17 @@ function RevenueStats(props) {
     let siren = props.siren
     siren = siren.toString()
 
+
+
     if (siren.length > 9) {
       siren = siren.slice(0, 9);
     }
     
     const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
+
 
     // API CALL TO GET REV STATS
+    // let urlchange = `https://veis-ittools.com:9100/FR/forcharts/revenue/`
     let urlchange = `https://veis-ittools.com:9100/FR/forcharts/revenue/${siren}`
     console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
@@ -34,9 +36,7 @@ function RevenueStats(props) {
     const [cachart, setCachart] = useState([])
     const [resultatchart, setResultatchart] = useState([])
     const [effectifchart, setEffectifchart] = useState([])
-
-
-
+    
 
     useEffect(() => {
       fetchData();
@@ -69,6 +69,7 @@ function RevenueStats(props) {
 
 
     // TOTAL ESTABLISHMENTS API CALL--------------
+    // let Turlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/'
     let Turlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     console.log(Turlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'

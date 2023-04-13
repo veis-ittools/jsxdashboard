@@ -16,7 +16,12 @@ import NafForm from '../Nafform/Nafform';
 function SecondSearchbar(props) {
     let famille1 = props.famille1
     console.log(famille1)
+    // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/`
     let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+    // let headers = {
+    //   'accept': 'application/json',
+    //   'famille1' : famille1
+    // } 
 
     // STATE FOR FAMILE2
     let [famille2 , setFamille2 ] =  useState([])

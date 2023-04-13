@@ -10,6 +10,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import SapFormresults from '../SapSearch/SapFormresults';
 import FormAllSAP from './FormAllSAP';
+import Alert from '@mui/material/Alert';
+
 
 function AllCountrySAP() {
     const theme = useTheme();
@@ -27,6 +29,8 @@ function AllCountrySAP() {
 
     console.log('fam1', inputValue)
     console.log('country', country)
+    console.log('country type', typeof( country))
+    
 
   return (
     <Box marginTop={2}>
@@ -100,10 +104,11 @@ function AllCountrySAP() {
                 size="small"
                 margin="normal"
                 required
+                defaultValue='FRANCE'
                 
                 >
                 {/* <MenuItem value="">
-                    <em>None</em>
+                    <em>FRANCE</em>
                 </MenuItem> */}
                 <MenuItem  value={'FRANCE'}>FRANCE</MenuItem>
                 <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
@@ -124,6 +129,9 @@ function AllCountrySAP() {
 
         {flag === true && country !== 'FRANCE' ?  <FormAllSAP  famille1= {inputValue}  country = {country}/>
         : null} 
+
+        {flag === true && country === '' ? <Alert sx={{width:'50%' , marginLeft:2, marginTop:2}}  severity="info"> select country</Alert>
+    : null }
 
     </Box>
 

@@ -1,8 +1,7 @@
 
 import React, {useEffect, useState} from 'react'
-import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid } from "@mui/material";
+
+import { Box, useTheme } from "@mui/material";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import axios from "axios";
 import Alert from '@mui/material/Alert';
@@ -16,6 +15,7 @@ const addId=(arr)=> {
 function AllEstablish(props) {
     let siren = props.siren
 
+
     siren = siren.toString()
     // console.log('type ETS==', typeof(siren));
     // console.log('lenght ETS=', siren.length );
@@ -28,14 +28,12 @@ function AllEstablish(props) {
     // console.log('from all es new comp', siren)
 
     const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
 
     const userTableStyles = {
         // m: 2,
         marginTop: 4,
         height: '450px',
-        width: 900,
+        width: 800,
         display: 'flex',
         flexDirection: 'column',
         boxShadow: 2,
@@ -81,11 +79,16 @@ function AllEstablish(props) {
       ];
 
     // BASIC INFORMATION API CALL CODE START------
+
+    // let urlchangeallrecs = 'https://veis-ittools.com:9100/FR/dashboard/data'
     let urlchangeallrecs = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     console.log(urlchangeallrecs);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
-    
+
+
+
+
     const [allusers, setUsers] = useState([])
     const [allinseerecs, setInseerecs] = useState([])
 
@@ -95,7 +98,7 @@ function AllEstablish(props) {
   
     const fetchData = () => {
       // setApiurl(apiurltocall[0])
-      console.log('INSEE API CODE -----')
+      console.log('all establishments API CODE -----')
       axios.post(urlchangeallrecs).then((response) => {
           setUsers(response.data);
           setInseerecs(response.data.AllEtablishments)

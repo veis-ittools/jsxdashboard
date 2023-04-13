@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import { Box, useTheme, Typography, Grid, Tooltip } from "@mui/material";
-import { sizing } from '@mui/system';
+
 
 
 import Alert from '@mui/material/Alert';
@@ -21,16 +21,15 @@ function BasicInfo(props) {
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const colorMode = useContext(ColorModeContext);
-
 
 
     // BASIC INFORMATION API CALL CODE START------
+    // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
-    
+
     const [users, setUsers] = useState([])
     const [inseerecs, setInseerecs] = useState([])
 
@@ -43,7 +42,7 @@ function BasicInfo(props) {
   
     const fetchData = () => {
       // setApiurl(apiurltocall[0])
-      console.log('INSEE API CODE -----')
+      console.log('BASIC API CODE --here---')
       axios.post(urlchange).then((response) => {
           setUsers(response.data);
           setInseerecs(response.data.basicinfo)
@@ -62,6 +61,7 @@ function BasicInfo(props) {
 
 
     // LA MARCHE INCLUSIVE START
+    // let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT`
     let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT/${siren}`
     useEffect(() => {
       MfetchData();

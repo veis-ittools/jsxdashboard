@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 // import Datagrid from './Datagrid';
 // import Button from '@mui/material/Button';
-
+import Alert from '@mui/material/Alert';
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import { Box } from '@mui/system';
 import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
 import AllEstablish from '../BasicInfo/AllEstablish';
+import ExampleComp from '../BasicInfo/ExampleComp';
 
 function SAPApicall(props) {
     let apiurllist =[]
@@ -34,11 +35,24 @@ function SAPApicall(props) {
     console.log('urltocall---', urlchange)
 
     const encoded_url = encodeURI(urlchange)
+
+    console.log('urltocall encoded_url---',encoded_url )
+
+    let url ='https://veis-ittools.com:5900/SAP/BI/RACCORDS%20COSSES%20MANCHONS%20ET%20CONNECTIQUE%20%7C%20AHELIA12?cat_name=All&ESS=false' 
+
+    console.log('url_url---',url )
+    
+    
+    let headers = {
+      'accept': 'application/json',
+    }
     
     const [users, setUsers] = useState([])
     const [birecs, setBIrecs] = useState([])
     const [biflag, setBiflag] = useState(false)
     const [selectedRow, setSelectedRow] = useState(null);
+    const [totalrecs, setTotalrecs] = useState()
+  
     
 
     const userTableStyles = {
@@ -46,7 +60,7 @@ function SAPApicall(props) {
         // marginTop: 2,
         // height: '370px',
         height: '450px',
-        width: 900,
+        width: 800,
         display: 'flex',
         flexDirection: 'column',
         boxShadow: 2,
@@ -130,6 +144,7 @@ function SAPApicall(props) {
         axios.post(encoded_url).then((response) => {
             setUsers(response.data);
             setBIrecs(response.data.SAP)
+            setTotalrecs(response.data.Totalrecords)
             setBiflag(true)
             // console.log('here from now', response.data.SAP)
             // console.log('here from now')
@@ -141,7 +156,12 @@ if (birecs!== [] && biflag === true) {
     return (
   
       <Box m="20px">
+           
+           <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found</Alert>
+    
           <Box display="flex" justifyContent="center" alignItems="center"  >
+
+          {totalrecs !== 0 ? 
   
           <DataGrid 
             rows = {birecs}
@@ -152,10 +172,12 @@ if (birecs!== [] && biflag === true) {
             checkboxSelection
             // getRowId={(rows) =>  generateRandom()}  
             /> 
+            : null}
           </Box>
           {selectedRow && <BasicInfo siren = {selectedRow}></BasicInfo>}
           {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> }
-          {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}        
+          {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}  
+          {selectedRow && <ExampleComp/>}      
 
 
   
@@ -180,14 +202,14 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         // console.log('insee block')
-        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&ESS=false`
+        let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
         console.log('scene 1')
         console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
-        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&ESS=true`
+        let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
         console.log('scene 2')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -196,7 +218,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+        let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         console.log('scene 3')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -204,7 +226,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
-		let baseURL = `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+		let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
         console.log('scene 4')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -212,14 +234,14 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
 // region figures
     if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
-		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
+		let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
         console.log('scene 5')
         finalbaseURL.push(baseURL)
 
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
-		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
+		let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
         console.log('scene 6')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -228,7 +250,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){	
-		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=false `
+		let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         console.log('scene 7')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -236,7 +258,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){		
-		let baseURL =  `https://veis-ittools.com:9100/SAP/BI/${famille2}?cat_name=${category}&ESS=true `
+		let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
         console.log('scene 8')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)

@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import axios from "axios";
 import Alert from '@mui/material/Alert';
@@ -15,7 +13,7 @@ const addId=(arr)=> {
 
 
 function AllSAPDatagrid(props) {
-    const theme = useTheme();
+    // const theme = useTheme();
 
     const apiparams2 = props.apiparams
 
@@ -35,7 +33,7 @@ function AllSAPDatagrid(props) {
         // m: 2,
         marginTop: 4,
         height: '450px',
-        width: 900,
+        width: 800,
         display: 'flex',
         flexDirection: 'column',
         boxShadow: 2,
@@ -50,18 +48,28 @@ function AllSAPDatagrid(props) {
     const columns = [
         { field: 'id', headerName: 'Id', width: 30 },
         { field: 'Nom Fournisseur', headerName: 'Name', width: 300 },
-        { field: 'Ville Fournisseur', headerName: 'City', width: 135 },
-        { field: 'Adresse Fournisseur Ligne 1', headerName: 'Address', width: 150 },   
-        { field: 'country', headerName: 'country', width: 75 },
-          { feild: 'Link', headerName:'Link', width:200 , 
+        { field: 'Ville Fournisseur', headerName: 'City', width: 150 },
+        { field: 'Adresse Fournisseur Ligne 1', headerName: 'Address', width: 275 },   
+        { field: 'country', headerName: 'country', width: 120 },
+        { feild: 'googlelink', headerName:'Link', width:250 , 
           renderCell: (params) => 
-          <a  href={params.row.link} target={"_blank" } rel={"noreferrer"} >{params.row.link} </a>,
+          <a  href={params.row.googlelink} target={"_blank" } rel={"noreferrer"} >{params.row.googlelink} </a>,
       },
 
       ];
 
-     let urlchangeallrecs =  `https://veis-ittools.com:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
+    //  let urlchangeallrecs =  `https://veis-ittools.com:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
+     let urlchangeallrecs = 'https://veis-ittools.com:5900/SAP/BI/ALL/fammile2/country/'
+     let headers = {
+        'accept': 'application/json',
+        'fammile2' : apiparams2.famiile2,
+        'country' : apiparams2.country
 
+     }
+
+     console.log(urlchangeallrecs)
+     console.log(headers)
+     
      const encoded = encodeURI(urlchangeallrecs)
      console.log( urlchangeallrecs)
     
@@ -69,7 +77,18 @@ function AllSAPDatagrid(props) {
       
       const [allusers, setUsers] = useState([])
       const [allinseerecs, setInseerecs] = useState([])
+      const [totalrecs, setTotalrecs] = useState()
   
+    //   useEffect(() => {
+    //     axios.post(urlchangeallrecs, {}, {headers}).then((response) => {
+    //         setUsers(response.data);
+    //         setInseerecs(response.data.SAPALL)
+
+    //         console.log(response.data)
+    //     });
+    //   }, [urlchangeallrecs]);
+      
+      
       useEffect(() => {
         fetchData();
       }, [encoded]);
@@ -77,24 +96,31 @@ function AllSAPDatagrid(props) {
       const fetchData = () => {
         // setApiurl(apiurltocall[0])
         console.log('INSEE API CODE -----')
-        axios.post(encoded).then((response) => {
+        axios.post(encoded, {}, {headers}).then((response) => {
             setUsers(response.data);
             setInseerecs(response.data.SAPALL)
+            setTotalrecs(response.data.Totalrecords)
             console.log('APIRESPONSE ===', response.data)
             console.log(typeof((response.data.SAPALL)))
             console.log(typeof(allinseerecs));
             console.log('here from now');
         })
       }
+
+
+
+
       let inseeid = addId(allinseerecs)
 
   if (!allusers) return null;
   return (
     <Box display="grid" marginTop={3}>
       
-      <Alert  severity="info">All Etablishments</Alert>
+      <Alert  severity="info"> {totalrecs} Etablishments</Alert>
       <Box display="flex" justifyContent="center" alignItems="center"  >
       
+
+      {totalrecs !== 0 ? 
         <DataGrid
               rows = {inseeid}
               columns = {columns}
@@ -102,6 +128,7 @@ function AllSAPDatagrid(props) {
               sx = {userTableStyles}
               components={{ Toolbar: GridToolbar }}
               />  
+      : null}
       </Box>
     </Box> 
   )
