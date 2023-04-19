@@ -17,7 +17,7 @@ function BasicInfo(props) {
     let siren = props.siren
 
 
-    console.log('from new comp BASIC INFO', siren)
+    // console.log('from new comp BASIC INFO', siren)
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -26,7 +26,7 @@ function BasicInfo(props) {
     // BASIC INFORMATION API CALL CODE START------
     // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
-    console.log(urlchange);
+    // console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
     const [siret, setSiret] =useState()
@@ -42,14 +42,14 @@ function BasicInfo(props) {
   
     const fetchData = () => {
       // setApiurl(apiurltocall[0])
-      console.log('BASIC API CODE --here---')
+      // console.log('BASIC API CODE --here---')
       axios.post(urlchange).then((response) => {
           setUsers(response.data);
           setInseerecs(response.data.basicinfo)
-          console.log(response.data)
-          console.log(typeof((response.data.basicinfo)))
-          console.log('INSEE', inseerecs);
-          console.log('here from now');
+          // console.log(response.data)
+          // console.log(typeof((response.data.basicinfo)))
+          // console.log('INSEE', inseerecs);
+          // console.log('here from now');
 
           response.data.basicinfo && Object.entries(response.data.basicinfo).map(([key, value]) => {
             return setSiret(value.SIRET)
@@ -67,16 +67,17 @@ function BasicInfo(props) {
 
     // LA MARCHE INCLUSIVE START
     
+
+
+    let mar_url = `https://veis-ittools.com:9100/lemarche/inclusion/ESAT/${siren}`
     
-    // let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT`
-    let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT/${siret}`
     useEffect(() => {
       MfetchData();
     }, [mar_url]);
   
     const MfetchData = () => {
       // setApiurl(apiurltocall[0])
-      console.log('INSEE API CODE -----')
+      // console.log('LAMARCHE API CODE -----')
       axios.post(mar_url).then((response) => {
         setLamarche(response.data.ESAT)
         setNorecfound(response.data.ESAT.address)
@@ -84,6 +85,9 @@ function BasicInfo(props) {
         // console.log('norec clasue--', response.data.ESAT.detail);
       })
     }
+
+
+
 
     // // let marcheflag = null
     // console.log('state=====MARCHE', lamarche);

@@ -8,7 +8,7 @@ import { LineChart,Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, Responsiv
 function ApexCharts(props) {
   let data = props.data
 
-  console.log('data fom rev api for chart', data)
+  // console.log('data fom rev api for chart', data)
 
   return (
 

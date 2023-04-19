@@ -70,10 +70,10 @@ function FourCharts(props) {
     let effectifchart = props.effectifchart
     
 
-    console.log('CA---', cachart)
-    console.log('resultat---', resultat)
-    console.log('etablishs---', totalrec)
-    console.log('year---', year)
+    // console.log('CA---', cachart)
+    // console.log('resultat---', resultat)
+    // console.log('etablishs---', totalrec)
+    // console.log('year---', year)
 
   return (
     <Box m="20px">

@@ -1,32 +1,7 @@
 import React from 'react'
 import { LineChart,Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-// const data2 = [
 
-//     {
-//       "name": "2020",
-//       "CAPercentDifferent": -22,
-  
-//     },
-//     {
-//       "name": "2019",
-//       "CAPercentDifferent": -35,
-  
-//     },
-//     {
-//       "name": "2018",
-//       "CAPercentDifferent": -14,
-  
-//     },
-//     {
-//       "name": "2017",
-//       "CAPercentDifferent": -3,
-  
-//     },
-  
-  
-//   ]
-  
 
 function PercentDiffer(props) {
     let data = props.data

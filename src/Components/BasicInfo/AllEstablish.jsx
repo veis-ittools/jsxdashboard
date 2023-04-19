@@ -100,10 +100,10 @@ function AllEstablish(props) {
       axios.post(urlchangeallrecs).then((response) => {
           setUsers(response.data);
           setInseerecs(response.data.AllEtablishments)
-          console.log(response.data.AllEtablishments)
-          console.log(typeof((response.data.AllEtablishments)))
-          console.log(typeof(allinseerecs));
-          console.log('here from now');
+          // console.log(response.data.AllEtablishments)
+          // console.log(typeof((response.data.AllEtablishments)))
+          // console.log(typeof(allinseerecs));
+          // console.log('here from now');
       })
     }
     let inseeid = addId(allinseerecs)

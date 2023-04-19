@@ -153,8 +153,8 @@ function Apitest(props) {
         axios.post(urlchange).then((response) => {
             setUsers(response.data);
             setInseerecs(response.data.INSEE)
-            console.log(response.data)
-            console.log('here from now')
+            // console.log(response.data)
+            // console.log('here from now')
       })
     }
 

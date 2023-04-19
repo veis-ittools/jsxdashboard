@@ -85,10 +85,10 @@ function SapFormresults(props) {
         label: famille2
       }))
 
-      console.log('value autnafinputValue --=', autnafinputValue)
-      console.log(typeof(autnafinputValue))
-      console.log(autnafinputValue.length)
-      console.log('flag autonaf----=', autonaf)
+    //   console.log('value autnafinputValue --=', autnafinputValue)
+    //   console.log(typeof(autnafinputValue))
+    //   console.log(autnafinputValue.length)
+    //   console.log('flag autonaf----=', autonaf)
 
 
 

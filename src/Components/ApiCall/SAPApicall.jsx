@@ -19,28 +19,28 @@ function SAPApicall(props) {
     let ESS = apiparams2.ESS
     let location = apiparams2.location
 
-    console.log(location)
-    console.log(location.toString().length )
+    // console.log(location)
+    // console.log(location.toString().length )
     let regionlen  = location.toString().length
-    console.log(datasource)
+    // console.log(datasource)
 
-    console.log('SAP BI block----', apiparams2)
+    // console.log('SAP BI block----', apiparams2)
 
     let apiurltocall = sapurlformating(famille2, ESS, location,category, regionlen)
-    console.log('SAP ---- BI function output', apiurltocall)
+    // console.log('SAP ---- BI function output', apiurltocall)
 
     apiurllist.push(apiurltocall[0])
     let urlchange = apiurllist[0]
 
-    console.log('urltocall---', urlchange)
+    // console.log('urltocall---', urlchange)
 
     const encoded_url = encodeURI(urlchange)
 
-    console.log('urltocall encoded_url---',encoded_url )
+    // console.log('urltocall encoded_url---',encoded_url )
 
-    let url ='https://veis-ittools.com:5900/SAP/BI/RACCORDS%20COSSES%20MANCHONS%20ET%20CONNECTIQUE%20%7C%20AHELIA12?cat_name=All&ESS=false' 
+    // let url ='https://veis-ittools.com:5900/SAP/BI/RACCORDS%20COSSES%20MANCHONS%20ET%20CONNECTIQUE%20%7C%20AHELIA12?cat_name=All&ESS=false' 
 
-    console.log('url_url---',url )
+    // console.log('url_url---',url )
     
     
     // let headers = {
@@ -127,7 +127,7 @@ function SAPApicall(props) {
     const handleButtonClick = (params) => {
         setSelectedRow(params.row.SIRET);
         // setAllrgerows(params.row)
-        console.log('sap basic all ROW----', selectedRow);
+        // console.log('sap basic all ROW----', selectedRow);
     };  
 
  
