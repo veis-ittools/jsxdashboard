@@ -3,6 +3,8 @@ import axios from "axios";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import { Box, Button ,TextField, useTheme } from "@mui/material";
 // // import MyComponent from './MyComponent';
+import Alert from '@mui/material/Alert';
+
 import ContentRge from './ContentRge';
 import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
@@ -151,6 +153,9 @@ if (rgerecs!== [] && domainflag === true && buttonclick === true) {
     return (
     
         <Box m="20px">
+        <Alert sx={{width:'85%' }} severity="info">   Click 'More' button and scroll down  to see more details</Alert>
+  
+
             <Box display="flex" justifyContent="center" alignItems="center"  >
     
                 <DataGrid 

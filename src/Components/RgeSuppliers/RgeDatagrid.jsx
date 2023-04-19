@@ -124,8 +124,11 @@ if (rgerecs!== [] && rgeflag === true) {
     return (
   
       <Box m="20px">
-          <Box display="flex" justifyContent="center" alignItems="center"  >
+
   
+
+          <Box display="flex" justifyContent="center" alignItems="center"  >
+   
           <DataGrid 
             rows = {rgerecs}
             columns = {columns}

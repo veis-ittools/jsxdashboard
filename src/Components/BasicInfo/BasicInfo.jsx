@@ -1,7 +1,7 @@
 
 import React, {useEffect, useState} from 'react'
-import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../theme";
+// import { useContext } from "react";
+import {  tokens } from "../../theme";
 import { Box, useTheme, Typography, Grid, Tooltip } from "@mui/material";
 
 
@@ -17,7 +17,7 @@ function BasicInfo(props) {
     let siren = props.siren
 
 
-    console.log('from new comp', siren)
+    console.log('from new comp BASIC INFO', siren)
 
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -29,7 +29,7 @@ function BasicInfo(props) {
     console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
-
+    const [siret, setSiret] =useState()
     const [users, setUsers] = useState([])
     const [inseerecs, setInseerecs] = useState([])
 
@@ -48,8 +48,13 @@ function BasicInfo(props) {
           setInseerecs(response.data.basicinfo)
           console.log(response.data)
           console.log(typeof((response.data.basicinfo)))
-          console.log(typeof(inseerecs));
+          console.log('INSEE', inseerecs);
           console.log('here from now');
+
+          response.data.basicinfo && Object.entries(response.data.basicinfo).map(([key, value]) => {
+            return setSiret(value.SIRET)
+          })
+
       })
     }
 
@@ -61,8 +66,10 @@ function BasicInfo(props) {
 
 
     // LA MARCHE INCLUSIVE START
+    
+    
     // let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT`
-    let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT/${siren}`
+    let mar_url = `https://veis-ittools.com:9100/lemarche.inclusion/ESAT/${siret}`
     useEffect(() => {
       MfetchData();
     }, [mar_url]);
@@ -73,19 +80,14 @@ function BasicInfo(props) {
       axios.post(mar_url).then((response) => {
         setLamarche(response.data.ESAT)
         setNorecfound(response.data.ESAT.address)
-
         // console.log('larmache--', response.data.ESAT);
         // console.log('norec clasue--', response.data.ESAT.detail);
-        
-
-        
-
       })
     }
 
-    // let marcheflag = null
-    console.log('state', lamarche);
-    console.log('state undefin',norecfound );
+    // // let marcheflag = null
+    // console.log('state=====MARCHE', lamarche);
+    // console.log('state undefin',norecfound );
     // Object.entries(lamarche).map(([key, value]) => {
 
     //   console.log('key', key);

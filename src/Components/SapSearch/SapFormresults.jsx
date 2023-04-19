@@ -14,10 +14,6 @@ import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
 import Switch from '@mui/material/Switch';
 import Apirouting from '../ApiCall/Apirouting';
-import MenuItem from '@mui/material/MenuItem';
-
-import Select from '@mui/material/Select';
-import { minWidth } from '@mui/system';
 
 function SapFormresults(props) {
     
@@ -160,6 +156,7 @@ function SapFormresults(props) {
                     label="famille2"
                     name="famille2"
                     autoFocus
+                    required
                     />}
 
                     /> 
@@ -225,7 +222,7 @@ function SapFormresults(props) {
                         id="location"
                         label="Region"
                         name="location"
-                        autoFocus
+                        
                         />}
 
                         /> 

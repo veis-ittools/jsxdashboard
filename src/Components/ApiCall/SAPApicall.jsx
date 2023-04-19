@@ -43,9 +43,9 @@ function SAPApicall(props) {
     console.log('url_url---',url )
     
     
-    let headers = {
-      'accept': 'application/json',
-    }
+    // let headers = {
+    //   'accept': 'application/json',
+    // }
     
     const [users, setUsers] = useState([])
     const [birecs, setBIrecs] = useState([])
@@ -157,7 +157,7 @@ if (birecs!== [] && biflag === true) {
   
       <Box m="20px">
            
-           <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found</Alert>
+           <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found,  Click 'More' button and scroll down  to see more details</Alert>
     
           <Box display="flex" justifyContent="center" alignItems="center"  >
 

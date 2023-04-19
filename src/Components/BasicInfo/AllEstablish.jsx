@@ -1,7 +1,7 @@
 
 import React, {useEffect, useState} from 'react'
 
-import { Box, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import axios from "axios";
 import Alert from '@mui/material/Alert';
@@ -26,8 +26,6 @@ function AllEstablish(props) {
 
 
     // console.log('from all es new comp', siren)
-
-    const theme = useTheme();
 
     const userTableStyles = {
         // m: 2,

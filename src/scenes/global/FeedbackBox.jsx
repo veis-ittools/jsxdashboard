@@ -62,7 +62,7 @@ function FeedbackBox() {
         Feedback
       </Typography>
       <Typography variant="h5" color={colors.greenAccent[400]}>
-        Search using VINCI Classification
+        Kindly share your ideas, feedbacks, so that we can improve the user experience and functionalities of this application
       </Typography>
 
 

@@ -75,7 +75,7 @@ function NafForm(props) {
 
         // STATE FOR NAF
         let [inputnaf , setInputnaf ] =  useState({})
-        const [nafflag, setNafflag] = useState(false)
+        // const [nafflag, setNafflag] = useState(false)
 
         
         // STATE FOR AUTOCOMPLETE INPUT NAF
@@ -85,7 +85,7 @@ function NafForm(props) {
             axios.post(URL).then((response) => {
                 // console.log(response)
                 setInputnaf(response.data.NAFS);
-                setNafflag(true)
+                // setNafflag(true)
                 // console.log(response.data)
 
             });
@@ -209,7 +209,7 @@ function NafForm(props) {
                         margin="normal"
                         fullWidth
                         id="location"
-                        label="City/Province/Region"
+                        label="Regions"
                         name="location"
                         autoFocus
                         />}

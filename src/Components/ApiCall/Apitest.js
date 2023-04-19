@@ -3,10 +3,12 @@ import axios from "axios";
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 // import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
-
+import Alert from '@mui/material/Alert';
 import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
 import AllEstablish from '../BasicInfo/AllEstablish';
+
+
 
 function Apitest(props) {
 
@@ -160,6 +162,8 @@ function Apitest(props) {
   if (!users) return null;
   return (
     <Box m="20px">
+
+      <Alert  severity="info">All Etablishments, Click 'More' button and scroll down  to see more details </Alert>
       <Box display="flex" justifyContent="center" alignItems="center"  >
         <DataGrid
               rows = {inseerecs}
