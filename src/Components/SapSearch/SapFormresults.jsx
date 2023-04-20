@@ -130,7 +130,7 @@ function SapFormresults(props) {
   
     return (
     
-        <Box component="form" marginLeft={2} onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
+        <Box component="form" marginLeft={1} onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={10}>
                     <Autocomplete

@@ -221,7 +221,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             /> 
-            {/* <Typography
+            <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
@@ -230,7 +230,7 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Manage Team"
-              to="/inactive"
+              to="/newpage"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -243,7 +243,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-  */}
+  
 
 
 

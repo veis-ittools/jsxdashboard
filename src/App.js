@@ -30,6 +30,7 @@ import RgeSuppliers from "./Components/RgeSuppliers/RgeSuppliers";
 import AllCountrySAP from "./Components/AllCountrySAP/AllCountrySAP";
 
 import FeedbackBox from "./scenes/global/FeedbackBox";
+import NewMainSAP from "./Components/NewMainSAP/NewMainSAP";
 
 // old siren
 // import SearchSiren from "./Components/SearchSiren/SearchSiren";
@@ -73,7 +74,9 @@ function ProfileContent() {
                   <Route path="/contacts" element={<BlankPage />} /> 
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/inactive" element={<BlankPage />} /> 
-                  <Route path="/help" element={<FeedbackBox />} /> 
+                  <Route path="/help" element={<FeedbackBox />} />
+                  <Route path="/newpage" element={<NewMainSAP />} />
+                   
                 </Routes>
               </main>
             </div>
