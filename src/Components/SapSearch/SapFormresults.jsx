@@ -59,7 +59,8 @@ function SapFormresults(props) {
                 ESS: data.get('ESS'),
                 companysize: data.get('companysize'), 
                 'iscomplete': true,
-                'datasource': 'BI'
+                'datasource': 'BI', 
+                'famille1': famille1
                 
     
             }
@@ -80,15 +81,19 @@ function SapFormresults(props) {
         });
       }, [URL]);
 
-      const skillsOptions = famille2.map((famille2, index) => ({
+      const newFirstElement = ' '
+      const newfamille2 = [newFirstElement].concat(famille2)
+
+      const skillsOptions = newfamille2.map((newfamille2, index) => ({
         id: index + 1,
-        label: famille2
+        label: newfamille2
       }))
 
     //   console.log('value autnafinputValue --=', autnafinputValue)
     //   console.log(typeof(autnafinputValue))
     //   console.log(autnafinputValue.length)
     //   console.log('flag autonaf----=', autonaf)
+    console.log('skill options---',skillsOptions )
 
 
 
@@ -129,10 +134,12 @@ function SapFormresults(props) {
     }
   
     return (
-    
-        <Box component="form" marginLeft={1} onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
+        <Box marginRight={0} marginLeft={2.1}>
+
+        
+        <Box component="form"   onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={10}>
+                <Grid item xs={12} sm={8.2}>
                     <Autocomplete
                     id="combo-box-demo"
                     onChange={(_, newValue) => {
@@ -252,7 +259,7 @@ function SapFormresults(props) {
 
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                    <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="L'économie sociale et solidaire (ESS) [FR Only]" value="YES" name='ESS' id='ESS'/>
+                    <FormControlLabel sx={{marginTop:2.5}} control={<Switch color='primary' />} label="L'économie sociale et solidaire (ESS)" value="YES" name='ESS' id='ESS'/>
                 </Grid>
             </Grid>
             <Button
@@ -265,6 +272,9 @@ function SapFormresults(props) {
             </Button> 
 
             {formcomplete && <Apirouting apiparams2= {apiparams2}  ></Apirouting> }
+
+        </Box>
+
 
         </Box>
 

@@ -28,58 +28,64 @@ function NewMainSAP() {
     console.log('couuntry from new', country);
 
   return (
-    <Box mb="25px" marginLeft={2}>
+    <Box  marginLeft={2} marginTop={-2}>
       <Box display="flex" justifyContent="space-between" p={1} >
-      
-        <Typography
-          variant="h3"
-          color={colors.grey[100]}
-          // fontWeight="bold"
-          sx={{ m: "0 0 5px 0" }}
+      <Grid marginTop={-2} marginLeft={1} alignContent={'center'} container spacing={2}
         >
-          SAP BI Search using VINCI Classification
-        </Typography>
-        {/* <Typography variant="h5" color={colors.greenAccent[400]}>
-          Search using VINCI Classification
-        </Typography> */}
+
+      <Grid item xs={12} sm={8}>  
+          <Typography
+            variant="h3"
+            color={colors.grey[100]}
+            // fontWeight="bold"
+            sx={{ m: "0 0 5px 0" }}
+          >
+            SAP BI Search using VINCI Classification
+          </Typography>
+          {/* <Typography variant="h5" color={colors.greenAccent[400]}>
+            Search using VINCI Classification
+          </Typography> */}
 
 
-      
-      {/* <NewMainsearch></NewMainsearch>   */}
-      {/* <NewSapSearch></NewSapSearch> */}
+        
+        {/* <NewMainsearch></NewMainsearch>   */}
+        {/* <NewSapSearch></NewSapSearch> */}
+        </Grid>
 
 
-      <Box  >
+        <Grid item xs={12} sm={4}>  
 
-      <FormControl sx={{ m: 2, minWidth: 220 , }}>
-                <InputLabel sx = {{maxHeight:75, minWidth:45}}  >
-                    Country
-                </InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={country}
-                label="Country"
-                onChange={handleChange}
-                variant="outlined" 
-                size="small"
-                margin="normal"
-                required
-                defaultValue='FRANCE'
-                
-                >
-                {/* <MenuItem value="">
-                    <em>FRANCE</em>
-                </MenuItem> */}
-                <MenuItem  value={'FRANCE'}>FRANCE</MenuItem>
-                <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
-                <MenuItem value={'PORTUGAL'}>PORTUGAL</MenuItem>
-                {/* <MenuItem value={'GERMANY(*inactive)'}>GERMANY(*inactive)</MenuItem>
-                <MenuItem value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</MenuItem> */}
-                </Select>
-            </FormControl>
+            <FormControl sx={{ m: 2, minWidth: 220 , }}>
+                      <InputLabel sx = {{maxHeight:75, minWidth:45}}  >
+                          Country
+                      </InputLabel>
+                      <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={country}
+                      label="Country"
+                      onChange={handleChange}
+                      variant="outlined" 
+                      size="small"
+                      margin="normal"
+                      required
+                      defaultValue='FRANCE'
+                      
+                      >
+                      {/* <MenuItem value="">
+                          <em>FRANCE</em>
+                      </MenuItem> */}
+                      <MenuItem  value={'FRANCE'}>FRANCE</MenuItem>
+                      <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
+                      <MenuItem value={'PORTUGAL'}>PORTUGAL</MenuItem>
+                      {/* <MenuItem value={'GERMANY(*inactive)'}>GERMANY(*inactive)</MenuItem>
+                      <MenuItem value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</MenuItem> */}
+                      </Select>
+                  </FormControl>
 
-      </Box>
+        </Grid>
+
+      </Grid>
 
       </Box> 
 

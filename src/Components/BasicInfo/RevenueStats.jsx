@@ -7,6 +7,14 @@ import { Box, useTheme } from "@mui/material";
 import axios from "axios";
 import FourCharts from './FourCharts';
 import Alert from '@mui/material/Alert';
+import DataGridRev from './DataGridRev';
+
+// const addId=(arr)=> {
+//   return arr.map((obj, index)=>  {
+//     return ({...obj,id: index })
+//   });
+// };
+
 
 function RevenueStats(props) {  
     let siren = props.siren
@@ -36,6 +44,11 @@ function RevenueStats(props) {
     const [cachart, setCachart] = useState([])
     const [resultatchart, setResultatchart] = useState([])
     const [effectifchart, setEffectifchart] = useState([])
+
+
+    // data fromae rev datagrid
+    const [datarev, setDatarev] =  useState()
+
     
 
     useEffect(() => {
@@ -94,6 +107,59 @@ function RevenueStats(props) {
 
 
     // TOTAL ESTABLISHMENTS API CALL END-------
+
+
+
+    // datagrid fro rev start
+    let revdatarecs =  null
+    let Durlchange = `https://veis-ittools.com:9100/FR/enterprise/data/${siren}`
+    console.log(Durlchange);
+    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    
+    let [drev, setDrev] =  useState()
+    useEffect(() => {
+        DfetchData();
+      }, [Durlchange]);
+    
+      const DfetchData = () => {
+        // setApiurl(apiurltocall[0])
+        console.log('---Total records--')
+        axios.post(Durlchange).then((response) => {
+            setDatarev(response.data.revenue)
+            console.log(response.data.revenue)
+            console.log(typeof((response.data.revenue)))
+            console.log(typeof(datarev));
+            console.log('here from now');
+
+            // response.data.revenue && Object.entries(
+            // let revdatarecs = addId(datarev)
+
+            response.data.revenue && Object.entries(response.data.revenue).map(([key, value]) => {
+              return setDrev(value)
+            })
+
+      })
+    }
+
+
+    console.log('okali', drev)
+    drev[ 'id' ] = 1;
+    console.log('okali 2', drev)
+
+
+
+    
+    
+    // datarev && Object.entries(datarev).map(([key, value]) => {
+    //   return 
+      
+      
+    // })
+   
+   
+
+
+
   return (
     <Box  justifyContent='center' marginTop={1}>
 
@@ -112,7 +178,10 @@ function RevenueStats(props) {
         
         {revinseerecs === null ?  
         <Alert severity="error">Revenue details not available</Alert>  
-        : null} 
+        : null}
+
+         {/* {drev !==null ? <DataGridRev drev = {drev} ></DataGridRev>
+        : null}  */}
 
 
 

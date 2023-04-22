@@ -18,10 +18,10 @@ function FRFrontpage(props) {
     let [inputValue, setInputValue] = useState('')
 
   return (
-    <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={1}
-    >
-      <Grid item xs={12} sm={10}>
 
+    <Box marginRight={-2} >
+        <Grid container spacing={3} >
+        <Grid item xs={12} sm={10}>
         <Autocomplete
             value={value}
             onChange={(_, newValue) => {
@@ -32,7 +32,7 @@ function FRFrontpage(props) {
             
             onInputChange={(_, newInputValue) => {
             setInputValue(newInputValue)
-            console.log(newInputValue)
+            console.log('input value', newInputValue)
             console.log(typeof(newInputValue))
             console.log(newInputValue.toString().length)
             if (newInputValue.toString().length > 5){
@@ -61,11 +61,11 @@ function FRFrontpage(props) {
             />}                   
             />
       </Grid>
-
+      </Grid> 
       {flag === true   ?  <SapFormresults  famille1= {inputValue} ></SapFormresults>
         : null}
 
-      </Grid>
+      </Box>
 
 
   )

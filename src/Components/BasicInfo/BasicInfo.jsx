@@ -10,10 +10,12 @@ import Alert from '@mui/material/Alert';
 
 // import Header from '../Header';
 import axios from "axios";
-
+import { useRef } from 'react';
 
 function BasicInfo(props) {
 
+
+    const aboutSection = useRef(null);
     let siren = props.siren
 
 
@@ -112,7 +114,7 @@ function BasicInfo(props) {
     // <Box backgroundColor={colors.primary[400]}  justifyContent='center' 
     <Box  justifyContent='center' 
         sx={{
-            marginTop: -3,
+            marginTop: 1,
             marginLeft: 2,
             display: 'flex',
             flexDirection: 'column',
@@ -123,6 +125,7 @@ function BasicInfo(props) {
             
             
         }}
+        ref={aboutSection}
     > 
       {/* <Header title="Présentation de la société VINCI ENERGIES" subtitle="Categorie Juridique UniteLegale SA à conseil d'administration (s.a.i.)" /> */}
       {inseerecs && Object.entries(inseerecs).map(([key, value]) => {

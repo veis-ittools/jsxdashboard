@@ -2,13 +2,27 @@ import React, {useEffect, useState} from 'react'
 import axios from "axios";
 // import Datagrid from './Datagrid';
 // import Button from '@mui/material/Button';
+
 import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import { DataGrid , GridToolbar} from '@mui/x-data-grid';
 import { Box } from '@mui/system';
 import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
 import AllEstablish from '../BasicInfo/AllEstablish';
 import ExampleComp from '../BasicInfo/ExampleComp';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+
+import ScrollToBottom from 'react-scroll-to-bottom';
+
+
+const scrollToBottom = () => {
+  window.scrollTo({
+    // top: document.documentElement.scrollHeight,
+    top: 600,
+    behavior: 'smooth',
+  });
+};
 
 function SAPApicall(props) {
     let apiurllist =[]
@@ -18,9 +32,38 @@ function SAPApicall(props) {
     let category = apiparams2.companysize
     let ESS = apiparams2.ESS
     let location = apiparams2.location
+    let famille1 = apiparams2.famille1
 
-    // console.log(location)
-    // console.log(location.toString().length )
+    console.log('famille1----', famille1)
+    console.log('famille2----',  famille2)
+
+    console.log('famille1----', famille1.slice(-6))
+    console.log('famille2----',  famille2.slice(-8))
+
+    let codefam1 = famille1.slice(-6)
+    let tempfam2 = famille2.slice(-8)
+    let codefam2 = tempfam2.slice(0,6)
+
+    console.log('codefam2---', codefam2)
+    let codecorrect = null
+
+    const codeflagset = (codefam1, codefam2) => {
+      if (codefam1===codefam2){
+        return codecorrect = true
+      }return codecorrect = false
+      
+    }
+
+    let flagtocall = codeflagset(codefam1, codefam2)
+
+    console.log('flagtocall---', flagtocall)
+    
+
+
+
+    
+    
+    
     let regionlen  = location.toString().length
     // console.log(datasource)
 
@@ -57,12 +100,12 @@ function SAPApicall(props) {
 
     const userTableStyles = {
         // m: 2,
-        // marginTop: 2,
+        marginTop: 2,
         // height: '370px',
-        height: '450px',
-        width: 800,
-        display: 'flex',
-        flexDirection: 'column',
+        height: '400px',
+        width: 600,
+        // display: 'flex',
+        // flexDirection: 'column',
         boxShadow: 2,
         border: 2,
         borderColor: 'primary.light',
@@ -76,7 +119,7 @@ function SAPApicall(props) {
 
 
 
-        { field: 'Name', headerName: 'Name', width: 300 },
+        { field: 'Name', headerName: 'Name', width: 250 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
 
@@ -126,6 +169,8 @@ function SAPApicall(props) {
       ];
     const handleButtonClick = (params) => {
         setSelectedRow(params.row.SIRET);
+        scrollToBottom()
+
         // setAllrgerows(params.row)
         // console.log('sap basic all ROW----', selectedRow);
     };  
@@ -152,28 +197,39 @@ function SAPApicall(props) {
     }
 
 if (!users) return null;
-if (birecs!== [] && biflag === true) {
+if (birecs!== [] && biflag === true && flagtocall === true) {
     return (
   
-      <Box m="20px">
+      <Box marginRight={1}>
            
            <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found,  Click 'More' button and scroll down  to see more details</Alert>
     
-          <Box display="flex" justifyContent="center" alignItems="center"  >
+          <Box display="flex" maxWidth={1275}   > 
 
-          {totalrecs !== 0 ? 
-  
-          <DataGrid 
-            rows = {birecs}
-            columns = {columns}
-            // loading = {!birecs.length}
-            sx = {userTableStyles}
-            components={{ Toolbar: GridToolbar }}
-            checkboxSelection
-            // getRowId={(rows) =>  generateRandom()}  
-            /> 
-            : null}
-          </Box>
+              {totalrecs !== 0 ? 
+      
+              <DataGrid 
+                rows = {birecs}
+                columns = {columns}
+                // loading = {!birecs.length}
+                sx = {userTableStyles}
+                components={{ Toolbar: GridToolbar }}
+                checkboxSelection
+                // getRowId={(rows) =>  generateRandom()}  
+                /> 
+                : null}
+          </Box> 
+          
+          
+          
+          {/* {selectedRow && 
+          
+          <Stack direction="row" alignItems="center" gap={2}>          
+            <Alert sx={{width:'15%' }} severity="info" > Scroll down here </Alert> 
+            <ArrowDownwardIcon/>
+          </Stack>
+          } */}
+          
           {selectedRow && <BasicInfo siren = {selectedRow}></BasicInfo>}
           {selectedRow && <RevenueStats siren = {selectedRow}></RevenueStats> }
           {selectedRow && <AllEstablish siren = {selectedRow}></AllEstablish>}  
@@ -186,9 +242,13 @@ if (birecs!== [] && biflag === true) {
       
     );
   }
-  return null ;
+  return  <Alert  sx={{width:'85%' }} severity="error"> Selected Achat Famille 1 and Achat Famille 2 are Different. Plase check Famille1/Famille2 feilds</Alert> ;
   
 }
+
+
+
+
 
 export default SAPApicall
 

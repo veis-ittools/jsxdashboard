@@ -111,7 +111,7 @@ function AllEstablish(props) {
 
   if (!allusers) return null;
   return (
-    <Box display="grid" marginTop={3}>
+    <Box display="grid" marginTop={10}>
       
       <Alert  severity="info">All Etablishments</Alert>
       <Box display="flex" justifyContent="center" alignItems="center"  >
