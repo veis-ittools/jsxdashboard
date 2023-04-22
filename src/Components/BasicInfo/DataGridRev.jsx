@@ -15,12 +15,13 @@ const addId=(arr)=> {
   });
 };
 
+
 function DataGridRev(props) {
 
-    let drev = props.drev
+    const datarev = props.datarev
 
-    let datarev = addId(drev)
-
+    console.log('from datagrid', datarev);
+    console.log('type', typeof(datarev));
 
 
 
@@ -28,8 +29,8 @@ function DataGridRev(props) {
         // m: 2,
         // marginTop: 2,
         // height: '370px',
-        height: '450px',
-        width: 400,
+        height: '200px',
+        width:900 ,
         display: 'flex',
         flexDirection: 'column',
         boxShadow: 2,
@@ -41,24 +42,38 @@ function DataGridRev(props) {
     }
 
     const columns = [
-        { field: 'id', headerName: 'Id', width: 30 },
-        { field: 'Date de cloture exercice 2020', headerName: 'Date de cloture exercice 2020', width: 300 },
-        { field: 'Date de cloture exercice 2019', headerName: 'Date de cloture exercice 2019', width: 150 },
-
+        { field: 'id', headerName: 'id', width: 30 },
+        { field: 'CA2020',  headerName: 'CA2020', width: 100 },
+        { field: 'Date de cloture exercice 2020', headerName: 'Date de cloture exercice 2020', width: 175 },
+        { field: 'CA2019',  headerName: 'CA2019', width: 100 },
+        { field: 'Date de cloture exercice 2019', headerName: 'Date de cloture exercice 2019', width: 175 },
+        { field: 'CA2018',  headerName: 'CA2018', width: 100 },
+        { field: 'Date de cloture exercice 2018', headerName: 'Date de cloture exercice 2018', width: 175 },
+        { field: 'CA2017',  headerName: 'CA2017', width: 100 },
+        { field: 'Date de cloture exercice 2017', headerName: 'Date de cloture exercice 2017', width: 175 },
+        { field: 'CA2016',  headerName: 'CA2016', width: 100 },
+        { field: 'Date de cloture exercice 2016', headerName: 'Date de cloture exercice 2016', width: 175 },
+              
 
       ];
+    let inseeid = addId(datarev)
 
-
-  if (!datarev) return null;
+  // if (!drev) return null;
   return (
     <Box display="grid" marginTop={3}>
+
+
+      <Alert  severity="info">Revenue Report</Alert>
+
+      { inseeid !== undefined ? 
         <DataGrid
-            rows = {datarev}
+            rows = {inseeid}
             columns = {columns}
         //   loading = {!allinseerecs.length}
             sx = {userTableStyles}
             components={{ Toolbar: GridToolbar }}
             />  
+            : null } 
     </Box>
   )
 }

@@ -19,6 +19,7 @@ import DataGridRev from './DataGridRev';
 function RevenueStats(props) {  
     let siren = props.siren
     siren = siren.toString()
+    siren = siren.replace(/['" ]+/g, '');
 
 
 
@@ -47,7 +48,10 @@ function RevenueStats(props) {
 
 
     // data fromae rev datagrid
-    const [datarev, setDatarev] =  useState()
+
+    const [datarev, setDatarev] =  useState([])
+    let [drev, setDrev] =  useState([])
+    const [dataflag, setDataflag] = useState(false)
 
     
 
@@ -116,7 +120,7 @@ function RevenueStats(props) {
     console.log(Durlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
     
-    let [drev, setDrev] =  useState()
+    
     useEffect(() => {
         DfetchData();
       }, [Durlchange]);
@@ -126,6 +130,8 @@ function RevenueStats(props) {
         console.log('---Total records--')
         axios.post(Durlchange).then((response) => {
             setDatarev(response.data.revenue)
+            setDataflag(dataflag===true)
+
             console.log(response.data.revenue)
             console.log(typeof((response.data.revenue)))
             console.log(typeof(datarev));
@@ -143,8 +149,9 @@ function RevenueStats(props) {
 
 
     console.log('okali', drev)
-    drev[ 'id' ] = 1;
+    // drev.id = 1
     console.log('okali 2', drev)
+    console.log('flag ', dataflag);
 
 
 
@@ -180,8 +187,8 @@ function RevenueStats(props) {
         <Alert severity="error">Revenue details not available</Alert>  
         : null}
 
-         {/* {drev !==null ? <DataGridRev drev = {drev} ></DataGridRev>
-        : null}  */}
+         {datarev !== undefined  ? <DataGridRev datarev = {datarev} ></DataGridRev>
+        : null}  
 
 
 

@@ -17,6 +17,7 @@ function BasicInfo(props) {
 
     const aboutSection = useRef(null);
     let siren = props.siren
+    siren = siren.replace(/['" ]+/g, '');
 
 
     // console.log('from new comp BASIC INFO', siren)
