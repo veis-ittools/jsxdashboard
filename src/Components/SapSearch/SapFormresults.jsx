@@ -22,7 +22,9 @@ function SapFormresults(props) {
     // get the fammille 2
     // STATE FOR FAMILE2
     // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/`
-    let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+    // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+    let URL = `https://veis-ittools.eu/BI/purchasefamille2/${famille1}`
+    
     // let headers = {
     //     'accept': 'application/json',
     //     'famille1': famille1
@@ -98,7 +100,9 @@ function SapFormresults(props) {
 
 
     // ===================================REGION OPEN=====================================================
-    let regionurl = 'https://veis-ittools.com:5900/FR/Regions/'
+    // let regionurl = 'https://veis-ittools.com:5900/FR/Regions/'
+
+    let regionurl = 'https://veis-ittools.eu/FR/Regions/'
     // state region
     let [inputRegion, setRegion] = useState([])
     // state to store after search, dynamic inputs

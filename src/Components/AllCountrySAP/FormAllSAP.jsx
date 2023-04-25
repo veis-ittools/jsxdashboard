@@ -18,7 +18,10 @@ function FormAllSAP(props) {
     // get the fammille 2
     // STATE FOR FAMILE2
     // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/`
-    let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+    // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+
+    let URL = `https://veis-ittools.eu/BI/purchasefamille2/${famille1}`
+    
 
 
     // let headers = {
