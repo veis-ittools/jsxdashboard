@@ -13,7 +13,7 @@ function RgeResults(props) {
     
     // const [domain, setDomain] =  useState('')
     // let URL = `https://veis-ittools.com:9100/domain/RGE/`
-    let URL = `https://veis-ittools.com:9100/domain/RGE/${meta}`
+    let URL = `https://veis-ittools.eu/domain/RGE/${meta}`
 
     let headers = {
       'accept': 'application/json',

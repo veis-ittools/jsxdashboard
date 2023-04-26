@@ -38,7 +38,7 @@ function NewMainsearch() {
             {/* <Header title="Search" subtitle="Search using VINCI fammille classification " /> */}     
         </Box> 
 
-        <Grid marginTop={-3} marginLeft={1} alignContent={'center'} container spacing={2}
+        <Grid marginTop={-1} marginLeft={1} alignContent={'center'} container spacing={2}
         >
           <Grid item xs={12} sm={10}>
             <Autocomplete

@@ -17,7 +17,8 @@ function SecondSearchbar(props) {
     let famille1 = props.famille1
     console.log(famille1)
     // let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/`
-    let URL = `https://veis-ittools.com:5900/BI/purchasefamille2/${famille1}`
+    let URL = `https://veis-ittools.eu/BI/purchasefamille2/${famille1}`
+    
     // let headers = {
     //   'accept': 'application/json',
     //   'famille1' : famille1
@@ -62,7 +63,7 @@ function SecondSearchbar(props) {
 
                         onInputChange={(_, autnafinputValue) => {
                         setAutnafinputValue(autnafinputValue)
-                        setAutonaf(!autonaf)
+                        setAutonaf(autonaf===true)
                         }}
                         options={skillsOptions}
 
@@ -91,7 +92,9 @@ function SecondSearchbar(props) {
         
         {/* {autonaf && <NafForm famille2 = {autnafinputValue}></NafForm>} */}
 
-        {autonaf=== true  ? <NafForm famille2 = {autnafinputValue}></NafForm> : null} 
+        {/* {autonaf=== true  ? <NafForm famille2 = {autnafinputValue}></NafForm> : null}  */}
+        {autnafinputValue.length > 2 ? <NafForm famille2 = {autnafinputValue}></NafForm> : null }
+        
         {/* { autnafinputValue.length === 0  ? <h6>No data</h6> : null}  */}
         
 

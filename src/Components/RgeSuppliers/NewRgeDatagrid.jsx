@@ -10,6 +10,15 @@ import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
 import AllEstablish from '../BasicInfo/AllEstablish';
 
+
+const scrollToBottom = () => {
+    window.scrollTo({
+      // top: document.documentElement.scrollHeight,
+      top: 600,
+      behavior: 'smooth',
+    });
+  };
+
 function NewRgeDatagrid(props) {
 
     let meta = props.meta
@@ -28,7 +37,7 @@ function NewRgeDatagrid(props) {
 
 
 
-    let URL = `https://veis-ittools.com:9100/RGE/${meta}/domain/${domain}`
+    let URL = `https://veis-ittools.eu/RGE/${meta}/domain/${domain}`
 
     const [users, setUsers] = useState([])
     const [selectedRow, setSelectedRow] = useState(null);
@@ -123,6 +132,7 @@ function NewRgeDatagrid(props) {
     const handleButtonClick = (params) => {
         setSelectedRow(params.row.siret);
         setAllrgerows(params.row)
+        scrollToBottom()
         console.log('rge all rec----', allrgerows);
     };   
     

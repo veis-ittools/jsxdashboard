@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid, IconButton, Link, Tooltip  } from "@mui/material";
+import { Box, useTheme, Typography, Button, Grid, IconButton, Link, Tooltip, Input  } from "@mui/material";
 import Alert from '@mui/material/Alert';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import Avatar from '@mui/material/Avatar';
@@ -9,31 +9,9 @@ import Stack from '@mui/material/Stack';
 import LanguageIcon from '@mui/icons-material/Language';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
-// import { makeStyles } from '@material-ui/core/styles';
-// import { keyframes } from 'styled-components';
-
-// const shakeAnimation = keyframes`
-//   0% { transform: rotate(0deg); }
-//   25% { transform: rotate(20deg); }
-//   50% { transform: rotate(0deg); }
-//   75% { transform: rotate(-20deg); }
-//   100% { transform: rotate(0deg); }
-// `;
-
 
 
 function ContentRge(props) {
-
-    // const useStyles = makeStyles({
-    //     shakeIcon: {
-    //       '&:hover': {
-    //         animation: `${shakeAnimation} 0.5s ease`,
-    //       },
-    //     },
-    //   })
-    
-    // const classes = useStyles();
-
 
     let rgerows = props.rgerows
     const theme = useTheme();
@@ -45,7 +23,7 @@ function ContentRge(props) {
     let cert = rgerows.url_qualification
     let website = rgerows.site_internet
 
-    console.log('i want--', website);
+    // console.log('i want--', website);
   
   
   
@@ -61,8 +39,7 @@ function ContentRge(props) {
                 variant="h5"
                 color={colors.grey[100]}
                 // fontWeight="bold"
-                sx={{ m: "1 0 5px 0" }}
-                
+                sx={{ m: "0 0 5px 0" }}
             >
                 Main Sector - {rgerows.meta_domaine}        
             </Typography >
@@ -78,23 +55,41 @@ function ContentRge(props) {
 
             <Stack direction="row" alignItems="center" gap={2}>
                 {/* <Alert severity="success">RGE Certificate</Alert>  */}
-                <Typography variant="h5">RGE Certificate {rgerows.nom_certificat}</Typography>
-                <Avatar sx={{  bgcolor: 'secondary.main' }}>
+                <Typography variant="h5">RGE Certificate:- {rgerows.nom_certificat} </Typography>
+   
+                    <>                    
                     <Tooltip title="Click the icon to see the certificate">    
-                        <WorkspacePremiumIcon   onClick={event =>  window.open(cert)} />
+                        <Stack direction={'row'}>
+                            <Avatar sx={{  bgcolor: 'secondary.main' }}>
+                                <WorkspacePremiumIcon  />
+                            </Avatar>
+                            <Button variant="outlined"  size='small' onClick={event =>  window.open(cert)}  >
+                                Certificate   
+                            </Button>
+                        </Stack> 
                     </Tooltip>
-                </Avatar> 
+                    </>
+
                 
                 <Typography variant="h5">email- {rgerows.email}</Typography>
 
                 <div>
                     {website != null ? (
                         <div>
-                        <Typography variant="h5"> visit website here</Typography>
+                        {/* <Typography variant="h5"> visit website here</Typography> */}
                         <Tooltip title="Click the icon to visit website">
+                            <Stack direction={'row'}>
+
+                            
                             <Avatar sx={{  bgcolor: 'secondary.main' }}>
-                                <LanguageIcon  onClick={event =>  window.open(website)} />
-                            </Avatar> 
+                                <LanguageIcon    />
+                            </Avatar>
+                            <Button variant="outlined"  size='small' onClick={event =>  window.open(website)}  >
+                                Website   
+                            </Button>
+
+
+                            </Stack>
                         </Tooltip>
                         </div>
                     ) : (

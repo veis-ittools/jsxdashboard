@@ -17,7 +17,7 @@ function BasicInfo(props) {
 
     const aboutSection = useRef(null);
     let siren = props.siren
-    siren = siren.replace(/['" ]+/g, '');
+    // siren = siren.replace(/['" ]+/g, '');
 
 
     // console.log('from new comp BASIC INFO', siren)
@@ -28,7 +28,9 @@ function BasicInfo(props) {
 
     // BASIC INFORMATION API CALL CODE START------
     // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
-    let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    let urlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
+    
     // console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
@@ -72,7 +74,7 @@ function BasicInfo(props) {
     
 
 
-    let mar_url = `https://veis-ittools.com:9100/lemarche/inclusion/ESAT/${siren}`
+    let mar_url = `https://veis-ittools.eu/lemarche/inclusion/ESAT/${siren}`
     
     useEffect(() => {
       MfetchData();

@@ -93,15 +93,16 @@ function FourCharts(props) {
           >
             <StatBox
               title= {records}
-              subtitle="Chiffre d'affaires"
+              subtitle="Chiffre d'affaires 2020-12-31"
               progress="0.75"
-            //   increase="+14%"
+              // increase=""
               icon={
                 <EuroSymbolIcon
                   sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
                 />
               }
             />
+            
           </Box>
           <Box
             gridColumn="span 3"
@@ -110,17 +111,46 @@ function FourCharts(props) {
             alignItems="center"
             justifyContent="center"
           >
-            <StatBox
+            {/* <StatBox
               title= {resultat}
               subtitle="Résultat"
               progress="0.50"
             //   increase="+21%"
               icon={
                 <PointOfSaleIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                  sx={{ color: colors.redAccent[600], fontSize: "26px" }}
                 />
               }
-            />
+            /> */}
+
+            { resultat!== undefined && resultat.slice(0, 2) === "€-" ?
+                        <StatBox
+                        title= {resultat}
+                        subtitle="Résultat"
+                        progress="0.50"
+                      //   increase="+21%"
+                        icon={
+                          <PointOfSaleIcon
+                            sx={{ color: colors.redAccent[600], fontSize: "26px" }}
+                          />
+                        } 
+                      /> 
+                      :
+
+                      <StatBox
+                      title= {resultat}
+                      subtitle="Résultat"
+                      progress="0.50"
+                    //   increase="+21%"
+                      icon={
+                        <PointOfSaleIcon
+                          sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                        />
+                      }
+                    />
+            
+            }
+
           </Box>
           <Box
             gridColumn="span 3"

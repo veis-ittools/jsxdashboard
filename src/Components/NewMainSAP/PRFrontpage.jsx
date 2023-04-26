@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 import { Box ,TextField, useTheme , Typography,  Grid,} from "@mui/material";
 import { tokens } from "../../theme";
-import { famill1_options_fr } from './Famille1FR'; 
+import { famill1_options_pr } from './Famille1PR'; 
 import Autocomplete from '@mui/material/Autocomplete';
-import SapFormresults from '../SapSearch/SapFormresults';
 
 
-function FRFrontpage(props) {
+
+function PRFrontpage(props) {
+
 
     let country = props.country
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    const [value, setValue] = useState(famill1_options_fr[0])
+    const [value, setValue] = useState(famill1_options_pr[0])
 
     // const [value, setValue] = useState(famill1_options[0])
     const [flag, setFlag] = useState(false)
     let [inputValue, setInputValue] = useState('')
 
   return (
-
     <Box marginTop={-5} >
         <Grid container spacing={3} >
         <Grid item xs={12} sm={10}>
@@ -46,7 +46,7 @@ function FRFrontpage(props) {
             }      
 
             }}
-            options={famill1_options_fr}
+            options={famill1_options_pr}
             // style={{ width: 300  }}
             renderInput={(params) => <TextField {...params} 
             variant="outlined" 
@@ -55,20 +55,18 @@ function FRFrontpage(props) {
             required
             // fullWidth
             id="purchasefamily1"
-            label="Achat famille 1"
+            label="Família de compras 1"
             name="purchasefamily1"
             autoFocus
             />}                   
             />
       </Grid>
       </Grid> 
-      {flag === true   ?  <SapFormresults  famille1= {inputValue} ></SapFormresults>
-        : null}
+      {/* {flag === true   ?  <SapFormresults  famille1= {inputValue} ></SapFormresults>
+        : null} */}
 
       </Box>
-
-
   )
 }
 
-export default FRFrontpage
+export default PRFrontpage

@@ -32,7 +32,7 @@ function RevenueStats(props) {
 
     // API CALL TO GET REV STATS
     // let urlchange = `https://veis-ittools.com:9100/FR/forcharts/revenue/`
-    let urlchange = `https://veis-ittools.com:9100/FR/forcharts/revenue/${siren}`
+    let urlchange = `https://veis-ittools.eu/FR/forcharts/revenue/${siren}`
     console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
@@ -87,7 +87,8 @@ function RevenueStats(props) {
 
     // TOTAL ESTABLISHMENTS API CALL--------------
     // let Turlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/'
-    let Turlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    // let Turlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    let Turlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
     console.log(Turlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
     const [totalrec, setTotalrecs] = useState()
@@ -116,7 +117,7 @@ function RevenueStats(props) {
 
     // datagrid fro rev start
     let revdatarecs =  null
-    let Durlchange = `https://veis-ittools.com:9100/FR/enterprise/data/${siren}`
+    let Durlchange = `https://veis-ittools.eu/FR/enterprise/data/${siren}`
     console.log(Durlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
     
@@ -187,7 +188,7 @@ function RevenueStats(props) {
         <Alert severity="error">Revenue details not available</Alert>  
         : null}
 
-         {datarev !== undefined  ? <DataGridRev datarev = {datarev} ></DataGridRev>
+         {datarev !== undefined && revinseerecs !== null ? <DataGridRev datarev = {datarev} ></DataGridRev>
         : null}  
 
 

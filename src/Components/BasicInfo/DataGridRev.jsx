@@ -26,7 +26,7 @@ function DataGridRev(props) {
 
 
     const userTableStyles = {
-        // m: 2,
+        m: 1,
         // marginTop: 2,
         // height: '370px',
         height: '200px',
@@ -43,27 +43,39 @@ function DataGridRev(props) {
 
     const columns = [
         { field: 'id', headerName: 'id', width: 30 },
-        { field: 'CA2020',  headerName: 'CA2020', width: 100 },
-        { field: 'Date de cloture exercice 2020', headerName: 'Date de cloture exercice 2020', width: 175 },
-        { field: 'CA2019',  headerName: 'CA2019', width: 100 },
+        { field: 'CA2020',  headerName: 'CA 2020', width: 100 },
+        { field: 'Date de cloture exercice 2020', headerName: 'Date de cloture exercice 2020', width: 175 },        
+        { field: 'CA2019',  headerName: 'CA 2019', width: 100 },
         { field: 'Date de cloture exercice 2019', headerName: 'Date de cloture exercice 2019', width: 175 },
-        { field: 'CA2018',  headerName: 'CA2018', width: 100 },
+        { field: 'CA2018',  headerName: 'CA 2018', width: 100 },
         { field: 'Date de cloture exercice 2018', headerName: 'Date de cloture exercice 2018', width: 175 },
-        { field: 'CA2017',  headerName: 'CA2017', width: 100 },
+        { field: 'CA2017',  headerName: 'CA 2017', width: 100 },
         { field: 'Date de cloture exercice 2017', headerName: 'Date de cloture exercice 2017', width: 175 },
-        { field: 'CA2016',  headerName: 'CA2016', width: 100 },
+        { field: 'CA2016',  headerName: 'CA 2016', width: 100 },
         { field: 'Date de cloture exercice 2016', headerName: 'Date de cloture exercice 2016', width: 175 },
-              
+        { field: 'Résultat2020',  headerName: 'Résultat 2020', width: 100 },
+        { field: 'Résultat2019', headerName: 'Résultat 2019', width: 100 },
+        { field: 'Résultat2018',  headerName: 'Résultat 2018', width: 100 },
+        { field: 'Résultat 2', headerName: 'Résultat 2017', width: 100 },
+        { field: 'Résultat 3', headerName: 'Résultat 2016', width: 100 },
+        { field: 'Effectif2020', headerName: 'Effectif 2020', width: 100 },
+        { field: 'Effectif2019', headerName: 'Effectif 2019', width: 100 },
+        { field: 'Effectif2018', headerName: 'Effectif 2018', width: 100 },
+        { field: 'Effectif2017', headerName: 'Effectif 2017', width: 100 },
+        { field: 'Effectif2016', headerName: 'Effectif 2016', width: 100 },
+                     
 
       ];
     let inseeid = addId(datarev)
 
   // if (!drev) return null;
   return (
-    <Box display="grid" marginTop={3}>
+    <Box>
+    <Alert  severity="info">Revenue Report </Alert>
+    <Box marginTop={3}  display="flex" justifyContent="center" alignItems="center" >
 
 
-      <Alert  severity="info">Revenue Report</Alert>
+      
 
       { inseeid !== undefined ? 
         <DataGrid
@@ -74,6 +86,7 @@ function DataGridRev(props) {
             components={{ Toolbar: GridToolbar }}
             />  
             : null } 
+    </Box>
     </Box>
   )
 }

@@ -8,6 +8,13 @@ import BasicInfo from '../BasicInfo/BasicInfo';
 import RevenueStats from '../BasicInfo/RevenueStats';
 import AllEstablish from '../BasicInfo/AllEstablish';
 
+const scrollToBottom = () => {
+  window.scrollTo({
+    // top: document.documentElement.scrollHeight,
+    top: 600,
+    behavior: 'smooth',
+  });
+};
 
 
 function Apitest(props) {
@@ -50,12 +57,12 @@ function Apitest(props) {
     const [selectedRow, setSelectedRow] = useState(null);
     
     const userTableStyles = {
-        // m: 2,
-        // marginTop: 2,
+        m: 1,
+        marginTop: 2,
         height: '450px',
-        width: 800,
-        // display: 'flex',
-        // flexDirection: 'column',
+        width: 900,
+        display: 'flex',
+        flexDirection: 'column',
         boxShadow: 2,
         border: 2,
         borderColor: 'primary.light',
@@ -138,7 +145,9 @@ function Apitest(props) {
 
 
     const handleButtonClick = (params) => {
-      setSelectedRow(params.row.SIRET);
+      setSelectedRow(params.row.SIRET)
+      scrollToBottom()
+
       // setAllrgerows(params.row)
       console.log('INSEE basic all ROW----', selectedRow);
     };  
@@ -161,7 +170,7 @@ function Apitest(props) {
 
   if (!users) return null;
   return (
-    <Box m="20px">
+    <Box marginTop={2}>
 
       <Alert  severity="info">All Etablishments, Click 'More' button and scroll down  to see more details </Alert>
       <Box display="flex" justifyContent="center" alignItems="center"  >
@@ -194,14 +203,14 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         console.log('insee block')
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/All?ESS=false`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?ESS=false`
         console.log('scene 1')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/All?ESS=true`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?ESS=true`
         console.log('scene 2')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -210,7 +219,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/${category}?ESS=false`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?ESS=false`
         console.log('scene 3')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -218,7 +227,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/${category}?ESS=true`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?ESS=true`
         console.log('scene 4')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -229,14 +238,14 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
         console.log('insee block')
         let naftocall =  naf.slice(0, 6)
         console.log(naftocall)
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/All?region=${location}&ESS=false`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?region=${location}&ESS=false`
         console.log('scene 5')
         finalbaseURL.push(baseURL)
 
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/All?region=${location}&ESS=true`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?region=${location}&ESS=true`
         console.log('scene 6')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -245,7 +254,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=false`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=false`
         console.log('scene 7')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -253,7 +262,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.com:9100/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=true`
+        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=true`
         console.log('scene 8')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)

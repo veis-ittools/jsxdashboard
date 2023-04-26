@@ -14,23 +14,23 @@ const addId=(arr)=> {
 
 function AllEstablish(props) {
     let siren = props.siren
-    siren = siren.replace(/['" ]+/g, '');
+    // siren = siren.replace(/['" ]+/g, '');
 
 
-    siren = siren.toString()
-    // console.log('type ETS==', typeof(siren));
-    // console.log('lenght ETS=', siren.length );
+    // siren = siren.toString()
+    // // console.log('type ETS==', typeof(siren));
+    // // console.log('lenght ETS=', siren.length );
 
-    if (siren.length > 9) {
-      siren = siren.slice(0, 9);
-    }
+    // if (siren.length > 9) {
+    //   siren = siren.slice(0, 9);
+    // }
 
 
     // console.log('from all es new comp', siren)
 
     const userTableStyles = {
-        // m: 2,
-        marginTop: 4,
+        m: 1,
+        marginTop: 3,
         height: '450px',
         width: 800,
         display: 'flex',
@@ -80,8 +80,9 @@ function AllEstablish(props) {
     // BASIC INFORMATION API CALL CODE START------
 
     // let urlchangeallrecs = 'https://veis-ittools.com:9100/FR/dashboard/data'
-    let urlchangeallrecs = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
-    console.log(urlchangeallrecs);
+    // let urlchangeallrecs = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    let urlchangeallrecs = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
+    // console.log(urlchangeallrecs);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
 

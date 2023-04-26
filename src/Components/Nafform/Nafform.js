@@ -70,7 +70,7 @@ function NafForm(props) {
 
 // ===================================NAFCODE OPEN=====================================================
 
-        let URL = `https://veis-ittools.com:5900/BI/getnafsfrombi/${famille2}`
+        let URL = `https://veis-ittools.eu/BI/getnafsfrombi/${famille2}`
         console.log(URL)
 
         // STATE FOR NAF
@@ -100,7 +100,7 @@ function NafForm(props) {
 // ===================================NAFCODE END=====================================================
 
 // ===================================REGION OPEN=====================================================
-        let regionurl = 'https://veis-ittools.com:5900/FR/Regions/'
+        let regionurl = 'https://veis-ittools.eu/FR/Regions/'
         // state region
         let [inputRegion, setRegion] = useState([])
         // state to store after search, dynamic inputs

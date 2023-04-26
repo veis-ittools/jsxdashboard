@@ -12,8 +12,11 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import Header from '../Header';
 import FRFrontpage from './FRFrontpage';
+import PRFrontpage from './PRFrontpage';
+import SPFrontpage from './SPFrontpage';
+
 
 function NewMainSAP() {
     const theme = useTheme();
@@ -34,14 +37,14 @@ function NewMainSAP() {
         >
 
       <Grid item xs={12} sm={8}>  
-          <Typography
+          {/* <Typography
             variant="h3"
             color={colors.grey[100]}
             // fontWeight="bold"
             sx={{ m: "0 0 5px 0" }}
           >
             SAP BI Search using VINCI Classification
-          </Typography>
+          </Typography> */}
           {/* <Typography variant="h5" color={colors.greenAccent[400]}>
             Search using VINCI Classification
           </Typography> */}
@@ -50,6 +53,8 @@ function NewMainSAP() {
         
         {/* <NewMainsearch></NewMainsearch>   */}
         {/* <NewSapSearch></NewSapSearch> */}
+
+        <Header title= {'SAP BI Search'} subtitle={'Search using VINCI Classification'} ></Header>
         </Grid>
 
 
@@ -90,6 +95,10 @@ function NewMainSAP() {
       </Box> 
 
     {country === 'FRANCE' ? <FRFrontpage country = {country} ></FRFrontpage>: null} 
+    {country === 'PORTUGAL' ? <PRFrontpage country = {country} ></PRFrontpage> : null}
+    {country === 'SPAIN' ? <SPFrontpage country = {country} ></SPFrontpage> : null}
+        
+    
     </Box>
 
   )

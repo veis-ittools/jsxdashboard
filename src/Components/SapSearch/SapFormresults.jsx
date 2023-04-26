@@ -138,7 +138,7 @@ function SapFormresults(props) {
     }
   
     return (
-        <Box marginRight={0} marginLeft={2.1}>
+        <Box marginRight={0} marginLeft={0}>
 
         
         <Box component="form"   onSubmit={handleSubmit} noValidate sx={{ mt: 1  }}>
@@ -164,7 +164,7 @@ function SapFormresults(props) {
 
                     fullWidth
                     id="famille2"
-                    label="famille2"
+                    label="Achat famille2"
                     name="famille2"
                     autoFocus
                     required
