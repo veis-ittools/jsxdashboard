@@ -3,7 +3,7 @@ import { Box ,TextField, useTheme , Typography,  Grid,} from "@mui/material";
 import { tokens } from "../../theme";
 import { famill1_options_sp } from './Famille1SP'; 
 import Autocomplete from '@mui/material/Autocomplete';
-
+import FormSpain from './FormSpain';
 
 function SPFrontpage(props) {
 
@@ -61,7 +61,8 @@ function SPFrontpage(props) {
             />
       </Grid>
       </Grid> 
-
+      {flag === true   ?  <FormSpain  famille1= {inputValue} country = {country}></FormSpain>
+        : null}
       </Box>
   )
 }

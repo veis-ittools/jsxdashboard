@@ -16,6 +16,8 @@ import Header from '../Header';
 import FRFrontpage from './FRFrontpage';
 import PRFrontpage from './PRFrontpage';
 import SPFrontpage from './SPFrontpage';
+import ReactCountryFlag from "react-country-flag"
+
 
 
 function NewMainSAP() {
@@ -80,9 +82,42 @@ function NewMainSAP() {
                       {/* <MenuItem value="">
                           <em>FRANCE</em>
                       </MenuItem> */}
-                      <MenuItem  value={'FRANCE'}>FRANCE</MenuItem>
-                      <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
-                      <MenuItem value={'PORTUGAL'}>PORTUGAL</MenuItem>
+                      <MenuItem  value={'FRANCE'}>
+                        
+                        FRANCE
+                        <ReactCountryFlag 
+                            style={{
+                              fontSize: '2em',
+                              lineHeight: '2em',
+                              marginLeft:10
+                          }}
+
+                          countryCode="FR" svg />
+                      </MenuItem>
+                      
+                      <MenuItem value={'SPAIN'}>
+                        SPAIN
+                        <ReactCountryFlag 
+                            style={{
+                              fontSize: '2em',
+                              lineHeight: '2em',
+                              marginLeft:10
+                          }}
+
+                          countryCode="ES" svg />                      
+                      </MenuItem>
+                      <MenuItem value={'PORTUGAL'}>
+                        
+                        PORTUGAL
+                        <ReactCountryFlag 
+                            style={{
+                              fontSize: '2em',
+                              lineHeight: '2em',
+                              marginLeft:10
+                          }}
+
+                          countryCode="PT" svg />                        
+                      </MenuItem>
                       {/* <MenuItem value={'GERMANY(*inactive)'}>GERMANY(*inactive)</MenuItem>
                       <MenuItem value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</MenuItem> */}
                       </Select>

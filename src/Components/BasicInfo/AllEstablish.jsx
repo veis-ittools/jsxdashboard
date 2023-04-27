@@ -15,6 +15,9 @@ const addId=(arr)=> {
 function AllEstablish(props) {
     let siren = props.siren
     // siren = siren.replace(/['" ]+/g, '');
+    // if (typeof(siren) === String ){
+    //   siren = siren.replace(/['" ]+/g, '');
+    // } 
 
 
     // siren = siren.toString()
@@ -30,7 +33,7 @@ function AllEstablish(props) {
 
     const userTableStyles = {
         m: 1,
-        marginTop: 3,
+        marginTop: 2,
         height: '450px',
         width: 800,
         display: 'flex',
@@ -113,7 +116,7 @@ function AllEstablish(props) {
 
   if (!allusers) return null;
   return (
-    <Box display="grid" marginTop={10}>
+    <Box display="grid" marginTop={5}>
       
       <Alert  severity="info">All Etablishments</Alert>
       <Box display="flex" justifyContent="center" alignItems="center"  >

@@ -3,7 +3,7 @@ import { Box ,TextField, useTheme , Typography,  Grid,} from "@mui/material";
 import { tokens } from "../../theme";
 import { famill1_options_pr } from './Famille1PR'; 
 import Autocomplete from '@mui/material/Autocomplete';
-
+import FormPortugal from './FormPortugal';
 
 
 function PRFrontpage(props) {
@@ -62,8 +62,8 @@ function PRFrontpage(props) {
             />
       </Grid>
       </Grid> 
-      {/* {flag === true   ?  <SapFormresults  famille1= {inputValue} ></SapFormresults>
-        : null} */}
+      {flag === true   ?  <FormPortugal  famille1= {inputValue} country = {country}></FormPortugal>
+        : null}
 
       </Box>
   )

@@ -17,6 +17,10 @@ function BasicInfo(props) {
 
     const aboutSection = useRef(null);
     let siren = props.siren
+
+    // if (typeof(siren) === String ){
+    //   siren = siren.replace(/['" ]+/g, '');
+    // } 
     // siren = siren.replace(/['" ]+/g, '');
 
 

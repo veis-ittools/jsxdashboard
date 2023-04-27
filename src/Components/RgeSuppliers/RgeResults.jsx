@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import TextField from '@mui/material/TextField';
 import axios from "axios";
 import Autocomplete from '@mui/material/Autocomplete';
-import {Typography,  Box, Button, useTheme , Grid,} from "@mui/material";
-import RgeDatagrid from './RgeDatagrid';
+import { Button , Grid,} from "@mui/material";
+// import RgeDatagrid from './RgeDatagrid';
 import NewRgeDatagrid from './NewRgeDatagrid';
 
 
@@ -15,11 +15,11 @@ function RgeResults(props) {
     // let URL = `https://veis-ittools.com:9100/domain/RGE/`
     let URL = `https://veis-ittools.eu/domain/RGE/${meta}`
 
-    let headers = {
-      'accept': 'application/json',
-      'metadomain' : meta
+    // let headers = {
+    //   'accept': 'application/json',
+    //   'metadomain' : meta
 
-    }
+    // }
     // state for the domain after api call
     const [domain, setDomain] =  useState([])
 

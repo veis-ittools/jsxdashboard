@@ -22,19 +22,33 @@ function AllSAPDatagrid(props) {
     // const [apirams, setApiparams] = useState()
     // setApiparams(apiparams2)
 
-    // const fam1 = apiparams2.famiile1
+    const famiile1 = apiparams2.famiile1
     let famiile2 = apiparams2.famiile2
+    let country = apiparams2.country
     // let country =  apirams.country
     // console.log('datagrid called apiparams', apirams)
     console.log('datagrid called famiile1', apiparams2.famille2)
     console.log('datagrid called saved var', famiile2)
-
     
+    let codefam1 = famiile1.slice(-6)
+    let tempfam2 = famiile2.slice(-8)
+    let codefam2 = tempfam2.slice(0,6)
 
+    console.log('codefam2---', codefam2)
+    let codecorrect = null
 
-    
+    const codeflagset = (codefam1, codefam2) => {
+      if (codefam1===codefam2){
+        return codecorrect = true
+      }return codecorrect = false
+      
+    }
+
+    let flagtocall = codeflagset(codefam1, codefam2)
+
+    console.log('flagtocall---', flagtocall)
     const userTableStyles = {
-        // m: 2,
+        m: 2,
         marginTop: 4,
         height: '450px',
         width: 800,
@@ -54,7 +68,7 @@ function AllSAPDatagrid(props) {
         { field: 'Nom Fournisseur', headerName: 'Name', width: 300 },
         { field: 'Ville Fournisseur', headerName: 'City', width: 150 },
         { field: 'Adresse Fournisseur Ligne 1', headerName: 'Address', width: 275 },   
-        { field: 'country', headerName: 'country', width: 120 },
+        // { field: 'country', headerName: 'country', width: 120 },
         { feild: 'googlelink', headerName:'Link', width:250 , 
           renderCell: (params) => 
           <a  href={params.row.googlelink} target={"_blank" } rel={"noreferrer"} >{params.row.googlelink} </a>,
@@ -63,8 +77,16 @@ function AllSAPDatagrid(props) {
       ];
 
     //  let urlchangeallrecs =  `https://veis-ittools.com:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
-     let urlchangeallrecs = 'https://veis-ittools.eu/SAP/purchasefamille2/portugal/CABOS%20%7C%20AACABL'
-    //  let headers = {
+    // let urlchangeallrecs =  `https://veis-ittools.eu/SAP/BI/ALL/fammile2/${famiile2}/country/${country} `
+    
+
+    // let urlchangeallrecs = 'https://veis-ittools.eu/SAP/BI/ALL/fammile2/CABOS%20ESPECIAIS%20OU%20OUTROS%20%7C%20AACABL23/country/SPAIN'
+    let urlchangeallrecs = `https://veis-ittools.eu/SAP/BI/ALL/fammile2/${famiile2}/country/${country}`
+   
+    console.log('url--',urlchangeallrecs )
+    
+    
+     //  let headers = {
     //     'accept': 'application/json',
     //     'fammile2' : apiparams2.famiile2,
     //     'country' : apiparams2.country
@@ -75,7 +97,7 @@ function AllSAPDatagrid(props) {
     //  console.log(headers)
      
      const encoded = encodeURI(urlchangeallrecs)
-     console.log( urlchangeallrecs)
+     console.log( 'encoded---', encoded)
     
 
       
@@ -117,25 +139,29 @@ function AllSAPDatagrid(props) {
       let inseeid = addId(allinseerecs)
 
   if (!allusers) return null;
-  return (
-    <Box display="grid" marginTop={3}>
-      
-      <Alert  severity="info"> {totalrecs} Etablishments</Alert>
-      <Box display="flex" justifyContent="center" alignItems="center"  >
-      
 
-      {totalrecs !== 0 ? 
-        <DataGrid
-              rows = {inseeid}
-              columns = {columns}
-            //   loading = {!allinseerecs.length}
-              sx = {userTableStyles}
-              components={{ Toolbar: GridToolbar }}
-              />  
-      : null}
-      </Box>
-    </Box> 
-  )
+
+  if (allusers !== [] && flagtocall === true) {
+    return (
+      <Box display="grid" marginTop={3}>
+        
+        <Alert  severity="info"> {totalrecs} Etablishments found in SAP </Alert>
+        <Box display="flex" justifyContent="center" alignItems="center"  >
+        
+
+        {totalrecs !== 0 ? 
+          <DataGrid
+                rows = {inseeid}
+                columns = {columns}
+              //   loading = {!allinseerecs.length}
+                sx = {userTableStyles}
+                components={{ Toolbar: GridToolbar }}
+                />  
+        : null}
+        </Box>
+      </Box> 
+    )
+
+  } return  <Alert  sx={{width:'85%' }} severity="error"> Selected Achat Famille 1 and Achat Famille 2 are Different. Plase check Famille1/Famille2 feilds</Alert> ;
 }
-
 export default AllSAPDatagrid

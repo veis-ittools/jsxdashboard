@@ -65,7 +65,7 @@ function ProfileContent() {
                 {/* <Mainseach></Mainseach> */}
                 
                 <Routes>
-                  <Route path="/" element={<AllCountrySAP />} />
+                  <Route path="/" element={<NewMainSAP />} />
                   <Route path="/sirensearch" element={<Sirensearch />} />  
                   <Route path="/inseesearch" element={<NewMainsearch />} />
 
@@ -152,28 +152,28 @@ function ProfileContent() {
 /**
  * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
  */
-// const MainContent = () => {    
-//     return (
-//         <div className="App">
-//             <AuthenticatedTemplate>
-//                 <ProfileContent />
-//             </AuthenticatedTemplate>
+const MainContent = () => {    
+    return (
+        <div className="App">
+            <AuthenticatedTemplate>
+                <ProfileContent />
+            </AuthenticatedTemplate>
 
-//             <UnauthenticatedTemplate>
-//                 <LandingPage/>
-//             </UnauthenticatedTemplate>
-//         </div>
-//     );
-// };
+            <UnauthenticatedTemplate>
+                <LandingPage/>
+            </UnauthenticatedTemplate>
+        </div>
+    );
+};
 
 // MAIN CONTENT at UN AUTH
-const MainContent = () => {    
-  return (
-      <div className="App">
-            <ProfileContent />
-      </div>
-  );
-};
+// const MainContent = () => {    
+//   return (
+//       <div className="App">
+//             <ProfileContent />
+//       </div>
+//   );
+// };
 
 
 export default function App() {

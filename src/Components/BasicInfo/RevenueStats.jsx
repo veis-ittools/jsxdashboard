@@ -45,6 +45,7 @@ function RevenueStats(props) {
     const [cachart, setCachart] = useState([])
     const [resultatchart, setResultatchart] = useState([])
     const [effectifchart, setEffectifchart] = useState([])
+    const [date, setDate] = useState([])
 
 
     // data fromae rev datagrid
@@ -69,9 +70,10 @@ function RevenueStats(props) {
           setCachart(response.data.CA)
           setResultatchart(response.data.Resultat)
           setEffectifchart(response.data.Effectif)
+          setDate(response.data.revdetails.date)
 
         console.log('revenue api response--', response.data)
-        //   console.log('--REVENUE-----', response.data.revdetails)
+        console.log('--REVENUE-----',response.data.revdetails.date)
         // //   console.log(typeof((response.data.revdetails)))
         //   console.log(typeof(revinseerecs));
         //   console.log('here from now');
@@ -180,6 +182,7 @@ function RevenueStats(props) {
                     cachart= {cachart}
                     resultatchart= {resultatchart}
                     effectifchart= {effectifchart}
+                    date = {date}
 
                     /> }
 

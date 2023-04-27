@@ -15,7 +15,7 @@ function FeedbackBox() {
 
     const [response, setresponse] = useState(null)
 
-    let URL = 'https://veis-ittools.com:5900/Feedback'
+    let URL = 'https://veis-ittools.eu/Feedback'
 
     let headers = {
         'accept': 'application/json',

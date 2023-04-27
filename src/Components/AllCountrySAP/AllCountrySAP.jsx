@@ -111,8 +111,8 @@ function AllCountrySAP() {
                     <em>FRANCE</em>
                 </MenuItem> */}
                 <MenuItem  value={'FRANCE'}>FRANCE</MenuItem>
-                {/* <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
-                <MenuItem value={'PORTUGAL'}>PORTUGAL</MenuItem> */}
+                <MenuItem value={'SPAIN'}>SPAIN</MenuItem>
+                <MenuItem value={'PORTUGAL'}>PORTUGAL</MenuItem>
                 {/* <MenuItem value={'GERMANY(*inactive)'}>GERMANY(*inactive)</MenuItem>
                 <MenuItem value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</MenuItem> */}
                 </Select>

@@ -202,7 +202,7 @@ if (birecs!== [] && biflag === true && flagtocall === true) {
   
       <Box marginRight={1}>
            
-           <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found,  Click 'More' button and scroll down  to see more details</Alert>
+           <Alert sx={{width:'85%' }} severity="info"> {totalrecs} Etablishments Found in SAP,  Click 'More' button and scroll down  to see more details</Alert>
     
           <Box display="flex" maxWidth={1275}   > 
 

@@ -63,11 +63,13 @@ function FourCharts(props) {
     let resultat = props.resultat
     let totalrec = props.totalrec
     let effective = props.effective
-    let year = props.year
+    let date = props.date
 
     let cachart = props.cachart
     let resultatchart = props.resultatchart
     let effectifchart = props.effectifchart
+
+    let catitle = "Chiffre d'affaires " + date
     
 
     // console.log('CA---', cachart)
@@ -93,7 +95,7 @@ function FourCharts(props) {
           >
             <StatBox
               title= {records}
-              subtitle="Chiffre d'affaires 2020-12-31"
+              subtitle={catitle}
               progress="0.75"
               // increase=""
               icon={

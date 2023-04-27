@@ -22,7 +22,17 @@ const Sirensearch= () =>{
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
-    const [siren, setSiren] = useState('')
+    let [siren, setSiren] = useState('')
+
+    console.log(typeof(siren))
+    
+    if (typeof(siren) === 'string'){
+      siren = siren.replace(/['" ]+/g, '');
+    } 
+    console.log(typeof(siren))
+    console.log(siren)
+    
+
     const [buttonclickstate, setButtonclickstate]  = useState(false)
 
   return (
