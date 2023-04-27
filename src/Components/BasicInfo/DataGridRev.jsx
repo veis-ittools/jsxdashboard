@@ -70,7 +70,7 @@ function DataGridRev(props) {
 
   // if (!drev) return null;
   return (
-    <Box marginTop={5}>
+    <Box marginTop={10}>
     <Alert  severity="info">Revenue Report </Alert>
     <Box marginTop={1}  display="flex" justifyContent="center" alignItems="center" >
 
