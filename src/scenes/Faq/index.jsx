@@ -29,6 +29,21 @@ const FAQ = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            Comment 'Navik' est une solution 'Substainable Sourcing'  ?
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Notre nouvelle application est une solution d'approvisionnement durable pour les entreprises cherchant à trouver des fournisseurs en France et dans le monde entier. L'application fournit une liste complète de fournisseurs et permet également aux utilisateurs de filtrer et de trouver des fournisseurs certifiés écologiques (entrepreneurs RGE) ou offrant une assistance aux personnes handicapées dans leurs bâtiments de bureau (Marche Inclusive API FR & ESS INSEE API). Ainsi, notre application encourage des pratiques durables et socialement responsables dans le processus d'approvisionnement, ce qui est crucial dans l'économie mondiale d'aujourd'hui. Nous pensons que notre application non seulement rationalisera le processus d'approvisionnement pour les entreprises, mais contribuera également à une chaîne d'approvisionnement plus durable et équitable. 
+ 
+          </Typography>
+        </AccordionDetails>  
+      </Accordion>    
+      
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
@@ -40,6 +55,8 @@ const FAQ = () => {
               La NAF, nomenclature d'activités française, est une nomenclature des activités économiques productives, principalement élaborée pour faciliter l'organisation de l'information économique et sociale. Afin de faciliter les comparaisons internationales, elle a la même structure que la nomenclature d'activités européenne NACE, elle-même dérivée de la nomenclature internationale CITI.
           </Typography>
         </AccordionDetails>
+      
+      
       </Accordion>
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>

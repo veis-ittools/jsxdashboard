@@ -21,6 +21,7 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import Typography from '@mui/material/Typography';
+import appLogo from './logoN4.png'
 
 
 const Topbar = () => {
@@ -45,25 +46,40 @@ const Topbar = () => {
         </IconButton> */}
       </Box>
 
-      <Stack direction="row" alignItems="center" gap={2}>
-          <Avatar sx={{  bgcolor: 'secondary.main' }}>
+      <Stack direction="row" alignItems="center" gap={0}>
+          {/* <Avatar sx={{  bgcolor: 'secondary.main' }}>
               <ApartmentIcon />
-          </Avatar> 
-          <Typography component="h1" variant="h2"> 
-              NAVIK 
+          </Avatar>  */}
+                <Box
+                  component="img"
+                  sx={{
+                    height: 40,
+                    width: 40,
+                    // maxHeight: { xs: 233, md: 167 },
+                    // maxWidth: { xs: 350, md: 250 },
+                  }}
+                  alt="The house from the offer."
+                  // src = './Logo-Vinci-Energies.jpg'
+                  src= {appLogo}
+                  // 
+                  // src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+                />
+
+          <Typography component="h1" variant="h1"> 
+              AVIK 
           </Typography>  
       </Stack>
 
       {/* ICONS */}
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
+        {/* <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon />
           ) : (
             <LightModeOutlinedIcon />
           )}
           <Typography variant="h5">Color Mode</Typography>
-        </IconButton>
+        </IconButton> */}
         {/* <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>

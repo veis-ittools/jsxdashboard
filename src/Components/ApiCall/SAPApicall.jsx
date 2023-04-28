@@ -14,6 +14,7 @@ import ExampleComp from '../BasicInfo/ExampleComp';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 import ScrollToBottom from 'react-scroll-to-bottom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 
 const scrollToBottom = () => {
@@ -138,6 +139,9 @@ function SAPApicall(props) {
               );
           },
       },
+
+
+
 
         { field: 'commune', headerName: 'City', width: 135 },
         // { field: 'Département', headerName: 'Département', width: 120 },
@@ -347,3 +351,5 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
     return finalbaseURL
 } 
+
+

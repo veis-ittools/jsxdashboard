@@ -22,6 +22,9 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 // import { blue, red } from "@mui/material/colors";
 import myImgSrc from './vincijpg.jpg';
+
+// import appLogo from './logoN.png'
+
 // import FlashOffIcon from '@mui/icons-material/FlashOff';
 // import Tooltip from '@mui/material/Tooltip';
 import ReactCountryFlag from "react-country-flag"
@@ -56,7 +59,8 @@ const Sidebar = () => {
  
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.primary[400]} !important`,
+          // background: `${colors.primary[400]} !important`,
+          background: '#FFFFFF',
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -178,7 +182,7 @@ const Sidebar = () => {
             />
             
             <Item
-              title="Certified RGE Suppliers"
+              title=" RGE professionnel"
               to="/rgesearch"
               icon={<SearchIcon />}
               selected={selected}
