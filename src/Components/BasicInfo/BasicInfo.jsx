@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 // import { useContext } from "react";
 import {  tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid, Tooltip } from "@mui/material";
+import { Box, useTheme, Typography, Grid, Tooltip, Stack } from "@mui/material";
 
 
 
@@ -167,7 +167,7 @@ function BasicInfo(props) {
                         // fontWeight="bold"
                         sx={{ m: "0 0 5px 0" }}
                       >
-                        Présentation de la société {value.Name}        
+                        Présentation de la société  {value.Name}   
                       </Typography >                  
                     ):(
                         <Typography
@@ -182,7 +182,9 @@ function BasicInfo(props) {
                 }
                   {/* <Alert sx = {{width: 1/8, height: '50%'}} severity="success">Active</Alert>     */} 
                   {value.Status === "A" ? (
-                    <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="success">Active</Alert>    
+      
+                      <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="success">Active </Alert>
+  
                   ) : (
                     <Alert sx = {{width:'13%', height: '25%', marginLeft:2, maxHeight:'25%'}} severity="error">inactive</Alert>      
                   )}
@@ -193,7 +195,7 @@ function BasicInfo(props) {
 
 
               <Typography variant="h5" color={colors.greenAccent[400]}>
-                  Categorie Juridique UniteLegale- {value.categorieJuridiqueUniteLegale}
+                  Categorie Juridique UniteLegale- {value.categorieJuridiqueUniteLegale} [source: INSEE]
               </Typography>
 
               <Typography variant="h5" color={colors.greenAccent[400]}>
@@ -262,8 +264,8 @@ function BasicInfo(props) {
               <Box>
                 {value.is_active === true ?  (
                 
-                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) - Yes </Typography>):(
-                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) -  Pas trouvé </Typography>
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) - Yes [source: API du marché de l'inclusion]</Typography>):(
+                <Typography variant="h5" color={colors.blueAccent[100]}>Entreprise sociale inclusive (SIAE ou structure du handicap, GEIQ) -  Pas trouvé [source: API du marché de l'inclusion] </Typography>
                 )} 
 
               </Box>

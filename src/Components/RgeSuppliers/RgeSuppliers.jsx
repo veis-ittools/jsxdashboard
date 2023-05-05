@@ -48,7 +48,7 @@ function RgeSuppliers() {
 
           <Typography variant="h6" color={colors.greenAccent[400]}>
             {/* Le label RGE, un gage de qualité des professionnels de la rénovation énergétique */}
-            Recherchez-vous des fournisseurs spécialisés dans la rénovation énergétique ou l'installation d'équipements à énergie renouvelable ? Les travaux et installations réalisés par des professionnels certifiés RGE permettent d'obtenir des aides financières et des déductions fiscales.
+            Recherchez-vous des fournisseurs spécialisés dans la rénovation énergétique ou l'installation d'équipements à énergie renouvelable ? Les travaux et installations réalisés par des professionnels certifiés RGE permettent d'obtenir des aides financières et des déductions fiscales. [source: ADEME(FR)]
             
           </Typography>
 

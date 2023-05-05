@@ -16,6 +16,8 @@ import Header from '../Header';
 import FRFrontpage from './FRFrontpage';
 import PRFrontpage from './PRFrontpage';
 import SPFrontpage from './SPFrontpage';
+import MAFrontpage from './MAFrontpage';
+
 import ReactCountryFlag from "react-country-flag"
 
 
@@ -118,6 +120,20 @@ function NewMainSAP() {
 
                           countryCode="PT" svg />                        
                       </MenuItem>
+
+                      <MenuItem value={'MAROC'}>
+                        
+                          MAROC
+                        <ReactCountryFlag 
+                            style={{
+                              fontSize: '2em',
+                              lineHeight: '2em',
+                              marginLeft:10
+                          }}
+
+                          countryCode="MA" svg />                        
+                      </MenuItem>
+
                       {/* <MenuItem value={'GERMANY(*inactive)'}>GERMANY(*inactive)</MenuItem>
                       <MenuItem value={'SUD AFRICA(*inactive)'}>SUD AFRICA(*inactive)</MenuItem> */}
                       </Select>
@@ -132,6 +148,8 @@ function NewMainSAP() {
     {country === 'FRANCE' ? <FRFrontpage country = {country} ></FRFrontpage>: null} 
     {country === 'PORTUGAL' ? <PRFrontpage country = {country} ></PRFrontpage> : null}
     {country === 'SPAIN' ? <SPFrontpage country = {country} ></SPFrontpage> : null}
+    {country === 'MAROC' ? <MAFrontpage country = {country} ></MAFrontpage> : null}
+       
         
     
     </Box>

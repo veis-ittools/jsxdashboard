@@ -32,7 +32,7 @@ function ContentRge(props) {
     <Box>
         <Box marginTop={1} paddingBottom={5} display="column" justifyContent="left" alignItems="center"   >
 
-        <Alert sx = {{ marginLeft:2}} severity="success">RGE Certification information</Alert> 
+        <Alert sx = {{ marginLeft:2}} severity="success">RGE Certification information [source: ADEME(FR)]</Alert> 
 
 
             <Typography

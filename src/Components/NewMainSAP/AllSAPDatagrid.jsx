@@ -81,17 +81,12 @@ function AllSAPDatagrid(props) {
     
 
     // let urlchangeallrecs = 'https://veis-ittools.eu/SAP/BI/ALL/fammile2/CABOS%20ESPECIAIS%20OU%20OUTROS%20%7C%20AACABL23/country/SPAIN'
+    
+    // lts code block
     let urlchangeallrecs = `https://veis-ittools.eu/SAP/BI/ALL/fammile2/${famiile2}/country/${country}`
-   
     console.log('url--',urlchangeallrecs )
-    
-    
-     //  let headers = {
-    //     'accept': 'application/json',
-    //     'fammile2' : apiparams2.famiile2,
-    //     'country' : apiparams2.country
+    // lts code block
 
-    //  }
 
      console.log(urlchangeallrecs)
     //  console.log(headers)
