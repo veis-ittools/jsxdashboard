@@ -95,7 +95,7 @@ function FormMaroc(props) {
 
                     fullWidth
                     id="famille2"
-                    label="Família de compras 2"
+                    label="Achat famille 2"
                     name="famille2"
                     autoFocus
                     />}
