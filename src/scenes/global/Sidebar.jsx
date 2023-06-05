@@ -147,7 +147,7 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="SAP Search"
+              title="SAP Search [ALL]"
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -189,8 +189,23 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
+            <Box paddingLeft={10}>
+            
+            <ReactCountryFlag 
+                          style={{
+                            fontSize: '2em',
+                            lineHeight: '2em',
+                        }}
 
-
+                        countryCode="ES" svg />
+            </Box>
+            <Item
+              title=" OpenData Search [ESP]"
+              to="/openspain"
+              icon={<SearchIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
             <Typography
               variant="h6"
               color={colors.grey[300]}

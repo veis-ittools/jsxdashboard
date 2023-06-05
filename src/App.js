@@ -31,6 +31,7 @@ import AllCountrySAP from "./Components/AllCountrySAP/AllCountrySAP";
 
 import FeedbackBox from "./scenes/global/FeedbackBox";
 import NewMainSAP from "./Components/NewMainSAP/NewMainSAP";
+import OpenSpain from "./Components/OpenSpain/OpenSpain";
 
 // old siren
 // import SearchSiren from "./Components/SearchSiren/SearchSiren";
@@ -77,6 +78,8 @@ function ProfileContent() {
                   <Route path="/help" element={<FeedbackBox />} />
                   <Route path="/newpage" element={<NewMainSAP />} />
                    
+                  <Route path="/openspain" element={<OpenSpain />} />
+
                 </Routes>
               </main>
             </div>
