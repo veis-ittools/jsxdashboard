@@ -79,7 +79,7 @@ function FourCharts(props) {
 
   return (
     <Box m="20px">
-      <Box display="flex" justifyContent="space-around" alignItems="center"   >
+      <Box display="flex" justifyContent="space-around" alignItems="center" marginTop={3}  >
         <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"

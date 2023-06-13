@@ -14,7 +14,7 @@ const addId=(arr)=> {
 
 function SpainDatagrid(props) {
     let domain = props.domain
-    let URL = `https://veis-ittools.com:5900/OPENDATA/spain/${domain}`
+    let URL = `https://veis-ittools.eu/OPENDATA/spain/${domain}`
 
     const [users, setUsers] = useState([])
     const [spainrecs, setSpainrecs] = useState([])

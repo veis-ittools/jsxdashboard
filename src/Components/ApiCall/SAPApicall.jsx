@@ -120,7 +120,7 @@ function SAPApicall(props) {
 
 
 
-        { field: 'Name', headerName: 'Name', width: 250 },
+        { field: 'NAME', headerName: 'Name', width: 250 },
         { field: 'SIREN', headerName: 'SIREN', width: 100 },
         { field: 'SIRET', headerName: 'SIRET', width: 120 },
 
@@ -142,36 +142,39 @@ function SAPApicall(props) {
 
 
 
+    //     { feild: 'PurchaseHistory', headerName:'BI InvoiceDetails', width:200 , 
+    //       renderCell: (params) => 
+    //       <a   href={params.row.PurchaseHistory} target={"_blank" } rel={"noreferrer"} >{params.row.PurchaseHistory} </a>,
+    //   },
+
+        { feild: 'InvoiceDetails', headerName:'SAP-BI Purchase Details', width:170 , 
+          renderCell: (params) => 
+          <a   href={params.row.InvoiceDetails} target={"_blank" } rel={"noreferrer"} >{params.row.InvoiceDetails} </a>,
+      },    
 
         { field: 'commune', headerName: 'City', width: 135 },
         // { field: 'Département', headerName: 'Département', width: 120 },
         { field: 'Région', headerName: 'Région', width: 120 },
         { field: 'Address', headerName: 'Address', width: 150 },
         
-        { field: 'Category', headerName: 'Category', width: 75 },
+    //     { feild: 'InvoiceDetails', headerName:'BI PurchaseHistory', width:170 , 
+    //       renderCell: (params) => 
+    //       <a   href={params.row.InvoiceDetails} target={"_blank" } rel={"noreferrer"} >{params.row.InvoiceDetails} </a>,
+    //   },        
+        
+      { field: 'Category', headerName: 'Category', width: 75 },
         { field: 'NAF', headerName: 'NAF', width: 75 },
         { field: 'ESS', headerName: 'ESS', width: 25 },
-        { field: 'Code Postal', headerName: 'Code Postal', width: 75 },
-        { feild: 'link', headerName:'Link', width:200 , 
-          renderCell: (params) => 
-          <a   href={params.row.link} target={"_blank" } rel={"noreferrer"} >{params.row.link} </a>,
-      },
-    //   {
-    //     field: "action",
-    //     headerName: "Action",
-    //     sortable: false,
-    //     renderCell: ({ row }) =>
-    //       <Button 
-    //       type="submit"
-    //       size='small'
-    //       variant="contained">
-    //         Action  
-    //       </Button>,
-    //   }      
-
-
+        { field: 'CodePostal', headerName: 'Code Postal', width: 75 },
+    //     { feild: 'link', headerName:'Link', width:200 , 
+    //       renderCell: (params) => 
+    //       <a   href={params.row.link} target={"_blank" } rel={"noreferrer"} >{params.row.link} </a>,
+    //   },
       ];
-    const handleButtonClick = (params) => {
+    
+    
+    
+      const handleButtonClick = (params) => {
         setSelectedRow(params.row.SIRET);
         scrollToBottom()
 
@@ -268,7 +271,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
         // console.log('insee block')
         // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
         
-        let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&ESS=false`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&ESS=false`
         
         console.log('scene 1')
         console.log(baseURL)
@@ -277,7 +280,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
         // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
-        let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&ESS=true`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&ESS=true`
         
         console.log('scene 2')
         // console.log(baseURL)
@@ -289,7 +292,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
         // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         
-        let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=false`
         
         
         console.log('scene 3')
@@ -300,7 +303,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
 		    // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
-        let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=true`
     
         console.log('scene 4')
         // console.log(baseURL)
@@ -310,7 +313,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 // region figures
     if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
 		    // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&region=${location}&ESS=false`
         
         console.log('scene 5')
         finalbaseURL.push(baseURL)
@@ -320,7 +323,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
 		    
         // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&region=${location}&ESS=true`
   
         console.log('scene 6')
         // console.log(baseURL)
@@ -331,7 +334,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){	
 		    // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=false`
         
         console.log('scene 7')
         // console.log(baseURL)
@@ -342,7 +345,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){		
 		    
         // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=true`
        
         console.log('scene 8')
         // console.log(baseURL)

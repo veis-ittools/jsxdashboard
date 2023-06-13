@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react'
 // import { useContext } from "react";
 import {  tokens } from "../../theme";
-import { Box, useTheme, Typography, Grid, Tooltip, Stack } from "@mui/material";
+import { Box, useTheme, Typography, Grid, Tooltip, Button, Stack } from "@mui/material";
 
 
 
@@ -34,7 +34,11 @@ function BasicInfo(props) {
     // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
     let urlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
-    
+
+    let purchaseurl =   `https://vinci-energies.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/b5545/bo/story/E12BAD0321E7066D31918A7DEAB4151E?f01Model=t.6:Calvqlkqib2mgv0tzek30l296o&f01Dim=SUPPLIER_SIRET&f01Val=${siren}`
+
+    let invoiceurl =   `https://vinci-energies.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/b5545/bo/story/6C8B650321E1F1F2F997EA9F708D1039?f01Model=t.6:Cc8lx2bcdjvkuu4e9jvo0w2a68&f01Dim=SUPPLIER_SIRET&f01Val=${siren}`
+
     // console.log(urlchange);
     // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
 
@@ -276,8 +280,15 @@ function BasicInfo(props) {
         )
       }
       
-      
 
+      <Stack direction="row" alignItems="center" gap={4} marginBottom={2}>
+        <Button variant="contained"  size='medium' onClick={event =>  window.open(purchaseurl)}  >
+              Purchase History [SAP]   
+        </Button>
+        <Button variant="contained"  size='medium' onClick={event =>  window.open(invoiceurl)}  >
+              Invoice Details [SAP]   
+        </Button>
+      </Stack>
 
     </Box>
   )

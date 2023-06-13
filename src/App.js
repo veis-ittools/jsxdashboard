@@ -173,7 +173,7 @@ const MainContent = () => {
 
 
 
-// TEST at UN AUTH
+// TEST at UN AUTH FOR TESTING
 // const MainContent = () => {    
 //   return (
 //       <div className="App">
@@ -182,21 +182,21 @@ const MainContent = () => {
 //   );
 // };
 
-// PROD AUTH CONTENT
-// export default function App() {
-//     return (
+// PROD DEFAULT CONTENT
+export default function App() {
+    return (
 
-//           <MainContent />
+          <MainContent />
 
-//     );
-// }
+    );
+}
 
 
 // SITE DOWN
-export default function App() {
-  return (
+// export default function App() {
+//   return (
 
-        <SiteDown />
+//         <SiteDown />
 
-  );
-}
+//   );
+// }
