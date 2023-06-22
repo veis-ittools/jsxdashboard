@@ -149,7 +149,7 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="SAP Search [ALL]"
+              title="BI Search [ALL]"
               to="/"
               icon={<PublicIcon />}
               selected={selected}
@@ -158,7 +158,7 @@ const Sidebar = () => {
             
             
               
-            <Box paddingLeft={10}>
+            <Box paddingLeft={5} paddingTop={3}>
               <Stack direction="row" >
                   <ReactCountryFlag 
                                 style={{
@@ -167,19 +167,19 @@ const Sidebar = () => {
                               }}
 
                               countryCode="FR" svg />
-                  {/* <Typography  variant="h6" color={colors.greenAccent[500]}>
+                  <Typography  variant="h6" color={colors.greenAccent[500]}>
                     France open data
-                  </Typography> */}
+                  </Typography>
                 </Stack>  
               </Box>
 
-              <Item  paddingLeft={0}
+              {/* <Item  
               title="France Opendata"
               // to="/sirensearch"
               // icon={<TravelExploreIcon />}
               // selected={selected}
               // setSelected={setSelected}
-            />
+            /> */}
 
               <Item 
               title="Enterprise Search"
@@ -205,23 +205,26 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Box paddingLeft={10}>
-            
-            <ReactCountryFlag 
-                          style={{
-                            fontSize: '2em',
-                            lineHeight: '2em',
-                        }}
+            <Box paddingLeft={5} paddingTop={3}>
+              <Stack direction="row">
 
-                        countryCode="ES" svg />
+                <ReactCountryFlag 
+                              style={{
+                                fontSize: '2em',
+                                lineHeight: '2em',
+                            }}
+
+                            countryCode="ES" svg />
+                <Typography  variant="h6" color={colors.greenAccent[500]}>
+                      Spain open data
+                </Typography>
+
+
+              </Stack>
+
+
             </Box>
-            <Item  paddingLeft={0}
-              title="Spain Opendata"
-              // to="/sirensearch"
-              // icon={<TravelExploreIcon />}
-              // selected={selected}
-              // setSelected={setSelected}
-            />
+
 
             <Item
               title=" OpenData Search [ESP]"
