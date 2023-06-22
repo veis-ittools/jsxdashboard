@@ -19,6 +19,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import SearchIcon from '@mui/icons-material/Search';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import PublicIcon from '@mui/icons-material/Public';
 
 // import { blue, red } from "@mui/material/colors";
 import myImgSrc from './vincijpg.jpg';
@@ -28,6 +29,7 @@ import myImgSrc from './vincijpg.jpg';
 // import FlashOffIcon from '@mui/icons-material/FlashOff';
 // import Tooltip from '@mui/material/Tooltip';
 import ReactCountryFlag from "react-country-flag"
+import { Stack } from "react-bootstrap";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -149,23 +151,37 @@ const Sidebar = () => {
             <Item
               title="SAP Search [ALL]"
               to="/"
-              icon={<HomeOutlinedIcon />}
+              icon={<PublicIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             
+            
               
             <Box paddingLeft={10}>
- 
-              <ReactCountryFlag 
-                            style={{
-                              fontSize: '2em',
-                              lineHeight: '2em',
-                          }}
+              <Stack direction="row" >
+                  <ReactCountryFlag 
+                                style={{
+                                  fontSize: '2em',
+                                  lineHeight: '2em',
+                              }}
 
-                          countryCode="FR" svg />
+                              countryCode="FR" svg />
+                  {/* <Typography  variant="h6" color={colors.greenAccent[500]}>
+                    France open data
+                  </Typography> */}
+                </Stack>  
               </Box>
-              <Item
+
+              <Item  paddingLeft={0}
+              title="France Opendata"
+              // to="/sirensearch"
+              // icon={<TravelExploreIcon />}
+              // selected={selected}
+              // setSelected={setSelected}
+            />
+
+              <Item 
               title="Enterprise Search"
               to="/sirensearch"
               icon={<TravelExploreIcon />}
@@ -199,6 +215,14 @@ const Sidebar = () => {
 
                         countryCode="ES" svg />
             </Box>
+            <Item  paddingLeft={0}
+              title="Spain Opendata"
+              // to="/sirensearch"
+              // icon={<TravelExploreIcon />}
+              // selected={selected}
+              // setSelected={setSelected}
+            />
+
             <Item
               title=" OpenData Search [ESP]"
               to="/openspain"

@@ -58,7 +58,7 @@ function NewMainSAP() {
         {/* <NewMainsearch></NewMainsearch>   */}
         {/* <NewSapSearch></NewSapSearch> */}
 
-        <Header title= {'SAP BI Search'} subtitle={'Search using VINCI Classification'} ></Header>
+        <Header title= {'VINCI Energies data Search'} subtitle={'Search using VINCI Classification'} ></Header>
         </Grid>
 
 
