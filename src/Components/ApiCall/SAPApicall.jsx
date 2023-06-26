@@ -265,13 +265,15 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     console.log(' *SAP BI* FUNCTION CODE BLOCK CALLED!')
     console.log('famiile----', famille2)
 
+    // category.toUpperCase()
+
     let finalbaseURL = []
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         // console.log('insee block')
         // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
         
-        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&ESS=false`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&ESS=false`
         
         console.log('scene 1')
         console.log(baseURL)
@@ -280,7 +282,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
         // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
-        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&ESS=true`
+        let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&ESS=true`
         
         console.log('scene 2')
         // console.log(baseURL)
@@ -313,7 +315,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 // region figures
     if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
 		    // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&region=${location}&ESS=false`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&region=${location}&ESS=false`
         
         console.log('scene 5')
         finalbaseURL.push(baseURL)
@@ -323,7 +325,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
 		    
         // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
-        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=All&region=${location}&ESS=true`
+        let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&region=${location}&ESS=true`
   
         console.log('scene 6')
         // console.log(baseURL)
