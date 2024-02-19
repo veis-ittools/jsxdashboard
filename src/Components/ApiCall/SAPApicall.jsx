@@ -82,7 +82,7 @@ function SAPApicall(props) {
 
     // console.log('urltocall encoded_url---',encoded_url )
 
-    // let url ='https://veis-ittools.com:5900/SAP/BI/RACCORDS%20COSSES%20MANCHONS%20ET%20CONNECTIQUE%20%7C%20AHELIA12?cat_name=All&ESS=false' 
+    // let url ='https://navik.veis-ittools.fr:5900/SAP/BI/RACCORDS%20COSSES%20MANCHONS%20ET%20CONNECTIQUE%20%7C%20AHELIA12?cat_name=All&ESS=false' 
 
     // console.log('url_url---',url )
     
@@ -271,7 +271,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         // console.log('insee block')
-        // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
+        // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
         
         let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&ESS=false`
         
@@ -281,7 +281,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
-        // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
+        // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
         let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&ESS=true`
         
         console.log('scene 2')
@@ -292,7 +292,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
-        // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+        // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         
         let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=false`
         
@@ -304,7 +304,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
-		    // let baseURL = `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+		    // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
         let baseURL = `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=true`
     
         console.log('scene 4')
@@ -314,7 +314,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
 // region figures
     if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
-		    // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
+		    // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
         let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&region=${location}&ESS=false`
         
         console.log('scene 5')
@@ -324,7 +324,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
 		    
-        // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
+        // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
         let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=ALL&region=${location}&ESS=true`
   
         console.log('scene 6')
@@ -335,7 +335,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){	
-		    // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+		    // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=false`
         
         console.log('scene 7')
@@ -346,7 +346,7 @@ const sapurlformating = (famille2, ESS, location,category, regionlen) => {
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){		
 		    
-        // let baseURL =  `https://veis-ittools.com:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+        // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
         let baseURL =  `https://veis-ittools.eu/SAP/BI/FRANCE/${famille2}?cat_name=${category}&ESS=true`
        
         console.log('scene 8')

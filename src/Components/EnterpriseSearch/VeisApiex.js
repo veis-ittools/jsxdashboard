@@ -13,7 +13,7 @@ function VeisApiex() {
         });
       };
     // let naf = props.naf
-    let baseURL ='https://veis-ittools.com:5900/INSEE/46.69A/category/GE?nombre=30&ESS=false'
+    let baseURL ='https://navik.veis-ittools.fr:5900/INSEE/46.69A/category/GE?nombre=30&ESS=false'
     const userTableStyles = {
         m: 2,
         marginTop: 12,

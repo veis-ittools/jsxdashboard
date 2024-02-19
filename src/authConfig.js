@@ -14,7 +14,7 @@ export const msalConfig = {
     auth: {
         clientId: "0c223fdc-2c33-4c3a-a9ca-2997467704c9",
         authority: "https://login.microsoftonline.com/47816a97-abc5-432b-a853-1031dba14e17",
-        redirectUri: "https://veis-ittools.com/"
+        redirectUri: "https://navik.veis-ittools.fr/"
         // redirectUri: "http://localhost:3000"
     },
     cache: {

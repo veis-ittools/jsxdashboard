@@ -82,11 +82,11 @@ function AllEstablish(props) {
 
     // BASIC INFORMATION API CALL CODE START------
 
-    // let urlchangeallrecs = 'https://veis-ittools.com:9100/FR/dashboard/data'
-    // let urlchangeallrecs = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    // let urlchangeallrecs = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data'
+    // let urlchangeallrecs = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
     let urlchangeallrecs = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
     // console.log(urlchangeallrecs);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
 
 
 

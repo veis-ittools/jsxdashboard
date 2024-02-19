@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import Datagrid from './Datagrid'
 import axios from "axios";
 
-// const baseURL = "https://veis-ittools.com:5900/FR/Regions/";
-// const baseURL = "https://veis-ittools.com:5900/FR/enterprise/data/391635844"
+// const baseURL = "https://navik.veis-ittools.fr:5900/FR/Regions/";
+// const baseURL = "https://navik.veis-ittools.fr:5900/FR/enterprise/data/391635844"
 
 function Siren(props) {
   
   let sirenvar =props.sirenvar
-  let baseURL = `https://veis-ittools.com:5900/FR/enterprise/data/${sirenvar}`
+  let baseURL = `https://navik.veis-ittools.fr:5900/FR/enterprise/data/${sirenvar}`
 
   console.log(baseURL)
 

@@ -76,7 +76,7 @@ function AllSAPDatagrid(props) {
 
       ];
 
-    //  let urlchangeallrecs =  `https://veis-ittools.com:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
+    //  let urlchangeallrecs =  `https://navik.veis-ittools.fr:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
     // let urlchangeallrecs =  `https://veis-ittools.eu/SAP/BI/ALL/fammile2/${famiile2}/country/${country} `
     
 

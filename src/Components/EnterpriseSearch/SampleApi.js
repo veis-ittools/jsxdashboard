@@ -11,8 +11,8 @@ const addId=(arr)=> {
 
 function SampleApi(props) {
     let sirenvar =props.sirenvar
-    let baseURL = `https://veis-ittools.com:5900/FR/enterprise/data/${sirenvar}`
-    // let baseURL ='https://veis-ittools.com:5900/INSEE/46.69A/category/GE?nombre=3&ESS=false' 
+    let baseURL = `https://navik.veis-ittools.fr:5900/FR/enterprise/data/${sirenvar}`
+    // let baseURL ='https://navik.veis-ittools.fr:5900/INSEE/46.69A/category/GE?nombre=3&ESS=false' 
     console.log(sirenvar)
     console.log(baseURL)
     

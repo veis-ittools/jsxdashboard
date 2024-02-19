@@ -31,8 +31,8 @@ function BasicInfo(props) {
 
 
     // BASIC INFORMATION API CALL CODE START------
-    // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
-    // let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    // let urlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
+    // let urlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
     let urlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
 
     let purchaseurl =   `https://vinci-energies.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/b5545/bo/story/E12BAD0321E7066D31918A7DEAB4151E?f01Model=t.6:Calvqlkqib2mgv0tzek30l296o&f01Dim=SUPPLIER_SIRET&f01Val=${siren}`
@@ -40,7 +40,7 @@ function BasicInfo(props) {
     let invoiceurl =   `https://vinci-energies.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/b5545/bo/story/6C8B650321E1F1F2F997EA9F708D1039?f01Model=t.6:Cc8lx2bcdjvkuu4e9jvo0w2a68&f01Dim=SUPPLIER_SIRET&f01Val=${siren}`
 
     // console.log(urlchange);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
 
     const [siret, setSiret] =useState()
     const [users, setUsers] = useState([])

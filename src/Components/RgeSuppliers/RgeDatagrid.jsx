@@ -8,7 +8,7 @@ function RgeDatagrid(props) {
     let meta = props.meta
     let domain = props.domain
 
-    let URL = `https://veis-ittools.com:9100/RGE/${meta}/domain/${domain}`
+    let URL = `https://navik.veis-ittools.fr:9100/RGE/${meta}/domain/${domain}`
 
     const [users, setUsers] = useState([])
     const [rgerecs, setRGErecs] = useState([])

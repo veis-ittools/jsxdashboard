@@ -12,7 +12,7 @@ function RgeResults(props) {
     let meta = props.meta
     
     // const [domain, setDomain] =  useState('')
-    // let URL = `https://veis-ittools.com:9100/domain/RGE/`
+    // let URL = `https://navik.veis-ittools.fr:9100/domain/RGE/`
     let URL = `https://veis-ittools.eu/domain/RGE/${meta}`
 
     // let headers = {

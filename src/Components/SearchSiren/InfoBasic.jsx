@@ -13,9 +13,9 @@ function InfoBasic(props) {
     let pastedsiren = props.pastedsiren
     console.log(pastedsiren);
 
-    let urlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${pastedsiren}`
+    let urlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${pastedsiren}`
     console.log(urlchange);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
 
     
     const [users, setUsers] = useState([])

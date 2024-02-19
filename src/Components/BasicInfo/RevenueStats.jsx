@@ -31,10 +31,10 @@ function RevenueStats(props) {
 
 
     // API CALL TO GET REV STATS
-    // let urlchange = `https://veis-ittools.com:9100/FR/forcharts/revenue/`
+    // let urlchange = `https://navik.veis-ittools.fr:9100/FR/forcharts/revenue/`
     let urlchange = `https://veis-ittools.eu/FR/forcharts/revenue/${siren}`
     console.log(urlchange);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
 
     
     const [users, setUsers] = useState([])
@@ -88,11 +88,11 @@ function RevenueStats(props) {
 
 
     // TOTAL ESTABLISHMENTS API CALL--------------
-    // let Turlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/'
-    // let Turlchange = `https://veis-ittools.com:9100/FR/dashboard/data/${siren}`
+    // let Turlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/'
+    // let Turlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
     let Turlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
     console.log(Turlchange);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
     const [totalrec, setTotalrecs] = useState()
 
     useEffect(() => {
@@ -121,7 +121,7 @@ function RevenueStats(props) {
     let revdatarecs =  null
     let Durlchange = `https://veis-ittools.eu/FR/enterprise/data/${siren}`
     console.log(Durlchange);
-    // let urlchange = 'https://veis-ittools.com:9100/FR/dashboard/data/%20%20535297121'
+    // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
     
     
     useEffect(() => {
