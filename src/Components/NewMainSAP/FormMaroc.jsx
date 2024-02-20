@@ -15,7 +15,7 @@ function FormMaroc(props) {
     let famille1 = props.famille1
     let country = props.country
     
-    let URL = `https://veis-ittools.eu/BI/purchasefamille2/${famille1}`
+    let URL = `https://api.veis-ittools.fr/BI/purchasefamille2/${famille1}`
     
     let [famille2 , setFamille2 ] =  useState([])
     const [autonaf, setAutonaf ] = useState(false)

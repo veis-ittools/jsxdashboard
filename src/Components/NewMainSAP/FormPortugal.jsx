@@ -16,7 +16,7 @@ function FormPortugal(props) {
     let country = props.country
 
 
-    let URL = `https://veis-ittools.eu/SAP/purchasefamille2/portugal/${famille1}`
+    let URL = `https://api.veis-ittools.fr/SAP/purchasefamille2/portugal/${famille1}`
     console.log(URL)
 
 

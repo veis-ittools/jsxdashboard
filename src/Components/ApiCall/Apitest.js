@@ -203,14 +203,14 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
     if ( ESS !== 'YES' && category ==='ALL' && regionlen < 1 ) {
         console.log('insee block')
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?ESS=false`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/All?ESS=false`
         console.log('scene 1')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?ESS=true`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/All?ESS=true`
         console.log('scene 2')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -219,7 +219,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?ESS=false`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/${category}?ESS=false`
         console.log('scene 3')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -227,7 +227,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?ESS=true`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/${category}?ESS=true`
         console.log('scene 4')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -238,14 +238,14 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
         console.log('insee block')
         let naftocall =  naf.slice(0, 6)
         console.log(naftocall)
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?region=${location}&ESS=false`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/All?region=${location}&ESS=false`
         console.log('scene 5')
         finalbaseURL.push(baseURL)
 
 
     }
     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/All?region=${location}&ESS=true`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/All?region=${location}&ESS=true`
         console.log('scene 6')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -254,7 +254,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
 
 
     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=false`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=false`
         console.log('scene 7')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)
@@ -262,7 +262,7 @@ const urlformating = (ESS, location,category, datasource, regionlen, naftocall, 
     }
 
     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){
-        let baseURL = `https://veis-ittools.eu/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=true`
+        let baseURL = `https://api.veis-ittools.fr/${datasource}/${naftocall}/category/${category}?region=${location}&ESS=true`
         console.log('scene 8')
         // console.log(baseURL)
         finalbaseURL.push(baseURL)

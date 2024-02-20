@@ -84,7 +84,7 @@ function AllEstablish(props) {
 
     // let urlchangeallrecs = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data'
     // let urlchangeallrecs = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
-    let urlchangeallrecs = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
+    let urlchangeallrecs = `https://api.veis-ittools.fr/FR/dashboard/data/${siren}`
     // console.log(urlchangeallrecs);
     // let urlchange = 'https://navik.veis-ittools.fr:9100/FR/dashboard/data/%20%20535297121'
 

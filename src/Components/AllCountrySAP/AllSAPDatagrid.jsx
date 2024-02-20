@@ -63,7 +63,7 @@ function AllSAPDatagrid(props) {
       ];
 
     //  let urlchangeallrecs =  `https://navik.veis-ittools.fr:9100/SAP/BI/ALL/${ apiparams2.famille1}/fammile2/${apiparams2.famiile2}/country/${apiparams2.country}`
-     let urlchangeallrecs = 'https://veis-ittools.eu/SAP/purchasefamille2/portugal/CABOS%20%7C%20AACABL'
+     let urlchangeallrecs = 'https://api.veis-ittools.fr/SAP/purchasefamille2/portugal/CABOS%20%7C%20AACABL'
     //  let headers = {
     //     'accept': 'application/json',
     //     'fammile2' : apiparams2.famiile2,

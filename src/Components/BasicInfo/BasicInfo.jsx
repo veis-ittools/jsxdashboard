@@ -33,7 +33,7 @@ function BasicInfo(props) {
     // BASIC INFORMATION API CALL CODE START------
     // let urlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
     // let urlchange = `https://navik.veis-ittools.fr:9100/FR/dashboard/data/${siren}`
-    let urlchange = `https://veis-ittools.eu/FR/dashboard/data/${siren}`
+    let urlchange = `https://api.veis-ittools.fr/FR/dashboard/data/${siren}`
 
     let purchaseurl =   `https://vinci-energies.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/b5545/bo/story/E12BAD0321E7066D31918A7DEAB4151E?f01Model=t.6:Calvqlkqib2mgv0tzek30l296o&f01Dim=SUPPLIER_SIRET&f01Val=${siren}`
 
@@ -82,7 +82,7 @@ function BasicInfo(props) {
     
 
 
-    let mar_url = `https://veis-ittools.eu/lemarche/inclusion/ESAT/${siren}`
+    let mar_url = `https://api.veis-ittools.fr/lemarche/inclusion/ESAT/${siren}`
     
     useEffect(() => {
       MfetchData();

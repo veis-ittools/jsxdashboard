@@ -37,7 +37,7 @@ function NewRgeDatagrid(props) {
 
 
 
-    let URL = `https://veis-ittools.eu/RGE/${meta}/domain/${domain}`
+    let URL = `https://api.veis-ittools.fr/RGE/${meta}/domain/${domain}`
 
     const [users, setUsers] = useState([])
     const [selectedRow, setSelectedRow] = useState(null);

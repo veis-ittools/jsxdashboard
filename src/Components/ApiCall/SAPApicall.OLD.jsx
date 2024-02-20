@@ -268,7 +268,7 @@
 //         // console.log('insee block')
 //         // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&ESS=false`
         
-//         let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&ESS=false`
+//         let baseURL = `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=All&ESS=false`
         
 //         console.log('scene 1')
 //         console.log(baseURL)
@@ -277,7 +277,7 @@
 //     }
 //     if ( ESS === 'YES' && category ==='ALL'  && regionlen < 1 ) {
 //         // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&ESS=true`
-//         let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&ESS=true`
+//         let baseURL = `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=All&ESS=true`
         
 //         console.log('scene 2')
 //         // console.log(baseURL)
@@ -289,7 +289,7 @@
 //     if (ESS !== 'YES' && category !== 'ALL'  && regionlen < 1){
 //         // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         
-//         let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+//         let baseURL = `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         
         
 //         console.log('scene 3')
@@ -300,7 +300,7 @@
 
 //     if (ESS === 'YES' && category !== 'ALL'  && regionlen < 1){
 // 		    // let baseURL = `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
-//         let baseURL = `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+//         let baseURL = `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
     
 //         console.log('scene 4')
 //         // console.log(baseURL)
@@ -310,7 +310,7 @@
 // // region figures
 //     if ( ESS !== 'YES' && category ==='ALL' && regionlen > 1 ) {	
 // 		    // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
-//         let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
+//         let baseURL =  `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=false`
         
 //         console.log('scene 5')
 //         finalbaseURL.push(baseURL)
@@ -320,7 +320,7 @@
 //     if ( ESS === 'YES' && category ==='ALL'  && regionlen > 1 ) {	
 		    
 //         // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
-//         let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
+//         let baseURL =  `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=All&region=${location}&ESS=true`
   
 //         console.log('scene 6')
 //         // console.log(baseURL)
@@ -331,7 +331,7 @@
 
 //     if (ESS !== 'YES' && category !== 'ALL'  && regionlen > 1){	
 // 		    // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
-//         let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
+//         let baseURL =  `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=${category}&ESS=false`
         
 //         console.log('scene 7')
 //         // console.log(baseURL)
@@ -342,7 +342,7 @@
 //     if (ESS === 'YES' && category !== 'ALL'  && regionlen > 1){		
 		    
 //         // let baseURL =  `https://navik.veis-ittools.fr:5900/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
-//         let baseURL =  `https://veis-ittools.eu/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
+//         let baseURL =  `https://api.veis-ittools.fr/SAP/BI/${famille2}?cat_name=${category}&ESS=true`
        
 //         console.log('scene 8')
 //         // console.log(baseURL)
